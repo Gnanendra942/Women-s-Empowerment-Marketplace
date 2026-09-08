@@ -295,7 +295,7 @@ async function initDB() {
       'artisan',
       'Bankura, West Bengal',
       'Second-generation terracotta sculptor crafting studio ceramics with river clay and natural mineral washes.',
-      '/images/ananya_artisan.jpg',
+      '/images/meera_artisan.jpg',
       'Mitti Roots Rural Guild'
     ]);
     const artisanId2 = res2.lastID;
@@ -311,7 +311,7 @@ async function initDB() {
       'artisan',
       'Cuttack, Odisha',
       'Expert silver filigree craftsman creating wearable poetry with silver wire techniques passed down over 400 years.',
-      '/images/ananya_artisan.jpg',
+      '/images/fatima_artisan.jpg',
       'Chandi Karigar Fellowship'
     ]);
     const artisanId3 = res3.lastID;
