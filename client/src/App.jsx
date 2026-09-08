@@ -12,6 +12,7 @@ import MasterclassStudio from './components/MasterclassStudio';
 import ArtisanChatModal from './components/ArtisanChatModal';
 import ProvenanceModal from './components/ProvenanceModal';
 import FairTradeCalculatorModal from './components/FairTradeCalculatorModal';
+import SellerStorefronts from './components/SellerStorefronts';
 import { CurrencyProvider } from './context/CurrencyContext';
 
 export default function App() {
@@ -268,10 +269,19 @@ export default function App() {
             />
           )}
 
+          {/* Tab: Multi-Vendor Artisan Storefronts */}
+          {activeTab === 'guilds' && (
+            <SellerStorefronts
+              onSelectProduct={handleSelectProduct}
+              onAddToCart={handleAddToCart}
+            />
+          )}
+
           {/* Tab 2: Masterclasses & Virtual Studio */}
           {activeTab === 'workshops' && (
             <MasterclassStudio />
           )}
+
 
           {/* Tab 3: Seller Analytics Suite */}
           {activeTab === 'seller' && (
