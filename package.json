@@ -7,7 +7,8 @@
     "build": "npm run build --prefix client",
     "server": "node server/server.js",
     "client": "npm run dev --prefix client",
-    "dev": "node -e \"const { spawn } = require('child_process'); spawn('node', ['server/server.js'], { stdio: 'inherit' }); spawn('npm', ['run', 'dev', '--prefix', 'client'], { stdio: 'inherit' });\""
+    "dev": "node -e \"const { spawn } = require('child_process'); spawn('node', ['server/server.js'], { stdio: 'inherit' }); spawn('npm', ['run', 'dev', '--prefix', 'client'], { stdio: 'inherit' });\"",
+    "tunnel": "npx -y cloudflared tunnel --url http://localhost:5001"
   },
   "keywords": [
     "women-empowerment",
