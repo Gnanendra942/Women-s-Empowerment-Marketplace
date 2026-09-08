@@ -63,6 +63,14 @@ app.use('/api/notifications', notificationRoutes);
 app.use('/api/workshops', workshopRoutes);
 app.use('/api/messages', messageRoutes);
 
+// Serve compiled client static assets & standalone public assets
+const clientDist = path.join(__dirname, '../client/dist');
+const publicDir = path.join(__dirname, '../public');
+const fs = require('fs');
+
+app.use(express.static(clientDist));
+app.use(express.static(publicDir));
+
 // Health check
 app.get('/api/health', (req, res) => {
   res.json({
@@ -73,6 +81,22 @@ app.get('/api/health', (req, res) => {
     pipeline: 'Distributed Order Lifecycle Active',
     timestamp: new Date().toISOString()
   });
+});
+
+// Single Page Application (SPA) & Static HTML Web Application Catch-All
+app.use((req, res) => {
+  if (req.path.startsWith('/api') || req.path.startsWith('/images')) {
+    return res.status(404).json({ error: 'API endpoint not found' });
+  }
+  const indexPath = path.join(clientDist, 'index.html');
+  if (fs.existsSync(indexPath)) {
+    return res.sendFile(indexPath);
+  }
+  const standalonePath = path.join(publicDir, 'marketplace.html');
+  if (fs.existsSync(standalonePath)) {
+    return res.sendFile(standalonePath);
+  }
+  res.status(200).send(`<!doctype html><html><body><h1>Women's Empowerment Marketplace</h1><p>Client build pending. Please run <code>npm run build</code>.</p></body></html>`);
 });
 
 // Start server

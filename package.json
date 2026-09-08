@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "Full-stack digital commerce engine empowering women artisans & local cottage entrepreneurs.",
   "scripts": {
-    "start": "node server/server.js",
+    "start": "node -e \"const fs=require('fs'); if(!fs.existsSync('client/dist/index.html')){ console.log('✨ Building frontend bundle...'); require('child_process').execSync('npm run build', {stdio:'inherit'}); } const s=require('child_process').spawn('node', ['server/server.js'], {stdio:'inherit'}); s.on('exit', process.exit);\"",
+    "build": "npm run build --prefix client",
     "server": "node server/server.js",
     "client": "npm run dev --prefix client",
-    "build": "npm run build --prefix client",
     "dev": "node -e \"const { spawn } = require('child_process'); spawn('node', ['server/server.js'], { stdio: 'inherit' }); spawn('npm', ['run', 'dev', '--prefix', 'client'], { stdio: 'inherit' });\""
   },
   "keywords": [
