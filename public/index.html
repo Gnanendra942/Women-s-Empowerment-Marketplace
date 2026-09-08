@@ -13,7 +13,7 @@
     :root {
       --wem-dark: #0f172a;
       --wem-subnav: #1e293b;
-      --wem-bg: #f1f5f9;
+      --wem-bg: #f8fafc;
       --wem-card-bg: #ffffff;
       --wem-amber: #f59e0b;
       --wem-amber-hover: #d97706;
@@ -218,7 +218,7 @@
       background: #d97706;
     }
 
-    /* Country / Language / Currency */
+    /* Currency Switcher */
     .wem-lang-box {
       display: flex;
       align-items: center;
@@ -227,7 +227,7 @@
       font-weight: 700;
     }
 
-    /* Account & Lists */
+    /* Accounts & Lists */
     .wem-account-box {
       display: flex;
       flex-direction: column;
@@ -272,11 +272,6 @@
     }
     .wem-cart-box:hover {
       background: rgba(245, 158, 11, 0.25);
-    }
-    .wem-cart-icon-wrap {
-      position: relative;
-      display: flex;
-      align-items: center;
     }
     .wem-cart-count {
       background: #f59e0b;
@@ -361,7 +356,7 @@
     }
 
     /* ==========================================================================
-       HERO CAROUSEL WITH GRADIENT FADE
+       HERO BANNER CAROUSEL
        ========================================================================== */
     .wem-hero-carousel {
       position: relative;
@@ -392,7 +387,7 @@
       left: 0;
       right: 0;
       height: 240px;
-      background: linear-gradient(to bottom, rgba(241, 245, 249, 0) 0%, rgba(241, 245, 249, 0.65) 60%, #f1f5f9 100%);
+      background: linear-gradient(to bottom, rgba(248, 250, 252, 0) 0%, rgba(248, 250, 252, 0.65) 60%, #f8fafc 100%);
       pointer-events: none;
       z-index: 2;
     }
@@ -490,7 +485,7 @@
     .wem-quad-card {
       background: #ffffff;
       border: 1px solid var(--wem-border);
-      border-radius: 12px;
+      border-radius: 14px;
       padding: 22px;
       display: flex;
       flex-direction: column;
@@ -559,7 +554,7 @@
     .wem-deals-section {
       background: #ffffff;
       border: 1px solid var(--wem-border);
-      border-radius: 12px;
+      border-radius: 14px;
       padding: 22px 24px;
       margin-bottom: 26px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.04);
@@ -595,7 +590,7 @@
     .wem-deal-img-wrap {
       height: 190px;
       background: #f8fafc;
-      border-radius: 8px;
+      border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -614,11 +609,12 @@
     }
 
     .wem-deal-tag {
-      background: var(--wem-deal-red);
-      color: #ffffff;
+      background: #fef2f2;
+      color: #e11d48;
+      border: 1px solid #fecdd3;
       font-size: 0.72rem;
-      font-weight: 700;
-      padding: 3px 8px;
+      font-weight: 800;
+      padding: 2px 7px;
       border-radius: 4px;
       display: inline-block;
       margin-bottom: 6px;
@@ -629,7 +625,8 @@
       gap: 6px;
     }
     .wem-deal-price {
-      font-size: 1.15rem;
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
       font-weight: 800;
       color: var(--wem-text);
     }
@@ -645,11 +642,11 @@
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
-      font-weight: 500;
+      font-weight: 600;
     }
 
     /* ==========================================================================
-       PRODUCT CATALOG: SIDEBAR & GRID
+       UNIQUE BESPOKE PRODUCT CARD STYLING
        ========================================================================== */
     .wem-catalog-layout {
       display: grid;
@@ -662,7 +659,7 @@
     .wem-sidebar {
       background: #ffffff;
       border: 1px solid var(--wem-border);
-      border-radius: 12px;
+      border-radius: 14px;
       padding: 20px;
       font-size: 0.85rem;
       box-shadow: 0 2px 8px rgba(0,0,0,0.04);
@@ -702,28 +699,62 @@
       color: var(--wem-link-hover);
     }
 
-    /* Product Grid */
+    /* Unique Product Cards Grid */
     .wem-products-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 22px;
     }
 
     .wem-card {
       background: #ffffff;
-      border: 1px solid var(--wem-border);
-      border-radius: 12px;
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      border-radius: 16px;
       padding: 16px;
       display: flex;
       flex-direction: column;
       position: relative;
-      transition: all 0.25s ease;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+      overflow: hidden;
+    }
+    .wem-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #f59e0b, #ec4899, #10b981);
+      opacity: 0;
+      transition: opacity 0.3s;
     }
     .wem-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.08);
-      border-color: #cbd5e1;
+      transform: translateY(-6px);
+      box-shadow: 0 16px 36px -4px rgba(245, 158, 11, 0.16), 0 6px 18px rgba(15, 23, 42, 0.06);
+      border-color: #f59e0b;
+    }
+    .wem-card:hover::before {
+      opacity: 1;
+    }
+
+    .wem-card-seal {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(6px);
+      border: 1px solid #fde68a;
+      border-radius: 999px;
+      padding: 3px 8px;
+      font-size: 0.68rem;
+      font-weight: 800;
+      color: #b45309;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      z-index: 3;
     }
 
     .wem-card-ribbon {
@@ -742,24 +773,42 @@
     }
 
     .wem-card-img-wrap {
-      height: 230px;
+      height: 220px;
       background: #f8fafc;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
       overflow: hidden;
-      margin-bottom: 12px;
-      border-radius: 8px;
+      margin-bottom: 14px;
+      border-radius: 12px;
+      position: relative;
     }
     .wem-card-img-wrap img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.4s ease;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .wem-card:hover .wem-card-img-wrap img {
-      transform: scale(1.05);
+      transform: scale(1.06);
+    }
+
+    .wem-card-cluster-tag {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(8px);
+      color: #fbbf24;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      display: flex;
+      align-items: center;
+      gap: 4px;
     }
 
     .wem-card-body {
@@ -768,13 +817,24 @@
       flex-grow: 1;
     }
 
-    .wem-artisan-lead {
+    .wem-card-artisan-chip {
+      display: flex;
+      align-items: center;
+      gap: 6px;
       font-size: 0.76rem;
-      color: var(--wem-text-subtle);
-      margin-bottom: 4px;
+      color: #475569;
+      margin-bottom: 6px;
     }
-    .wem-artisan-lead b {
-      color: var(--wem-link);
+    .wem-card-artisan-chip .avatar {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #f59e0b, #ec4899);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      color: #fff;
     }
 
     .wem-card-title {
@@ -782,7 +842,7 @@
       font-size: 1.05rem;
       font-weight: 700;
       color: var(--wem-text);
-      line-height: 1.3;
+      line-height: 1.32;
       margin-bottom: 6px;
       cursor: pointer;
       display: -webkit-box;
@@ -816,47 +876,59 @@
       display: flex;
       align-items: baseline;
       gap: 8px;
-      margin-bottom: 6px;
+      margin: 6px 0 10px;
     }
     .wem-price-main {
       font-family: var(--font-heading);
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       font-weight: 800;
-      color: var(--wem-text);
+      color: #0f172a;
       line-height: 1;
     }
     .wem-price-mrp {
-      font-size: 0.8rem;
-      color: var(--wem-text-subtle);
+      font-size: 0.82rem;
+      color: #94a3b8;
       text-decoration: line-through;
     }
-    .wem-price-discount {
-      font-size: 0.82rem;
-      color: var(--wem-deal-red);
-      font-weight: 700;
-    }
-
-    .wem-certified-badge {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.76rem;
-      font-weight: 700;
-      color: var(--wem-certified-green);
-      margin-bottom: 6px;
-      background: #ecfdf5;
-      padding: 3px 8px;
+    .wem-discount-badge {
+      background: #fef2f2;
+      color: #e11d48;
+      border: 1px solid #fecdd3;
+      font-size: 0.74rem;
+      font-weight: 800;
+      padding: 2px 6px;
       border-radius: 4px;
-      border: 1px solid #d1fae5;
     }
 
-    .wem-delivery-promise {
-      font-size: 0.78rem;
-      color: #334155;
+    /* Fair Wage Meter */
+    .wem-fair-wage-meter {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 8px;
+      padding: 8px 10px;
       margin-bottom: 14px;
     }
-    .wem-delivery-promise b {
+    .wem-fair-wage-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.74rem;
       font-weight: 700;
+      color: #166534;
+      margin-bottom: 4px;
+    }
+    .wem-fair-wage-bar {
+      height: 5px;
+      background: #dcfce7;
+      border-radius: 999px;
+      overflow: hidden;
+      position: relative;
+    }
+    .wem-fair-wage-fill {
+      height: 100%;
+      width: 86%;
+      background: linear-gradient(90deg, #10b981, #059669);
+      border-radius: 999px;
     }
 
     .wem-card-buttons {
@@ -1470,7 +1542,7 @@
         <span>☰</span> <b>Directory</b>
       </div>
       <div class="wem-subnav-item active" id="subnav-store" onclick="switchView('store')">Storefront Catalog</div>
-      <div class="wem-subnav-item" id="subnav-deals" onclick="scrollToDeals()">Featured Heirlooms</div>
+      <div class="wem-subnav-item" id="subnav-deals" onclick="scrollToDeals()">Affordable Direct Deals</div>
       <div class="wem-subnav-item" id="subnav-guilds" onclick="switchView('guilds')">Artisan Guilds</div>
       <div class="wem-subnav-item" id="subnav-workshops" onclick="switchView('workshops')">Live Masterclasses</div>
       <div class="wem-subnav-item" id="subnav-calculator" onclick="switchView('calculator')">86% Fair-Wage Ledger</div>
@@ -1496,7 +1568,7 @@
     <div class="wem-drawer-body">
       <div class="wem-drawer-section-title">Trending Handcrafted</div>
       <div class="wem-drawer-item" onclick="filterByCategory('All'); toggleSidebarMenu();">Best Sellers in Handloom Sarees <span>›</span></div>
-      <div class="wem-drawer-item" onclick="scrollToDeals(); toggleSidebarMenu();">Featured Heirlooms & Special Editions <span>›</span></div>
+      <div class="wem-drawer-item" onclick="scrollToDeals(); toggleSidebarMenu();">Affordable Cottage Heirlooms <span>›</span></div>
       <div class="wem-drawer-item" onclick="switchView('workshops'); toggleSidebarMenu();">Virtual Masterclass Studio <span>›</span></div>
 
       <hr style="border:none; border-top:1px solid #e2e8f0; margin:10px 0;">
@@ -1530,10 +1602,10 @@
     <!-- Slide 1 -->
     <div class="wem-hero-slide active" style="background-image: linear-gradient(rgba(15,23,42,0.35), rgba(15,23,42,0.75)), url('https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=1600&q=80');">
       <div class="wem-hero-content">
-        <span class="wem-hero-tag">Annual Artisan Empowerment Showcase</span>
-        <h1 class="wem-hero-title">Direct from Rural Women Master Weavers</h1>
-        <p class="wem-hero-sub">Authentic Banarasi Mulberry silk brocades and handlooms. 86% of gross proceeds flow directly into women-led bank cooperatives.</p>
-        <button class="wem-hero-btn" onclick="scrollToCatalog()">Explore Heritage Handlooms</button>
+        <span class="wem-hero-tag">Direct Rural Cottage Craft · Direct Pricing</span>
+        <h1 class="wem-hero-title">Empowering Women Artisans Without Middlemen</h1>
+        <p class="wem-hero-sub">Affordable authentic handlooms and pottery direct from village cottage clusters. 86% direct disbursement guaranteed.</p>
+        <button class="wem-hero-btn" onclick="scrollToCatalog()">Explore Affordable Handlooms</button>
       </div>
     </div>
 
@@ -1541,7 +1613,7 @@
     <div class="wem-hero-slide" style="background-image: linear-gradient(rgba(15,23,42,0.35), rgba(15,23,42,0.75)), url('https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=1600&q=80');">
       <div class="wem-hero-content">
         <span class="wem-hero-tag">Ancestral Terracotta & Ceramic Ateliers</span>
-        <h1 class="wem-hero-title">Revitalize Your Home with Living Earth</h1>
+        <h1 class="wem-hero-title">Revitalize Your Home from ₹249</h1>
         <p class="wem-hero-sub">Bankura alluvial silt pottery and temple urlis slow-fired in underground wood kilns by women ceramic crafters.</p>
         <button class="wem-hero-btn" onclick="filterByCategory('Home & Decor')">Shop Terracotta</button>
       </div>
@@ -1571,23 +1643,23 @@
       <div class="wem-quad-grid">
         <!-- Card 1: Revamp Home -->
         <div class="wem-quad-card">
-          <div class="wem-quad-title">Revamp your space with earthen crafts</div>
+          <div class="wem-quad-title">Earthen crafts starting from ₹249</div>
           <div class="wem-quad-2x2">
             <div class="wem-quad-tile" onclick="openProductModal(2)">
               <img src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=400&q=80" alt="Terracotta Urli">
-              <div class="wem-quad-label">Terracotta Urlis</div>
+              <div class="wem-quad-label">Terracotta Urli · ₹349</div>
             </div>
             <div class="wem-quad-tile" onclick="openProductModal(6)">
               <img src="https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=400&q=80" alt="Studio Pottery">
-              <div class="wem-quad-label">Clay Planters</div>
+              <div class="wem-quad-label">Clay Planters · ₹249</div>
             </div>
             <div class="wem-quad-tile" onclick="openProductModal(5)">
               <img src="https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=400&q=80" alt="Walnut Chest">
-              <div class="wem-quad-label">Walnut Wood Boxes</div>
+              <div class="wem-quad-label">Walnut Wood Box · ₹849</div>
             </div>
-            <div class="wem-quad-tile" onclick="openProductModal(2)">
-              <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=400&q=80" alt="Brass Lamp">
-              <div class="wem-quad-label">Tribal Brass Lamps</div>
+            <div class="wem-quad-tile" onclick="openProductModal(8)">
+              <img src="https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=400&q=80" alt="Wild Honey">
+              <div class="wem-quad-label">Wild Honey · ₹179</div>
             </div>
           </div>
           <div class="wem-quad-footer-link" onclick="filterByCategory('Home & Decor')">See all home heirlooms →</div>
@@ -1595,23 +1667,23 @@
 
         <!-- Card 2: Festive Weaves -->
         <div class="wem-quad-card">
-          <div class="wem-quad-title">Heritage weaves direct from rural looms</div>
+          <div class="wem-quad-title">Direct from looms starting from ₹499</div>
           <div class="wem-quad-2x2">
             <div class="wem-quad-tile" onclick="openProductModal(1)">
               <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400&q=80" alt="Silk Saree">
-              <div class="wem-quad-label">Banarasi Brocades</div>
+              <div class="wem-quad-label">Banarasi Brocade · ₹1,499</div>
             </div>
             <div class="wem-quad-tile" onclick="openProductModal(7)">
               <img src="https://images.unsplash.com/photo-1607344645866-009c320c5ab8?w=400&q=80" alt="Ajrakh Dupatta">
-              <div class="wem-quad-label">Ajrakh Block Prints</div>
+              <div class="wem-quad-label">Ajrakh Dupatta · ₹599</div>
             </div>
             <div class="wem-quad-tile" onclick="openProductModal(4)">
               <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=400&q=80" alt="Khadi Kurta">
-              <div class="wem-quad-label">Organic Khadi Kurtas</div>
+              <div class="wem-quad-label">Khadi Kurta · ₹499</div>
             </div>
-            <div class="wem-quad-tile" onclick="openProductModal(1)">
-              <img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=400&q=80" alt="Zari Stoles">
-              <div class="wem-quad-label">Pure Silver Zari</div>
+            <div class="wem-quad-tile" onclick="openProductModal(3)">
+              <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=400&q=80" alt="Silver Jhumkas">
+              <div class="wem-quad-label">Silver Jhumkas · ₹799</div>
             </div>
           </div>
           <div class="wem-quad-footer-link" onclick="filterByCategory('Textiles')">Explore all handlooms →</div>
@@ -1619,11 +1691,11 @@
 
         <!-- Card 3: Silver & Adornment -->
         <div class="wem-quad-card">
-          <div class="wem-quad-title">Fine 925 silver & traditional adornment</div>
+          <div class="wem-quad-title">Fine 925 silver & traditional jewelry</div>
           <div class="wem-quad-2x2">
             <div class="wem-quad-tile" onclick="openProductModal(3)">
               <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=400&q=80" alt="Silver Jhumkas">
-              <div class="wem-quad-label">Tarakasi Jhumkas</div>
+              <div class="wem-quad-label">Tarakasi Jhumkas · ₹799</div>
             </div>
             <div class="wem-quad-tile" onclick="openProductModal(3)">
               <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=400&q=80" alt="Chokers">
@@ -1656,7 +1728,7 @@
       <!-- Featured Crafts Horizontal Strip -->
       <div class="wem-deals-section" id="deals-strip">
         <div class="wem-deals-header">
-          <div class="wem-deals-title">Featured Artisan Heirlooms</div>
+          <div class="wem-deals-title">Affordable Artisan Highlights (Direct from Looms)</div>
           <a href="#catalog-section" class="wem-quad-footer-link" onclick="filterByDeals()">See full collection</a>
         </div>
         <div class="wem-deals-row" id="deals-carousel-row">
@@ -1701,14 +1773,11 @@
           </div>
 
           <div class="wem-filter-group">
-            <div class="wem-filter-heading">Patron Ratings</div>
+            <div class="wem-filter-heading">Budget Range</div>
             <ul class="wem-filter-list">
-              <li class="wem-filter-item" onclick="filterByStars(4)">
-                <span style="color:#f59e0b;">★★★★☆</span> & Up
-              </li>
-              <li class="wem-filter-item" onclick="filterByStars(3)">
-                <span style="color:#f59e0b;">★★★☆☆</span> & Up
-              </li>
+              <li class="wem-filter-item" onclick="showToast('Filtered by budget')">Under ₹500</li>
+              <li class="wem-filter-item" onclick="showToast('Filtered by budget')">₹500 - ₹1,000</li>
+              <li class="wem-filter-item" onclick="showToast('Filtered by budget')">Over ₹1,000</li>
             </ul>
           </div>
 
@@ -1738,9 +1807,9 @@
             </div>
           </div>
 
-          <!-- The Products Grid -->
+          <!-- The Unique Products Grid -->
           <div class="wem-products-grid" id="products-grid">
-            <!-- Dynamically populated via JS -->
+            <!-- Dynamically populated via JS with unique styling -->
           </div>
         </div>
       </div>
@@ -1768,25 +1837,25 @@
 
         <div style="background:#f8fafc; border:1px solid var(--wem-border); border-radius:8px; padding:22px; margin-bottom:26px;">
           <label style="font-size:0.92rem; font-weight:700; display:block; margin-bottom:8px;">
-            Simulate Purchase Total: <span id="calc-display-val" style="color:#d97706; font-size:1.4rem; font-family:var(--font-mono);">₹8,350</span>
+            Simulate Purchase Total: <span id="calc-display-val" style="color:#d97706; font-size:1.4rem; font-family:var(--font-mono);">₹499</span>
           </label>
-          <input type="range" min="20" max="500" value="100" style="width:100%; accent-color:#f59e0b; cursor:pointer;" oninput="updateCalculator(this.value)">
+          <input type="range" min="100" max="3000" step="50" value="499" style="width:100%; accent-color:#f59e0b; cursor:pointer;" oninput="updateCalculator(this.value)">
         </div>
 
         <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:16px; margin-bottom:24px;">
           <div style="background:#ecfdf5; border:1px solid #a7f3d0; padding:18px; border-radius:8px;">
             <div style="font-size:0.75rem; color:#059669; font-weight:700;">86% DIRECT ARTISAN PAYOUT</div>
-            <div id="calc-artisan-val" style="font-family:var(--font-heading); font-size:1.7rem; font-weight:800; color:#0f172a; margin:6px 0;">₹7,181</div>
+            <div id="calc-artisan-val" style="font-family:var(--font-heading); font-size:1.7rem; font-weight:800; color:#0f172a; margin:6px 0;">₹429</div>
             <div style="font-size:0.75rem; color:#64748b;">Direct bank cooperative credit to female artisan</div>
           </div>
           <div style="background:#fffbeb; border:1px solid #fde68a; padding:18px; border-radius:8px;">
             <div style="font-size:0.75rem; color:#d97706; font-weight:700;">8% RAW ECO-MATERIALS</div>
-            <div id="calc-materials-val" style="font-family:var(--font-heading); font-size:1.7rem; font-weight:800; color:#0f172a; margin:6px 0;">₹668</div>
+            <div id="calc-materials-val" style="font-family:var(--font-heading); font-size:1.7rem; font-weight:800; color:#0f172a; margin:6px 0;">₹40</div>
             <div style="font-size:0.75rem; color:#64748b;">Pure Mulberry silk, clay & natural dyes</div>
           </div>
           <div style="background:#eff6ff; border:1px solid #bfdbfe; padding:18px; border-radius:8px;">
             <div style="font-size:0.75rem; color:#2563eb; font-weight:700;">6% PACKAGING & LOGISTICS</div>
-            <div id="calc-logistics-val" style="font-family:var(--font-heading); font-size:1.7rem; font-weight:800; color:#0f172a; margin:6px 0;">₹501</div>
+            <div id="calc-logistics-val" style="font-family:var(--font-heading); font-size:1.7rem; font-weight:800; color:#0f172a; margin:6px 0;">₹30</div>
             <div style="font-size:0.75rem; color:#64748b;">Zero-plastic cardboard & carbon offset dispatch</div>
           </div>
         </div>
@@ -1797,7 +1866,7 @@
     <div id="view-workshops" style="display:none;">
       <div style="background:#fff; border:1px solid var(--wem-border); border-radius:12px; padding:28px; margin-bottom:24px;">
         <h2 style="font-family:var(--font-heading); font-size:1.8rem; font-weight:700; color:#0f1111; margin-bottom:6px;">Virtual Masterclasses & Live Artisan Studio</h2>
-        <p style="color:#64748b; font-size:0.92rem;">Join live two-way HD workshops broadcast directly from rural looms and ateliers. Raw craft kits delivered to your doorstep.</p>
+        <p style="color:#64748b; font-size:0.92rem;">Join live two-way HD workshops broadcast directly from rural looms and ateliers. Raw craft kits delivered to your doorstep starting at just ₹169.</p>
       </div>
       <div class="wem-quad-grid" id="workshops-full-grid"></div>
     </div>
@@ -1944,8 +2013,8 @@
               </select>
             </div>
             <div>
-              <label style="font-size:0.8rem; font-weight:700; color:#0f172a;">Price (USD $)</label>
-              <input type="number" id="pub-price" required min="10" max="1000" placeholder="e.g. 95" style="width:100%; border:1px solid #cbd5e1; border-radius:6px; padding:9px 12px; font-size:0.85rem;">
+              <label style="font-size:0.8rem; font-weight:700; color:#0f172a;">Price (INR ₹)</label>
+              <input type="number" id="pub-price" required min="99" max="9999" placeholder="e.g. 499" style="width:100%; border:1px solid #cbd5e1; border-radius:6px; padding:9px 12px; font-size:0.85rem;">
             </div>
           </div>
           <div>
@@ -2074,49 +2143,52 @@
     let currentUser = { role: 'artisan', name: 'Ananya Devi', avatar: '👩‍🌾' };
 
     const CURRENCY_RATES = {
-      INR: { symbol: '₹', rate: 83.5 },
-      USD: { symbol: '$', rate: 1.0 },
-      EUR: { symbol: '€', rate: 0.92 },
-      GBP: { symbol: '£', rate: 0.79 },
-      CAD: { symbol: 'C$', rate: 1.36 }
+      INR: { symbol: '₹', rate: 1.0 },
+      USD: { symbol: '$', rate: 0.024 },
+      EUR: { symbol: '€', rate: 0.022 },
+      GBP: { symbol: '£', rate: 0.019 },
+      CAD: { symbol: 'C$', rate: 0.032 }
     };
 
+    // DECREASED AFFORDABLE COTTAGE INDUSTRY PRICES
     let PRODUCTS = [
       {
         id: 1,
-        title: "Pure Mulberry Silk Banarasi Brocade Saree with Real Silver Zari Weaving",
-        price: 185,
-        mrp: 245,
+        title: "Pure Mulberry Silk Banarasi Brocade Saree with Silver Zari Weaving",
+        price: 1499, // Decreased to accessible ₹1,499 ($35.90)
+        mrp: 2999,
         category: "Textiles",
         craft_type: "Handloom Brocade",
         artisan_name: "Ananya Devi",
         village: "Varanasi, Uttar Pradesh",
         collective: "Dhaga Kala Weavers Guild",
-        lead_time: "Get It by Tomorrow",
+        lead_time: "Delivered in 48 hrs",
         rating: 4.9,
         reviews_count: 1420,
         deal: true,
-        deal_discount: "24% off",
+        deal_discount: "50% off",
+        badge: "💮 National Award Heritage",
         image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=600&q=80",
-        story: "Hand-loomed over 180 continuous hours using untwisted pure Mulberry silk and certified electro-plated silver zari thread. Each border motif depicts sacred river flora indigenous to the sacred Ghats of Varanasi.",
+        story: "Hand-loomed over 180 continuous hours using untwisted pure Mulberry silk and certified silver zari thread. Each border motif depicts sacred river flora indigenous to the sacred Ghats of Varanasi.",
         materials: "100% Mulberry Silk, Pure Silver Zari, Natural Madder Root Dye",
         provenance_hash: "8f7e2a9b4c1d6e3f5a8b7c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f"
       },
       {
         id: 2,
         title: "Terracotta Temple Urli & Floating Lotus Bowl with Ancient Alluvial Patina",
-        price: 48,
-        mrp: 75,
+        price: 349, // Decreased to accessible ₹349 ($8.30)
+        mrp: 699,
         category: "Home & Decor",
         craft_type: "Terracotta Ceramic",
         artisan_name: "Radhika Pal",
         village: "Bankura, West Bengal",
         collective: "Mitti Shilp Terracotta Guild",
-        lead_time: "Get It by Tomorrow",
+        lead_time: "Delivered in 48 hrs",
         rating: 4.8,
         reviews_count: 852,
         deal: true,
-        deal_discount: "36% off",
+        deal_discount: "50% off",
+        badge: "🏺 Alluvial River Silt",
         image: "https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=600&q=80",
         story: "Molded from sacred alluvial river silt deposits, burnished with river stones, and slow-fired in an underground wood kiln to impart a deep smoke patina.",
         materials: "Alluvial Clay, Organic Mustard Oil Glaze, River Stone Finish",
@@ -2125,17 +2197,18 @@
       {
         id: 3,
         title: "925 Sterling Silver Filigree Peacock Jhumkas (Tarakasi Hand-Drawn Wires)",
-        price: 95,
-        mrp: 135,
+        price: 799, // Decreased to accessible ₹799 ($19.10)
+        mrp: 1599,
         category: "Jewelry",
         craft_type: "Tarakasi Filigree",
         artisan_name: "Sunita Das",
         village: "Cuttack, Odisha",
         collective: "Tarakasi Silver Guild",
-        lead_time: "Get It by Tomorrow",
+        lead_time: "Delivered in 48 hrs",
         rating: 4.9,
         reviews_count: 2110,
         deal: false,
+        badge: "💎 92.5 Sterling Silver",
         image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=600&q=80",
         story: "Crafted through the 500-year-old Tarakasi tradition by drawing 92.5% silver into hair-thin threads, hand-crimped into lace-like filigree feathers without modern casts.",
         materials: "925 Sterling Silver, Hand-Drawn Micro Wires",
@@ -2144,18 +2217,19 @@
       {
         id: 4,
         title: "Handspun Organic Khadi Cotton Summer Kurta with Hand-Carved Coconut Buttons",
-        price: 54,
-        mrp: 80,
+        price: 499, // Decreased to accessible ₹499 ($11.90)
+        mrp: 999,
         category: "Textiles",
         craft_type: "Charkha Khadi",
         artisan_name: "Meera Joshi",
         village: "Wardha, Maharashtra",
         collective: "Gram Seva Women's Trust",
-        lead_time: "Get It in 2 Days",
+        lead_time: "Delivered in 24 hrs",
         rating: 4.7,
         reviews_count: 640,
         deal: true,
-        deal_discount: "32% off",
+        deal_discount: "50% off",
+        badge: "🌿 100% Desi Khadi",
         image: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=600&q=80",
         story: "Hand-harvested indigenous cotton hand-spun on heritage wooden Charkhas and breathable loose-weave loomed for exceptional summer ventilation.",
         materials: "100% Rainfed Desi Cotton, Herbal Wash Finish",
@@ -2164,17 +2238,18 @@
       {
         id: 5,
         title: "Hand-Carved Kashmiri Walnut Wood Heritage Jewelry Chest with Secret Drawer",
-        price: 110,
-        mrp: 160,
+        price: 849, // Decreased to accessible ₹849 ($20.30)
+        mrp: 1699,
         category: "Home & Decor",
         craft_type: "Wood Carving",
         artisan_name: "Parveena Akhtar",
         village: "Srinagar, Kashmir",
         collective: "Chinar Valley Artisans",
-        lead_time: "Get It by Tomorrow",
+        lead_time: "Delivered in 72 hrs",
         rating: 4.9,
         reviews_count: 490,
         deal: false,
+        badge: "🪵 Aged Walnut Root",
         image: "https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=600&q=80",
         story: "Sculpted from naturally fallen aged Kashmiri walnut roots using precision chisels. Features intricate Chinar leaf lattice fretwork and secret locking drawer.",
         materials: "Aged Walnut Root, Brass Hinges, Natural Beeswax Polish",
@@ -2183,18 +2258,19 @@
       {
         id: 6,
         title: "Glazed Stoneware Clay Planter & Saucer (Lead-Free Reactive Mineral Mist)",
-        price: 42,
-        mrp: 60,
+        price: 249, // Decreased to accessible ₹249 ($5.90)
+        mrp: 499,
         category: "Home & Decor",
         craft_type: "Studio Pottery",
         artisan_name: "Fatima Begum",
         village: "Khurja, Uttar Pradesh",
         collective: "Khurja Ceramic Guild",
-        lead_time: "Get It by Tomorrow",
+        lead_time: "Delivered in 48 hrs",
         rating: 4.8,
         reviews_count: 320,
         deal: true,
-        deal_discount: "30% off",
+        deal_discount: "50% off",
+        badge: "🪴 Aerated Stoneware",
         image: "https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=600&q=80",
         story: "Wheel-thrown high-fire stoneware engineered with deliberate root aeration grooves and glazed in a reactive mineral mist finish.",
         materials: "High-Fire Earthen Stoneware, Lead-Free Mineral Glaze",
@@ -2203,17 +2279,18 @@
       {
         id: 7,
         title: "Ajrakh Hand-Block Printed Chanderi Silk Dupatta with Natural Indigo Dye",
-        price: 68,
-        mrp: 95,
+        price: 599, // Decreased to accessible ₹599 ($14.30)
+        mrp: 1199,
         category: "Textiles",
         craft_type: "Natural Block Print",
         artisan_name: "Zarina Khatun",
         village: "Kutch, Gujarat",
         collective: "Kutch Desert Block Printers",
-        lead_time: "Get It by Tomorrow",
+        lead_time: "Delivered in 48 hrs",
         rating: 4.9,
         reviews_count: 940,
         deal: false,
+        badge: "🎨 14-Stage Pure Indigo",
         image: "https://images.unsplash.com/photo-1607344645866-009c320c5ab8?w=600&q=80",
         story: "14-stage mud-resist printing using pure indigo and pomegranate rind mordants, hand-stamped onto airy tissue Chanderi silk-cotton.",
         materials: "Chanderi Silk-Cotton, Indigo & Alizarin Plant Dyes",
@@ -2222,18 +2299,19 @@
       {
         id: 8,
         title: "Ayurvedic Wild Forest Raw Honey & High-Curcumin Lakadong Turmeric Elixir",
-        price: 28,
-        mrp: 40,
+        price: 179, // Decreased to accessible ₹179 ($4.20)
+        mrp: 350,
         category: "Wellness",
         craft_type: "Foraged Wellness",
         artisan_name: "Valli Murugan",
         village: "Nilgiris, Tamil Nadu",
         collective: "Nilgiri Indigenous Forest Foragers",
-        lead_time: "Get It by Tomorrow",
+        lead_time: "Delivered in 24 hrs",
         rating: 4.9,
         reviews_count: 3100,
         deal: true,
-        deal_discount: "30% off",
+        deal_discount: "49% off",
+        badge: "🍯 Wild Cliff Harvest",
         image: "https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=600&q=80",
         story: "Cold-harvested multi-floral wild cliff honey infused with slow-shade dried high-curcumin Lakadong turmeric and native black pepper.",
         materials: "Wild Raw Cliff Honey, 7.5% High Curcumin Turmeric",
@@ -2276,6 +2354,7 @@
       }
     ];
 
+    // Decreased accessible workshop passes
     let WORKSHOPS = [
       {
         id: 101,
@@ -2284,7 +2363,7 @@
         village: "Varanasi, Uttar Pradesh",
         date: "Saturday, 3:00 PM IST",
         duration: "2h 30m",
-        price: 35,
+        price: 249, // Decreased to ₹249
         seats_left: 7,
         image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=500&q=80",
         kit: "Pure Mulberry silk thread samples, micro-loom shuttle, natural madder dye swatches"
@@ -2296,7 +2375,7 @@
         village: "Bankura, West Bengal",
         date: "Sunday, 5:00 PM IST",
         duration: "1h 45m",
-        price: 28,
+        price: 169, // Decreased to ₹169
         seats_left: 4,
         image: "https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=500&q=80",
         kit: "Raw alluvial clay block (2kg), wooden modeling ribs, burnishing river stone"
@@ -2308,7 +2387,7 @@
         village: "Cuttack, Odisha",
         date: "Wednesday, 6:00 PM IST",
         duration: "2h 00m",
-        price: 42,
+        price: 299, // Decreased to ₹299
         seats_left: 9,
         image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=500&q=80",
         kit: "Annealed silver wire coils, jewelry micro-pliers, wooden pin-block template"
@@ -2320,7 +2399,7 @@
         village: "Kutch, Gujarat",
         date: "Friday, 4:00 PM IST",
         duration: "3h 00m",
-        price: 32,
+        price: 199, // Decreased to ₹199
         seats_left: 5,
         image: "https://images.unsplash.com/photo-1607344645866-009c320c5ab8?w=500&q=80",
         kit: "Organic Indigo cake sample, hand-carved teak wood block, 1m test cotton stole"
@@ -2333,13 +2412,13 @@
         date: "8 September 2026",
         customer: "Priya Sharma",
         destination: "Bengaluru, Karnataka 560001",
-        total: 239,
+        total: 1998,
         status: "Dispatched",
         tracking: "TRK-BNG9942",
         carrier: "Cooperative Express Logistics",
         items: [
-          { title: "Pure Mulberry Silk Banarasi Brocade Saree", price: 185, image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=100&q=80" },
-          { title: "Handspun Organic Khadi Cotton Summer Kurta", price: 54, image: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=100&q=80" }
+          { title: "Pure Mulberry Silk Banarasi Brocade Saree", price: 1499, image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=100&q=80" },
+          { title: "Handspun Organic Khadi Cotton Summer Kurta", price: 499, image: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=100&q=80" }
         ]
       },
       {
@@ -2347,12 +2426,12 @@
         date: "6 September 2026",
         customer: "Elena Rostova",
         destination: "Vienna, Austria",
-        total: 185,
+        total: 1499,
         status: "Artisan Crafting",
         tracking: "TRK-VIE4210",
         carrier: "Global Fair-Trade Express",
         items: [
-          { title: "Pure Mulberry Silk Banarasi Brocade Saree", price: 185, image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=100&q=80" }
+          { title: "Pure Mulberry Silk Banarasi Brocade Saree", price: 1499, image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=100&q=80" }
         ]
       },
       {
@@ -2360,12 +2439,12 @@
         date: "4 September 2026",
         customer: "Michael Chang",
         destination: "San Francisco, USA",
-        total: 95,
+        total: 799,
         status: "Quality Check",
         tracking: "TRK-SFO1893",
         carrier: "Certified Consignment Air",
         items: [
-          { title: "925 Sterling Silver Filigree Peacock Jhumkas", price: 95, image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=100&q=80" }
+          { title: "925 Sterling Silver Filigree Peacock Jhumkas", price: 799, image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=100&q=80" }
         ]
       },
       {
@@ -2373,13 +2452,13 @@
         date: "1 September 2026",
         customer: "Sarah Jenkins",
         destination: "London, UK",
-        total: 152,
+        total: 1098,
         status: "Delivered",
         tracking: "TRK-LDN8720",
         carrier: "British Royal Courier Partner",
         items: [
-          { title: "Hand-Carved Kashmiri Walnut Wood Heritage Jewelry Chest", price: 110, image: "https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=100&q=80" },
-          { title: "Glazed Stoneware Clay Planter & Saucer", price: 42, image: "https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=100&q=80" }
+          { title: "Hand-Carved Kashmiri Walnut Wood Heritage Jewelry Chest", price: 849, image: "https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=100&q=80" },
+          { title: "Glazed Stoneware Clay Planter & Saucer", price: 249, image: "https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=100&q=80" }
         ]
       }
     ];
@@ -2389,9 +2468,9 @@
     let currentSlide = 0;
 
     // Price & Currency Formatter
-    function formatPrice(usd) {
+    function formatPrice(inr) {
       const cfg = CURRENCY_RATES[currentCurrency] || CURRENCY_RATES.INR;
-      const conv = usd * cfg.rate;
+      const conv = inr * cfg.rate;
       if (currentCurrency === 'INR') {
         return `₹${Math.round(conv).toLocaleString('en-IN')}`;
       }
@@ -2405,7 +2484,7 @@
       renderCatalog();
       renderDealsStrip();
       renderCartDrawer();
-      updateCalculator(100);
+      updateCalculator(499);
       showToast(`Switched currency to ${next}`);
     }
 
@@ -2466,7 +2545,7 @@
             <img src="${p.image}" alt="${p.title}" onerror="this.src='https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=400&q=80'">
           </div>
           <div>
-            <span class="wem-deal-tag">${p.deal_discount || 'Featured Edition'}</span>
+            <span class="wem-deal-tag">${p.deal_discount || 'Direct Deal'}</span>
             <div class="wem-deal-pricing">
               <span class="wem-deal-price">${formatPrice(p.price)}</span>
               <span class="wem-deal-mrp">${formatPrice(p.mrp)}</span>
@@ -2477,7 +2556,7 @@
       `).join('');
     }
 
-    // Render Main Product Catalog
+    // Render UNIQUE Product Catalog
     function renderCatalog() {
       const grid = document.getElementById('products-grid');
       let filtered = PRODUCTS.filter(p => {
@@ -2506,39 +2585,52 @@
       }
 
       grid.innerHTML = filtered.map((p, idx) => {
+        const isWish = wishlist.includes(p.id);
         return `
           <div class="wem-card">
+            <div class="wem-card-seal">${p.badge || '💮 Authentic Masterpiece'}</div>
             ${idx === 0 ? '<div class="wem-card-ribbon">⭐ Flagship Heirloom</div>' : ''}
+            
             <div class="wem-card-img-wrap" onclick="openProductModal(${p.id})">
               <img src="${p.image}" alt="${p.title}" onerror="this.src='https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=500&q=80'">
+              <div class="wem-card-cluster-tag">
+                <span>📍</span> ${p.village.split(',')[0]}
+              </div>
             </div>
+
             <div class="wem-card-body">
-              <div class="wem-artisan-lead">Master Artisan: <b>${p.artisan_name}</b> · ${p.village}</div>
+              <div class="wem-card-artisan-chip">
+                <span class="avatar">👩‍🌾</span>
+                <span><b>${p.artisan_name}</b> · ${p.collective}</span>
+              </div>
+
               <h3 class="wem-card-title" onclick="openProductModal(${p.id})">${p.title}</h3>
               
               <div class="wem-stars">
                 <span class="wem-star-icons">★★★★★</span>
-                <span class="wem-rating-count">${p.rating} (${p.reviews_count.toLocaleString()} patron reviews)</span>
+                <span class="wem-rating-count">${p.rating} (${p.reviews_count.toLocaleString()} reviews)</span>
               </div>
 
               <div class="wem-price-box">
                 <span class="wem-price-main">${formatPrice(p.price)}</span>
                 <span class="wem-price-mrp">${formatPrice(p.mrp)}</span>
-                <span class="wem-price-discount">${p.deal_discount || '86% Direct'}</span>
+                <span class="wem-discount-badge">${p.deal_discount || '50% OFF'}</span>
               </div>
 
-              <div class="wem-certified-badge">
-                <span>🌿</span> <b>86% Direct Living Wage Guaranteed</b>
-              </div>
-
-              <div class="wem-delivery-promise">
-                <b>Zero-Plastic Dispatch</b> · Delivered in 48-72 hrs
+              <!-- Unique Fair-Wage Direct Disbursement Meter -->
+              <div class="wem-fair-wage-meter">
+                <div class="wem-fair-wage-header">
+                  <span>💚 86% Direct to Artisan</span>
+                  <span>${formatPrice(p.price * 0.86)}</span>
+                </div>
+                <div class="wem-fair-wage-bar">
+                  <div class="wem-fair-wage-fill"></div>
+                </div>
               </div>
 
               <div class="wem-card-buttons">
-                <button class="wem-btn-yellow" onclick="addToCart(${p.id})">Add to Cart</button>
-                <button class="wem-btn-orange" onclick="buyNow(${p.id})">Acquire Now</button>
-                <button class="wem-btn-secondary" onclick="openProductModal(${p.id})">View Story & Provenance Hash</button>
+                <button class="wem-btn-yellow" onclick="addToCart(${p.id})">🛍️ Add to Cart</button>
+                <button class="wem-btn-secondary" onclick="openProductModal(${p.id})">📜 Provenance & Craft Story</button>
               </div>
             </div>
           </div>
@@ -2569,9 +2661,6 @@
       switchView('store');
       scrollToCatalog();
     }
-    function filterByStars(s) {
-      showToast(`Filtered by ${s} stars & up`);
-    }
     function filterSavedItems() {
       wishlistOnly = !wishlistOnly;
       renderCatalog();
@@ -2585,8 +2674,8 @@
       inner.innerHTML = `
         <div style="display:grid; grid-template-columns:1.1fr 1fr; gap:28px;">
           <div>
-            <img src="${p.image}" style="width:100%; height:380px; object-fit:cover; border-radius:10px; border:1px solid #e2e8f0;" onerror="this.src='https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=800&q=80'">
-            <div style="margin-top:14px; background:#f8fafc; border:1px solid #e2e8f0; padding:14px; border-radius:8px;">
+            <img src="${p.image}" style="width:100%; height:380px; object-fit:cover; border-radius:12px; border:1px solid #e2e8f0;" onerror="this.src='https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=800&q=80'">
+            <div style="margin-top:14px; background:#f8fafc; border:1px solid #e2e8f0; padding:14px; border-radius:10px;">
               <div style="font-size:0.75rem; color:#64748b; font-weight:700;">CRYPTOGRAPHIC PROVENANCE STAMP:</div>
               <div style="font-family:var(--font-mono); font-size:0.75rem; color:#2563eb; word-break:break-all; margin-top:2px;">
                 ${p.provenance_hash}
@@ -2595,7 +2684,7 @@
           </div>
 
           <div>
-            <div style="font-size:0.8rem; color:#2563eb; font-weight:700; margin-bottom:4px;">Artisan Guild: ${p.collective}</div>
+            <div style="display:inline-block; background:#fef3c7; color:#b45309; font-size:0.72rem; font-weight:800; padding:2px 8px; border-radius:4px; margin-bottom:6px;">${p.badge || '💮 Authentic Masterpiece'}</div>
             <h2 style="font-family:var(--font-heading); font-size:1.45rem; font-weight:700; color:#0f172a; line-height:1.25; margin-bottom:8px;">${p.title}</h2>
             
             <div class="wem-stars" style="margin-bottom:12px;">
@@ -2607,12 +2696,13 @@
               <div class="wem-price-box">
                 <span class="wem-price-main" style="font-size:1.8rem; color:#d97706;">${formatPrice(p.price)}</span>
                 <span class="wem-price-mrp">${formatPrice(p.mrp)}</span>
+                <span class="wem-discount-badge">${p.deal_discount || '50% OFF'}</span>
               </div>
               <div style="font-size:0.82rem; color:#64748b;">Inclusive of all cooperative taxes & direct living wage</div>
             </div>
 
             <!-- Fair Wage Box -->
-            <div style="background:#ecfdf5; border:1px solid #a7f3d0; border-radius:8px; padding:12px 16px; margin-bottom:16px; font-size:0.85rem;">
+            <div style="background:#ecfdf5; border:1px solid #a7f3d0; border-radius:10px; padding:12px 16px; margin-bottom:16px; font-size:0.85rem;">
               <div style="font-weight:700; color:#065f46;">🌿 Direct Living Wage Guarantee:</div>
               <div style="color:#0f172a; margin-top:2px;">
                 <b>${formatPrice(p.price * 0.86)}</b> is directly disbursed without middlemen into <b>${p.artisan_name}</b>'s bank account.
@@ -2631,8 +2721,8 @@
             </div>
 
             <div style="display:flex; flex-direction:column; gap:10px;">
-              <button class="wem-btn-yellow" onclick="addToCart(${p.id}); closeModal('modal-product');">Add to Cart</button>
-              <button class="wem-btn-orange" onclick="buyNow(${p.id}); closeModal('modal-product');">Acquire Now</button>
+              <button class="wem-btn-yellow" onclick="addToCart(${p.id}); closeModal('modal-product');">🛍️ Add to Cart</button>
+              <button class="wem-btn-orange" onclick="buyNow(${p.id}); closeModal('modal-product');">✨ Acquire Now (${formatPrice(p.price)})</button>
               <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
                 <button class="wem-btn-secondary" onclick="openProvenanceModal(${p.id})">Verify SHA-256 Certificate</button>
                 <button class="wem-btn-secondary" onclick="openChatModal('${p.artisan_name}', '${p.village}')">💬 Chat with Artisan</button>
@@ -3010,16 +3100,17 @@
         id: Date.now(),
         title: title,
         price: price,
-        mrp: price * 1.35,
+        mrp: price * 2,
         category: cat,
         craft_type: "Artisan Craft",
         artisan_name: currentUser.name,
         village: "Varanasi, Uttar Pradesh",
         collective: "Dhaga Kala Weavers Guild",
-        lead_time: "Get It by Tomorrow",
+        lead_time: "Delivered in 48 hrs",
         rating: 5.0,
         reviews_count: 1,
         deal: false,
+        badge: "✨ New Artisan Piece",
         image: img,
         story: story,
         materials: "100% Verified Ethically Harvested Materials",
@@ -3077,7 +3168,7 @@
       renderDealsStrip();
       renderCatalog();
       updateCartBadge();
-      updateCalculator(100);
+      updateCalculator(499);
     });
   </script>
 </body>
