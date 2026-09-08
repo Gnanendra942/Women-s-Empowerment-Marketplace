@@ -3,29 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Women's Empowerment Marketplace | Flagship Artisan Commerce</title>
-  <meta name="description" content="Decentralized digital commerce engine empowering women master artisans with fair-wage provenance tracking, live masterclasses, seller analytics, and distributed fulfillment pipeline.">
+  <title>Online Shopping site in India: Shop Online for Handloom, Terracotta, Silver & Artisans - Women's Marketplace.in</title>
+  <meta name="description" content="India's largest decentralized women artisan digital marketplace. Shop authentic handloom sarees, terracotta ceramics, silver filigree, and wellness direct from master craftswomen. 86% direct fair-wage guarantee.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Amazon+Ember:wght@400;500;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
   <style>
     :root {
-      --bg-main: #090d16;
-      --bg-surface: #0f172a;
-      --bg-card: rgba(22, 29, 47, 0.75);
-      --bg-card-hover: rgba(30, 41, 67, 0.88);
-      --border-subtle: rgba(255, 255, 255, 0.08);
-      --border-accent: rgba(245, 158, 11, 0.35);
-      --primary: #f59e0b;
-      --primary-glow: rgba(245, 158, 11, 0.25);
-      --accent-pink: #ec4899;
-      --accent-emerald: #10b981;
-      --accent-indigo: #6366f1;
-      --text-main: #f8fafc;
-      --text-muted: #94a3b8;
-      --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
-      --font-heading: 'Outfit', sans-serif;
+      --amz-dark: #131921;
+      --amz-subnav: #232f3e;
+      --amz-bg: #eaeded;
+      --amz-orange: #febd69;
+      --amz-orange-dark: #f3a847;
+      --amz-yellow-btn: #ffd814;
+      --amz-yellow-hover: #f7ca00;
+      --amz-orange-btn: #ffa41c;
+      --amz-orange-hover: #fa8900;
+      --amz-link: #007185;
+      --amz-link-hover: #c7511f;
+      --amz-text: #0f1111;
+      --amz-text-subtle: #565959;
+      --amz-deal-red: #cc0c39;
+      --amz-prime-blue: #00a8e1;
+      --amz-certified-green: #067d62;
+      --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       --font-mono: 'JetBrains Mono', monospace;
     }
 
@@ -36,1182 +38,1868 @@
     }
 
     body {
-      background-color: var(--bg-main);
-      color: var(--text-main);
-      font-family: var(--font-body);
+      background-color: var(--amz-bg);
+      color: var(--amz-text);
+      font-family: var(--font-family);
       min-height: 100vh;
-      line-height: 1.55;
+      line-height: 1.4;
       overflow-x: hidden;
-      position: relative;
     }
 
-    /* Ambient background glows */
-    .ambient-glow-1 {
-      position: fixed;
-      top: -180px;
-      right: -100px;
-      width: 650px;
-      height: 650px;
-      background: radial-gradient(circle, rgba(236, 72, 153, 0.12) 0%, rgba(245, 158, 11, 0.06) 50%, transparent 80%);
-      pointer-events: none;
-      z-index: 0;
-      filter: blur(90px);
+    a {
+      color: var(--amz-link);
+      text-decoration: none;
     }
-    .ambient-glow-2 {
-      position: fixed;
-      bottom: -150px;
-      left: -100px;
-      width: 550px;
-      height: 550px;
-      background: radial-gradient(circle, rgba(16, 185, 129, 0.09) 0%, rgba(99, 102, 241, 0.07) 50%, transparent 80%);
-      pointer-events: none;
-      z-index: 0;
-      filter: blur(90px);
+    a:hover {
+      color: var(--amz-link-hover);
+      text-decoration: underline;
     }
 
-    /* Header & Navigation */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(9, 13, 22, 0.9);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      border-bottom: 1px solid var(--border-subtle);
-      padding: 12px 24px;
-    }
-
-    .nav-container {
-      max-width: 1400px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .brand {
+    /* ==========================================================================
+       AMAZON HEADER (ROW 1: #131921)
+       ========================================================================== */
+    .amz-header-top {
+      background-color: var(--amz-dark);
+      color: #ffffff;
+      padding: 8px 16px;
       display: flex;
       align-items: center;
       gap: 12px;
-      cursor: pointer;
-      text-decoration: none;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      height: 60px;
     }
 
-    .brand-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, #f59e0b, #ec4899);
+    .amz-nav-item {
+      padding: 6px 8px;
+      border: 1px solid transparent;
+      border-radius: 2px;
+      cursor: pointer;
       display: flex;
       align-items: center;
-      justify-content: center;
-      font-size: 1.4rem;
-      box-shadow: 0 4px 18px rgba(245, 158, 11, 0.35);
-      flex-shrink: 0;
+      gap: 6px;
+      transition: border-color 0.1s;
+      user-select: none;
+      white-space: nowrap;
+    }
+    .amz-nav-item:hover {
+      border-color: #ffffff;
     }
 
-    .brand-title {
-      font-family: var(--font-heading);
+    /* Logo */
+    .amz-logo-box {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: #ffffff;
+      padding-right: 6px;
+    }
+    .amz-logo-title {
       font-size: 1.25rem;
       font-weight: 800;
-      letter-spacing: -0.02em;
-      color: #ffffff;
+      letter-spacing: -0.04em;
+      line-height: 1;
       display: flex;
       align-items: center;
-      gap: 8px;
     }
-
-    .badge-pill {
-      font-size: 0.65rem;
-      padding: 2px 7px;
-      border-radius: 6px;
-      background: rgba(245, 158, 11, 0.18);
-      color: #fbbf24;
-      font-family: var(--font-mono);
+    .amz-logo-title .flower {
+      font-size: 1.3rem;
+      margin-right: 4px;
+    }
+    .amz-logo-title .brand-name {
+      color: #ffffff;
+    }
+    .amz-logo-title .in {
+      font-size: 0.85rem;
+      color: var(--amz-orange);
       font-weight: 700;
-      border: 1px solid rgba(245, 158, 11, 0.35);
+      margin-left: 2px;
+    }
+    .amz-logo-curve {
+      width: 90%;
+      height: 4px;
+      background: linear-gradient(90deg, transparent 0%, #febd69 30%, #febd69 70%, transparent 100%);
+      border-radius: 999px;
+      margin-top: 1px;
     }
 
-    .brand-subtitle {
+    /* Delivery Location Pin */
+    .amz-location-box {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.75rem;
+      line-height: 1.15;
+    }
+    .amz-location-icon {
+      font-size: 1.1rem;
+      color: #ffffff;
+      margin-top: 4px;
+    }
+    .amz-location-text .line-1 {
+      color: #cccccc;
       font-size: 0.72rem;
-      color: var(--text-muted);
     }
-
-    .nav-tabs {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(255, 255, 255, 0.03);
-      padding: 4px;
-      border-radius: 12px;
-      border: 1px solid var(--border-subtle);
-    }
-
-    .nav-tab-btn {
-      background: transparent;
-      border: none;
-      color: var(--text-muted);
-      padding: 8px 14px;
-      border-radius: 8px;
-      font-size: 0.84rem;
-      font-weight: 600;
-      font-family: var(--font-body);
-      cursor: pointer;
-      transition: all 0.2s ease;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .nav-tab-btn:hover {
+    .amz-location-text .line-2 {
       color: #ffffff;
-      background: rgba(255, 255, 255, 0.06);
-    }
-
-    .nav-tab-btn.active {
-      color: #ffffff;
-      background: rgba(245, 158, 11, 0.2);
-      border: 1px solid rgba(245, 158, 11, 0.45);
-      box-shadow: 0 2px 10px rgba(245, 158, 11, 0.15);
-    }
-
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .currency-select {
-      background: rgba(255, 255, 255, 0.05);
-      color: #e2e8f0;
-      border: 1px solid var(--border-subtle);
-      padding: 7px 10px;
-      border-radius: 8px;
+      font-weight: 700;
       font-size: 0.82rem;
-      font-weight: 600;
-      cursor: pointer;
-      outline: none;
     }
 
-    .currency-select option {
-      background: #111827;
-      color: #ffffff;
-    }
-
-    .btn-icon {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid var(--border-subtle);
-      color: #cbd5e1;
-      padding: 8px 14px;
-      border-radius: 8px;
-      font-size: 0.84rem;
-      font-weight: 600;
-      cursor: pointer;
+    /* Search Bar (Amazon 3-part: Dropdown + Input + Orange Button) */
+    .amz-search-container {
+      flex: 1;
       display: flex;
-      align-items: center;
-      gap: 8px;
-      transition: all 0.2s ease;
-      position: relative;
+      height: 40px;
+      border-radius: 4px;
+      overflow: hidden;
+      background: #ffffff;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+    }
+    .amz-search-container:focus-within {
+      box-shadow: 0 0 0 2px #f3a847, 0 0 0 3px #f90;
     }
 
-    .btn-icon:hover {
-      background: rgba(255, 255, 255, 0.1);
-      color: #ffffff;
-      border-color: rgba(255, 255, 255, 0.2);
+    .amz-search-dropdown {
+      background: #f3f3f3;
+      color: #555555;
+      border: none;
+      border-right: 1px solid #ddd;
+      padding: 0 10px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      outline: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .amz-search-dropdown:hover {
+      background: #e2e2e2;
     }
 
-    .cart-badge {
-      position: absolute;
-      top: -6px;
-      right: -6px;
-      background: linear-gradient(135deg, #ec4899, #ef4444);
-      color: #ffffff;
-      font-size: 0.7rem;
-      font-weight: 800;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
+    .amz-search-input {
+      flex: 1;
+      border: none;
+      padding: 0 14px;
+      font-size: 0.92rem;
+      outline: none;
+      font-family: inherit;
+      color: #0f1111;
+    }
+
+    .amz-search-btn {
+      width: 46px;
+      background: var(--amz-orange);
+      border: none;
+      cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 2px 8px rgba(236, 72, 153, 0.5);
+      font-size: 1.15rem;
+      transition: background 0.15s;
+    }
+    .amz-search-btn:hover {
+      background: var(--amz-orange-dark);
     }
 
-    .user-pill {
+    /* Country / Language / Currency */
+    .amz-lang-box {
       display: flex;
       align-items: center;
-      gap: 8px;
-      background: rgba(245, 158, 11, 0.12);
-      border: 1px solid rgba(245, 158, 11, 0.3);
-      padding: 6px 12px;
-      border-radius: 9999px;
-      font-size: 0.8rem;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    .user-pill:hover {
-      background: rgba(245, 158, 11, 0.2);
-    }
-
-    /* Main Container */
-    main {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 24px 20px 80px;
-      position: relative;
-      z-index: 1;
-    }
-
-    /* Hero Banner */
-    .hero-banner {
-      background: linear-gradient(135deg, rgba(30, 27, 75, 0.65) 0%, rgba(88, 28, 135, 0.35) 50%, rgba(15, 23, 42, 0.85) 100%);
-      border: 1px solid rgba(168, 85, 247, 0.25);
-      border-radius: 20px;
-      padding: 44px 36px;
-      margin-bottom: 36px;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
-    }
-
-    .hero-banner::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      right: -20%;
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(245, 158, 11, 0.15) 0%, transparent 70%);
-      border-radius: 50%;
-      pointer-events: none;
-    }
-
-    .hero-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 6px 14px;
-      border-radius: 9999px;
-      background: rgba(245, 158, 11, 0.15);
-      color: #fbbf24;
-      font-size: 0.78rem;
+      gap: 4px;
+      font-size: 0.85rem;
       font-weight: 700;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      border: 1px solid rgba(245, 158, 11, 0.3);
-      margin-bottom: 16px;
     }
 
-    .hero-title {
-      font-family: var(--font-heading);
-      font-size: 2.6rem;
-      font-weight: 800;
+    /* Account & Lists */
+    .amz-account-box {
+      display: flex;
+      flex-direction: column;
       line-height: 1.15;
-      letter-spacing: -0.03em;
+    }
+    .amz-account-box .line-1 {
+      font-size: 0.72rem;
       color: #ffffff;
-      max-width: 840px;
-      margin-bottom: 16px;
     }
-
-    .hero-title span {
-      background: linear-gradient(90deg, #f59e0b, #ec4899, #a855f7);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .hero-desc {
-      font-size: 1.05rem;
-      color: #cbd5e1;
-      max-width: 760px;
-      margin-bottom: 28px;
-    }
-
-    .hero-actions {
+    .amz-account-box .line-2 {
+      font-size: 0.85rem;
+      font-weight: 700;
       display: flex;
       align-items: center;
-      gap: 14px;
-      margin-bottom: 32px;
-      flex-wrap: wrap;
+      gap: 2px;
     }
 
-    .hero-stats {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 16px;
-      padding-top: 24px;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    /* Returns & Orders */
+    .amz-orders-box {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+    }
+    .amz-orders-box .line-1 {
+      font-size: 0.72rem;
+      color: #ffffff;
+    }
+    .amz-orders-box .line-2 {
+      font-size: 0.85rem;
+      font-weight: 700;
     }
 
-    .stat-card {
-      background: rgba(255, 255, 255, 0.04);
-      padding: 14px 18px;
-      border-radius: 12px;
-      border: 1px solid rgba(255, 255, 255, 0.06);
+    /* Cart */
+    .amz-cart-box {
+      display: flex;
+      align-items: flex-end;
+      position: relative;
+      padding: 4px 8px;
     }
-
-    .stat-number {
-      font-family: var(--font-heading);
-      font-size: 1.55rem;
+    .amz-cart-icon-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .amz-cart-count {
+      position: absolute;
+      top: -4px;
+      left: 12px;
+      color: #f08804;
+      font-size: 0.95rem;
       font-weight: 800;
-      color: #fbbf24;
+    }
+    .amz-cart-text {
+      font-size: 0.88rem;
+      font-weight: 700;
+      margin-left: 6px;
+      margin-bottom: 2px;
     }
 
-    .stat-label {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      font-weight: 500;
-    }
-
-    /* Controls Bar */
-    .controls-bar {
+    /* ==========================================================================
+       AMAZON SUB-NAV (ROW 2: #232f3e)
+       ========================================================================== */
+    .amz-subnav {
+      background-color: var(--amz-subnav);
+      color: #ffffff;
+      padding: 0 16px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin-bottom: 28px;
+      height: 39px;
+      font-size: 0.86rem;
+      position: sticky;
+      top: 60px;
+      z-index: 999;
+      border-bottom: 1px solid rgba(0,0,0,0.15);
     }
 
-    .category-pills {
+    .amz-subnav-links {
       display: flex;
       align-items: center;
-      gap: 8px;
-      flex-wrap: wrap;
+      gap: 2px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .amz-subnav-links::-webkit-scrollbar {
+      display: none;
     }
 
-    .cat-btn {
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid var(--border-subtle);
-      color: var(--text-muted);
-      padding: 8px 16px;
-      border-radius: 9999px;
-      font-size: 0.82rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-
-    .cat-btn:hover {
+    .amz-subnav-item {
+      padding: 6px 10px;
       color: #ffffff;
-      background: rgba(255, 255, 255, 0.08);
-      border-color: rgba(255, 255, 255, 0.2);
-    }
-
-    .cat-btn.active {
-      background: #f59e0b;
-      color: #0f172a;
-      border-color: #f59e0b;
-      font-weight: 700;
-      box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35);
-    }
-
-    .search-box {
-      position: relative;
-      min-width: 280px;
-    }
-
-    .search-box input {
-      width: 100%;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid var(--border-subtle);
-      border-radius: 10px;
-      padding: 10px 14px 10px 38px;
-      color: #ffffff;
-      font-size: 0.85rem;
-      font-family: var(--font-body);
-      outline: none;
-      transition: border-color 0.2s;
-    }
-
-    .search-box input:focus {
-      border-color: var(--primary);
-    }
-
-    .search-box span {
-      position: absolute;
-      left: 12px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: #64748b;
-      font-size: 0.9rem;
-    }
-
-    /* Products Grid */
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 26px;
-    }
-
-    .product-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: 18px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-      backdrop-filter: blur(10px);
-      position: relative;
-    }
-
-    .product-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 36px rgba(0, 0, 0, 0.45);
-      border-color: var(--border-accent);
-    }
-
-    .card-media {
-      position: relative;
-      height: 230px;
-      background: #1e293b;
-      overflow: hidden;
+      text-decoration: none;
+      border: 1px solid transparent;
+      border-radius: 2px;
+      white-space: nowrap;
+      font-weight: 500;
       cursor: pointer;
-    }
-
-    .card-media img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s ease;
-    }
-
-    .product-card:hover .card-media img {
-      transform: scale(1.06);
-    }
-
-    .badge-artisan {
-      position: absolute;
-      top: 12px;
-      left: 12px;
-      background: rgba(9, 13, 22, 0.88);
-      backdrop-filter: blur(8px);
-      padding: 5px 11px;
-      border-radius: 8px;
-      font-size: 0.72rem;
-      font-weight: 600;
-      color: #fbbf24;
-      border: 1px solid rgba(245, 158, 11, 0.35);
       display: flex;
       align-items: center;
       gap: 5px;
     }
-
-    .wishlist-btn {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      background: rgba(9, 13, 22, 0.85);
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      color: #ffffff;
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      font-size: 1rem;
-      transition: all 0.2s;
+    .amz-subnav-item:hover {
+      border-color: #ffffff;
+      text-decoration: none;
     }
-
-    .wishlist-btn:hover {
-      transform: scale(1.15);
-      background: rgba(236, 72, 153, 0.2);
-      border-color: #ec4899;
-    }
-
-    .wishlist-btn.active {
-      color: #ec4899;
-      border-color: #ec4899;
-      background: rgba(236, 72, 153, 0.2);
-    }
-
-    .card-content {
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-    }
-
-    .card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 8px;
-    }
-
-    .card-category {
-      font-size: 0.7rem;
+    .amz-subnav-item.active {
       font-weight: 700;
-      color: #ec4899;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
+      color: var(--amz-orange);
     }
 
-    .card-origin {
-      font-size: 0.73rem;
-      color: var(--text-muted);
-    }
-
-    .card-title {
-      font-family: var(--font-heading);
-      font-size: 1.18rem;
-      font-weight: 700;
+    .amz-subnav-banner {
       color: #ffffff;
-      line-height: 1.3;
-      margin-bottom: 8px;
-      cursor: pointer;
-    }
-
-    .card-title:hover {
-      color: #fbbf24;
-    }
-
-    .card-artisan-name {
       font-size: 0.82rem;
-      color: #94a3b8;
-      margin-bottom: 12px;
-    }
-
-    .card-artisan-name b {
-      color: #e2e8f0;
-    }
-
-    .impact-pill {
-      background: rgba(16, 185, 129, 0.12);
-      border: 1px solid rgba(16, 185, 129, 0.25);
-      color: #34d399;
-      font-size: 0.72rem;
-      padding: 4px 9px;
-      border-radius: 6px;
-      margin-bottom: 16px;
+      font-weight: 700;
       display: flex;
       align-items: center;
       gap: 6px;
-    }
-
-    .card-footer {
-      margin-top: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding-top: 14px;
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
-    }
-
-    .card-price {
-      font-family: var(--font-heading);
-      font-size: 1.35rem;
-      font-weight: 800;
-      color: #ffffff;
-    }
-
-    .card-actions {
-      display: flex;
-      gap: 8px;
-    }
-
-    .btn-secondary {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid var(--border-subtle);
-      color: #cbd5e1;
-      padding: 8px 12px;
-      border-radius: 8px;
-      font-size: 0.8rem;
-      font-weight: 600;
+      background: rgba(254, 189, 105, 0.15);
+      border: 1px solid rgba(254, 189, 105, 0.35);
+      padding: 3px 10px;
+      border-radius: 4px;
       cursor: pointer;
-      transition: all 0.2s;
+    }
+    .amz-subnav-banner:hover {
+      background: rgba(254, 189, 105, 0.25);
     }
 
-    .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.12);
+    /* ==========================================================================
+       HERO CAROUSEL WITH AMAZON'S SIGNATURE BOTTOM GRADIENT FADE
+       ========================================================================== */
+    .amz-hero-carousel {
+      position: relative;
+      height: 380px;
+      background: #111;
+      overflow: hidden;
+      margin-bottom: -180px; /* Pulls cards upward to overlap the banner */
+    }
+
+    .amz-hero-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 0.8s ease-in-out;
+      background-size: cover;
+      background-position: center top;
+      display: flex;
+      align-items: flex-start;
+      padding: 40px 60px;
+    }
+    .amz-hero-slide.active {
+      opacity: 1;
+    }
+
+    /* Iconic Amazon Bottom Gradient Fade */
+    .amz-hero-gradient-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 250px;
+      background: linear-gradient(to bottom, rgba(234, 237, 237, 0) 0%, rgba(234, 237, 237, 0.7) 65%, #eaeded 100%);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .amz-hero-content {
+      position: relative;
+      z-index: 3;
+      max-width: 650px;
       color: #ffffff;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+    }
+    .amz-hero-tag {
+      display: inline-block;
+      background: #febd69;
+      color: #0f1111;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 3px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+    }
+    .amz-hero-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 8px;
+    }
+    .amz-hero-sub {
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: #f1f5f9;
+      margin-bottom: 16px;
     }
 
-    .btn-primary {
-      background: linear-gradient(135deg, #f59e0b, #d97706);
-      border: none;
-      color: #0f172a;
-      padding: 8px 16px;
-      border-radius: 8px;
-      font-size: 0.82rem;
+    .amz-hero-btn {
+      background: var(--amz-yellow-btn);
+      border: 1px solid var(--amz-yellow-hover);
+      color: #0f1111;
+      padding: 9px 22px;
+      border-radius: 20px;
+      font-size: 0.88rem;
       font-weight: 700;
       cursor: pointer;
-      transition: all 0.2s;
-      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+    .amz-hero-btn:hover {
+      background: var(--amz-yellow-hover);
     }
 
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 6px 16px rgba(245, 158, 11, 0.45);
-    }
-
-    /* Views */
-    .view-section {
-      display: none;
-    }
-    .view-section.active {
-      display: block;
-    }
-
-    /* Modals */
-    .modal-backdrop {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.78);
-      backdrop-filter: blur(10px);
-      z-index: 1100;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-
-    .modal-backdrop.active {
-      display: flex;
-    }
-
-    .modal-box {
-      background: #0d1424;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 20px;
-      max-width: 680px;
-      width: 100%;
-      max-height: 90vh;
-      overflow-y: auto;
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
-      position: relative;
-    }
-
-    .modal-close-btn {
+    .amz-carousel-arrow {
       position: absolute;
-      top: 18px;
-      right: 18px;
-      background: rgba(255, 255, 255, 0.1);
-      border: none;
-      color: #ffffff;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 1.1rem;
+      top: 35%;
+      width: 44px;
+      height: 70px;
+      background: rgba(255, 255, 255, 0.4);
+      border: 1px solid rgba(0,0,0,0.1);
       display: flex;
       align-items: center;
       justify-content: center;
+      font-size: 1.6rem;
+      color: #111;
+      cursor: pointer;
       z-index: 10;
       transition: background 0.2s;
     }
-    .modal-close-btn:hover {
-      background: rgba(255, 255, 255, 0.2);
+    .amz-carousel-arrow:hover {
+      background: rgba(255, 255, 255, 0.8);
     }
+    .amz-carousel-arrow.left { left: 0; border-radius: 0 4px 4px 0; }
+    .amz-carousel-arrow.right { right: 0; border-radius: 4px 0 0 4px; }
 
-    .modal-body {
-      padding: 28px;
-    }
-
-    /* Certificate Styling */
-    .certificate-frame {
-      border: 2px solid #f59e0b;
-      border-radius: 14px;
-      padding: 24px;
-      background: linear-gradient(135deg, rgba(245, 158, 11, 0.04) 0%, rgba(20, 25, 40, 0.9) 100%);
+    /* ==========================================================================
+       MAIN CONTAINER & AMAZON 4-IN-1 QUAD-CARD GRID
+       ========================================================================== */
+    .amz-main-content {
+      max-width: 1480px;
+      margin: 0 auto;
+      padding: 0 18px 60px;
       position: relative;
-      margin-top: 16px;
+      z-index: 10;
     }
-    .cert-seal {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #f59e0b, #d97706);
+
+    .amz-quad-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+
+    .amz-quad-card {
+      background: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 20px;
       display: flex;
       flex-direction: column;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+    .amz-quad-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #0f1111;
+      line-height: 1.25;
+      margin-bottom: 14px;
+    }
+
+    .amz-quad-2x2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      flex-grow: 1;
+      margin-bottom: 16px;
+    }
+    .amz-quad-tile {
+      cursor: pointer;
+    }
+    .amz-quad-tile img {
+      width: 100%;
+      height: 108px;
+      object-fit: cover;
+      border-radius: 3px;
+      transition: transform 0.2s;
+    }
+    .amz-quad-tile:hover img {
+      transform: scale(1.02);
+    }
+    .amz-quad-label {
+      font-size: 0.73rem;
+      color: #0f1111;
+      margin-top: 4px;
+      line-height: 1.2;
+      font-weight: 500;
+    }
+
+    .amz-quad-footer-link {
+      font-size: 0.82rem;
+      color: var(--amz-link);
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: auto;
+    }
+    .amz-quad-footer-link:hover {
+      color: var(--amz-link-hover);
+      text-decoration: underline;
+    }
+
+    /* Single Large Tile Card */
+    .amz-single-tile img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 3px;
+      cursor: pointer;
+      margin-bottom: 12px;
+    }
+
+    /* ==========================================================================
+       TODAY'S DEALS & BEST SELLERS STRIP
+       ========================================================================== */
+    .amz-deals-section {
+      background: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 20px 24px;
+      margin-bottom: 24px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+    .amz-deals-header {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+    .amz-deals-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #0f1111;
+    }
+
+    .amz-deals-row {
+      display: flex;
+      gap: 18px;
+      overflow-x: auto;
+      padding-bottom: 10px;
+      scrollbar-width: thin;
+    }
+
+    .amz-deal-item {
+      min-width: 220px;
+      max-width: 220px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+    }
+    .amz-deal-img-wrap {
+      height: 190px;
+      background: #f7f7f7;
+      border-radius: 4px;
+      display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.65rem;
-      font-weight: 800;
-      color: #0f172a;
-      text-transform: uppercase;
-      box-shadow: 0 4px 20px rgba(245, 158, 11, 0.4);
-      margin: 0 auto 16px;
-      text-align: center;
-      line-height: 1.1;
-      border: 3px double #ffffff;
+      overflow: hidden;
+      margin-bottom: 10px;
+      position: relative;
+    }
+    .amz-deal-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+    .amz-deal-item:hover img {
+      transform: scale(1.05);
     }
 
-    /* Chat Styling */
-    .chat-box {
-      display: flex;
-      flex-direction: column;
-      height: 480px;
+    .amz-deal-tag {
+      background: var(--amz-deal-red);
+      color: #ffffff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 7px;
+      border-radius: 2px;
+      display: inline-block;
+      margin-bottom: 6px;
     }
-    .chat-messages {
-      flex-grow: 1;
-      overflow-y: auto;
+    .amz-deal-pricing {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+    .amz-deal-price {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f1111;
+    }
+    .amz-deal-mrp {
+      font-size: 0.78rem;
+      color: var(--amz-text-subtle);
+      text-decoration: line-through;
+    }
+    .amz-deal-desc {
+      font-size: 0.8rem;
+      color: #0f1111;
+      margin-top: 4px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    /* ==========================================================================
+       MAIN PRODUCT CATALOG: SIDEBAR FILTERS & PRODUCT GRID
+       ========================================================================== */
+    .amz-catalog-layout {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    /* Left Filter Sidebar */
+    .amz-sidebar {
+      background: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 16px;
+      font-size: 0.85rem;
+    }
+    .amz-filter-group {
+      margin-bottom: 20px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 16px;
+    }
+    .amz-filter-group:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .amz-filter-heading {
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: #0f1111;
+      margin-bottom: 8px;
+    }
+    .amz-filter-list {
+      list-style: none;
+    }
+    .amz-filter-item {
+      padding: 4px 0;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #0f1111;
+    }
+    .amz-filter-item:hover {
+      color: var(--amz-link-hover);
+    }
+    .amz-filter-item.active {
+      font-weight: 700;
+      color: var(--amz-link-hover);
+    }
+
+    /* Product Grid */
+    .amz-products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    .amz-card {
+      background: #ffffff;
+      border: 1px solid #e7e7e7;
+      border-radius: 4px;
       padding: 16px;
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      background: rgba(0, 0, 0, 0.25);
-      border-radius: 12px;
-      border: 1px solid var(--border-subtle);
+      position: relative;
+      transition: box-shadow 0.2s, border-color 0.2s;
     }
-    .chat-msg {
-      max-width: 80%;
-      padding: 10px 14px;
-      border-radius: 12px;
-      font-size: 0.86rem;
-      line-height: 1.4;
-    }
-    .chat-msg.artisan {
-      align-self: flex-start;
-      background: rgba(30, 41, 67, 0.9);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      color: #f1f5f9;
-    }
-    .chat-msg.user {
-      align-self: flex-end;
-      background: linear-gradient(135deg, #f59e0b, #d97706);
-      color: #0f172a;
-      font-weight: 600;
-    }
-    .chat-input-bar {
-      display: flex;
-      gap: 10px;
-      margin-top: 14px;
-    }
-    .chat-input {
-      flex-grow: 1;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid var(--border-subtle);
-      border-radius: 8px;
-      padding: 10px 14px;
-      color: #ffffff;
-      outline: none;
-      font-family: var(--font-body);
+    .amz-card:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      border-color: #bbb;
     }
 
-    /* Cart Drawer */
-    .cart-drawer {
+    .amz-card-ribbon {
+      position: absolute;
+      top: 10px;
+      left: 0;
+      background: #e67a00;
+      color: #ffffff;
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 3px 8px 3px 10px;
+      border-radius: 0 2px 2px 0;
+      text-transform: uppercase;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+      z-index: 2;
+    }
+
+    .amz-card-img-wrap {
+      height: 230px;
+      background: #fafafa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      overflow: hidden;
+      margin-bottom: 12px;
+      border-radius: 2px;
+    }
+    .amz-card-img-wrap img {
+      max-height: 100%;
+      width: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    .amz-card:hover .amz-card-img-wrap img {
+      transform: scale(1.04);
+    }
+
+    .amz-card-body {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .amz-artisan-lead {
+      font-size: 0.75rem;
+      color: var(--amz-text-subtle);
+      margin-bottom: 4px;
+    }
+    .amz-artisan-lead b {
+      color: var(--amz-link);
+    }
+
+    .amz-card-title {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #0f1111;
+      line-height: 1.35;
+      margin-bottom: 6px;
+      cursor: pointer;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .amz-card-title:hover {
+      color: var(--amz-link-hover);
+    }
+
+    /* Star Ratings */
+    .amz-stars {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-bottom: 8px;
+    }
+    .amz-star-icons {
+      color: #ffa41c;
+      font-size: 0.85rem;
+      letter-spacing: -1px;
+    }
+    .amz-rating-count {
+      font-size: 0.75rem;
+      color: var(--amz-link);
+    }
+
+    /* Amazon Price Layout */
+    .amz-price-box {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      margin-bottom: 4px;
+    }
+    .amz-price-symbol {
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+    .amz-price-main {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: #0f1111;
+      line-height: 1;
+    }
+    .amz-price-mrp {
+      font-size: 0.78rem;
+      color: var(--amz-text-subtle);
+      text-decoration: line-through;
+    }
+    .amz-price-discount {
+      font-size: 0.82rem;
+      color: var(--amz-deal-red);
+      font-weight: 700;
+    }
+
+    /* Prime-style / Certified Fair Trade Seal */
+    .amz-prime-badge {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--amz-certified-green);
+      margin-bottom: 6px;
+    }
+    .amz-prime-badge span {
+      background: #067d62;
+      color: #fff;
+      font-size: 0.65rem;
+      padding: 1px 4px;
+      border-radius: 2px;
+    }
+
+    .amz-delivery-promise {
+      font-size: 0.78rem;
+      color: #0f1111;
+      margin-bottom: 12px;
+    }
+    .amz-delivery-promise b {
+      font-weight: 700;
+    }
+
+    .amz-card-buttons {
+      margin-top: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .amz-btn-yellow {
+      background: var(--amz-yellow-btn);
+      border: 1px solid var(--amz-yellow-hover);
+      color: #0f1111;
+      padding: 8px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(213,217,217,.5);
+      transition: background 0.1s;
+    }
+    .amz-btn-yellow:hover {
+      background: var(--amz-yellow-hover);
+    }
+
+    .amz-btn-orange {
+      background: var(--amz-orange-btn);
+      border: 1px solid var(--amz-orange-hover);
+      color: #0f1111;
+      padding: 8px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(213,217,217,.5);
+      transition: background 0.1s;
+    }
+    .amz-btn-orange:hover {
+      background: var(--amz-orange-hover);
+    }
+
+    .amz-btn-secondary {
+      background: #ffffff;
+      border: 1px solid #d5d9d9;
+      color: #0f1111;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      cursor: pointer;
+      text-align: center;
+    }
+    .amz-btn-secondary:hover {
+      background: #f7fafa;
+    }
+
+    /* ==========================================================================
+       AMAZON "ALL" SLIDING SIDEBAR DRAWER
+       ========================================================================== */
+    .amz-sidebar-drawer {
+      position: fixed;
+      top: 0;
+      left: -380px;
+      width: 100%;
+      max-width: 360px;
+      height: 100vh;
+      background: #ffffff;
+      z-index: 2000;
+      box-shadow: 4px 0 20px rgba(0,0,0,0.4);
+      transition: left 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+    }
+    .amz-sidebar-drawer.open {
+      left: 0;
+    }
+
+    .amz-drawer-header {
+      background: var(--amz-subnav);
+      color: #ffffff;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+    .amz-drawer-header .avatar {
+      font-size: 1.4rem;
+    }
+
+    .amz-drawer-body {
+      padding: 16px 0;
+      flex-grow: 1;
+      overflow-y: auto;
+    }
+    .amz-drawer-section-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #0f1111;
+      padding: 12px 24px 6px;
+    }
+    .amz-drawer-item {
+      padding: 10px 24px;
+      color: #111;
+      font-size: 0.88rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .amz-drawer-item:hover {
+      background: #eaeded;
+    }
+
+    .amz-drawer-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 1999;
+      display: none;
+    }
+    .amz-drawer-overlay.active {
+      display: block;
+    }
+
+    /* ==========================================================================
+       AMAZON CART SLIDE-OUT DRAWER
+       ========================================================================== */
+    .amz-cart-drawer {
       position: fixed;
       top: 0;
       right: -440px;
       width: 100%;
       max-width: 420px;
       height: 100vh;
-      background: #0d1322;
-      border-left: 1px solid var(--border-subtle);
-      z-index: 1200;
-      box-shadow: -10px 0 30px rgba(0, 0, 0, 0.6);
+      background: #ffffff;
+      z-index: 2000;
+      box-shadow: -4px 0 25px rgba(0,0,0,0.35);
       transition: right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
       display: flex;
       flex-direction: column;
     }
-
-    .cart-drawer.open {
+    .amz-cart-drawer.open {
       right: 0;
     }
 
-    .cart-drawer-header {
-      padding: 20px 24px;
-      border-bottom: 1px solid var(--border-subtle);
+    .amz-cart-header {
+      padding: 18px 20px;
+      background: #f0f2f2;
+      border-bottom: 1px solid #ddd;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
+    .amz-cart-header h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f1111;
+    }
 
-    .cart-drawer-body {
-      padding: 20px 24px;
+    .amz-cart-body {
+      padding: 18px 20px;
       flex-grow: 1;
       overflow-y: auto;
     }
-
-    .cart-item {
-      display: flex;
-      gap: 14px;
-      padding: 14px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-      align-items: center;
-    }
-
-    .cart-item img {
-      width: 64px;
-      height: 64px;
-      border-radius: 8px;
-      object-fit: cover;
-      flex-shrink: 0;
-    }
-
-    .cart-item-info {
-      flex-grow: 1;
-    }
-
-    .cart-qty-ctrl {
+    .amz-free-delivery-box {
+      background: #edf8f5;
+      border: 1px solid #cce8e2;
+      padding: 10px 14px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      color: #067d62;
+      font-weight: 600;
       display: flex;
       align-items: center;
       gap: 8px;
-      margin-top: 6px;
+      margin-bottom: 16px;
     }
 
-    .qty-btn {
+    .amz-cart-item-row {
+      display: flex;
+      gap: 12px;
+      padding: 14px 0;
+      border-bottom: 1px solid #eee;
+    }
+    .amz-cart-item-row img {
+      width: 68px;
+      height: 68px;
+      object-fit: cover;
+      border-radius: 4px;
+      border: 1px solid #eee;
+    }
+    .amz-cart-item-info {
+      flex: 1;
+    }
+    .amz-cart-item-title {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #0f1111;
+      line-height: 1.25;
+      margin-bottom: 4px;
+    }
+    .amz-cart-item-price {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #0f1111;
+      margin-bottom: 6px;
+    }
+    .amz-cart-item-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .amz-qty-select {
+      border: 1px solid #d5d9d9;
+      background: #f0f2f2;
+      border-radius: 6px;
+      padding: 3px 6px;
+      font-size: 0.78rem;
+    }
+    .amz-item-delete-link {
+      font-size: 0.75rem;
+      color: var(--amz-link);
+      cursor: pointer;
+    }
+    .amz-item-delete-link:hover {
+      text-decoration: underline;
+    }
+
+    .amz-cart-footer {
+      padding: 20px;
+      background: #f8f9fa;
+      border-top: 1px solid #ddd;
+    }
+    .amz-cart-subtotal-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #0f1111;
+      margin-bottom: 6px;
+    }
+    .amz-cart-artisan-payout {
+      font-size: 0.78rem;
+      color: #067d62;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    /* ==========================================================================
+       AMAZON "RETURNS & ORDERS" VIEW
+       ========================================================================== */
+    .amz-orders-section {
+      background: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .amz-orders-header {
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 14px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .amz-order-card {
+      border: 1px solid #d5d9d9;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+    .amz-order-card-header {
+      background: #f0f2f2;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      color: var(--amz-text-subtle);
+      border-bottom: 1px solid #d5d9d9;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .amz-order-card-header .val {
+      color: #0f1111;
+      font-weight: 600;
+      font-size: 0.85rem;
+      margin-top: 2px;
+    }
+
+    .amz-order-card-body {
+      padding: 20px;
+    }
+
+    /* Amazon 4-step Delivery Progress Bar */
+    .amz-delivery-stepper {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      margin: 16px 0 24px;
+      padding: 0 10px;
+    }
+    .amz-delivery-stepper::before {
+      content: '';
+      position: absolute;
+      top: 10px;
+      left: 30px;
+      right: 30px;
+      height: 4px;
+      background: #e2e8f0;
+      z-index: 1;
+    }
+    .amz-step-item {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      flex: 1;
+    }
+    .amz-step-bullet {
       width: 24px;
       height: 24px;
-      border-radius: 4px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid var(--border-subtle);
-      color: #fff;
+      border-radius: 50%;
+      background: #e2e8f0;
+      color: #64748b;
+      margin: 0 auto 6px;
       display: flex;
       align-items: center;
       justify-content: center;
-      cursor: pointer;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      border: 2px solid #fff;
     }
-
-    .cart-drawer-footer {
-      padding: 20px 24px;
-      border-top: 1px solid var(--border-subtle);
-      background: rgba(0, 0, 0, 0.35);
+    .amz-step-item.done .amz-step-bullet {
+      background: #067d62;
+      color: #fff;
     }
-
-    /* Tables */
-    .data-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 16px;
-      background: rgba(15, 23, 42, 0.6);
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid var(--border-subtle);
+    .amz-step-item.active .amz-step-bullet {
+      background: #ffa41c;
+      color: #0f1111;
+      box-shadow: 0 0 0 3px rgba(255, 164, 28, 0.3);
     }
-
-    .data-table th, .data-table td {
-      padding: 14px 18px;
-      text-align: left;
-      border-bottom: 1px solid var(--border-subtle);
-      font-size: 0.88rem;
-    }
-
-    .data-table th {
-      color: var(--text-muted);
+    .amz-step-label {
+      font-size: 0.74rem;
       font-weight: 600;
-      background: rgba(255, 255, 255, 0.02);
+      color: #565959;
+    }
+    .amz-step-item.done .amz-step-label,
+    .amz-step-item.active .amz-step-label {
+      color: #0f1111;
     }
 
-    /* Toast */
-    .toast {
+    /* ==========================================================================
+       AMAZON MULTI-TIER FOOTER (#37475a, #232f3e, #131921)
+       ========================================================================== */
+    .amz-back-to-top {
+      background: #37475a;
+      color: #ffffff;
+      text-align: center;
+      padding: 15px 0;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .amz-back-to-top:hover {
+      background: #485769;
+    }
+
+    .amz-footer-main {
+      background: var(--amz-subnav);
+      color: #ffffff;
+      padding: 40px 20px;
+      border-bottom: 1px solid #3a4553;
+    }
+    .amz-footer-cols {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      font-size: 0.85rem;
+    }
+    .amz-footer-col h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+      color: #ffffff;
+    }
+    .amz-footer-col ul {
+      list-style: none;
+    }
+    .amz-footer-col li {
+      margin-bottom: 8px;
+    }
+    .amz-footer-col a {
+      color: #dddddd;
+    }
+    .amz-footer-col a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    .amz-footer-bottom {
+      background: var(--amz-dark);
+      color: #999999;
+      padding: 30px 20px 40px;
+      text-align: center;
+      font-size: 0.75rem;
+    }
+    .amz-footer-bottom-logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .amz-footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+    .amz-footer-links a {
+      color: #cccccc;
+    }
+
+    /* ==========================================================================
+       MODALS (PRODUCT DETAIL BUY BOX, PROVENANCE CERTIFICATE, CHAT, AUTH)
+       ========================================================================== */
+    .amz-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      backdrop-filter: blur(4px);
+      z-index: 3000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .amz-modal-backdrop.active {
+      display: flex;
+    }
+    .amz-modal-box {
+      background: #ffffff;
+      border-radius: 8px;
+      max-width: 840px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+      position: relative;
+    }
+    .amz-modal-close {
+      position: absolute;
+      top: 14px;
+      right: 16px;
+      background: none;
+      border: none;
+      font-size: 1.3rem;
+      cursor: pointer;
+      color: #555;
+      z-index: 10;
+    }
+
+    /* Toast Notification */
+    .amz-toast {
       position: fixed;
       bottom: 24px;
       right: 24px;
-      background: #10b981;
-      color: #064e3b;
-      padding: 12px 22px;
-      border-radius: 10px;
+      background: #067d62;
+      color: #ffffff;
+      padding: 12px 20px;
+      border-radius: 6px;
       font-weight: 700;
       font-size: 0.88rem;
-      z-index: 2100;
-      transform: translateY(120px);
+      z-index: 4000;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+      transform: translateY(100px);
       opacity: 0;
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-      box-shadow: 0 8px 24px rgba(16, 185, 129, 0.35);
     }
-
-    .toast.show {
+    .amz-toast.show {
       transform: translateY(0);
       opacity: 1;
     }
 
     /* Responsive */
     @media (max-width: 900px) {
-      .hero-title { font-size: 2rem; }
-      .nav-container { flex-direction: column; align-items: flex-start; }
-      .nav-tabs { width: 100%; overflow-x: auto; }
-      .nav-actions { width: 100%; justify-content: space-between; }
+      .amz-header-top { height: auto; flex-wrap: wrap; }
+      .amz-search-container { order: 10; width: 100%; }
+      .amz-catalog-layout { grid-template-columns: 1fr; }
+      .amz-sidebar { display: none; }
+      .amz-hero-carousel { height: 260px; margin-bottom: -90px; }
+      .amz-hero-title { font-size: 1.4rem; }
     }
   </style>
 </head>
 <body>
 
-  <div class="ambient-glow-1"></div>
-  <div class="ambient-glow-2"></div>
-
-  <!-- Header -->
-  <header>
-    <div class="nav-container">
-      <div class="brand" onclick="switchView('store')">
-        <div class="brand-icon">🌸</div>
-        <div>
-          <div class="brand-title">
-            WOMEN'S MARKETPLACE
-            <span class="badge-pill">FLAGSHIP ENGINE</span>
-          </div>
-          <div class="brand-subtitle">86% Direct Artisan Payout · Verified Fair-Trade Provenance</div>
-        </div>
+  <!-- ========================================================================
+       AMAZON.IN TOP HEADER (#131921)
+       ======================================================================== -->
+  <header class="amz-header-top">
+    <!-- Logo -->
+    <a href="#" class="amz-logo-box amz-nav-item" onclick="switchView('store')">
+      <div class="amz-logo-title">
+        <span class="flower">🌸</span>
+        <span class="brand-name">marketplace</span>
+        <span class="in">.in</span>
       </div>
+      <div class="amz-logo-curve"></div>
+    </a>
 
-      <nav class="nav-tabs">
-        <button class="nav-tab-btn active" id="tab-store" onclick="switchView('store')">🛍️ Storefront</button>
-        <button class="nav-tab-btn" id="tab-guilds" onclick="switchView('guilds')">✨ Artisan Guilds</button>
-        <button class="nav-tab-btn" id="tab-calculator" onclick="switchView('calculator')">⚖️ Fair Trade</button>
-        <button class="nav-tab-btn" id="tab-workshops" onclick="switchView('workshops')">🎥 Masterclasses</button>
-        <button class="nav-tab-btn" id="tab-seller" onclick="switchView('seller')">📊 Seller Suite</button>
-        <button class="nav-tab-btn" id="tab-pipeline" onclick="switchView('pipeline')">📦 Order Pipeline</button>
-      </nav>
-
-      <div class="nav-actions">
-        <select class="currency-select" id="currency-select" onchange="changeCurrency(this.value)">
-          <option value="USD">USD ($)</option>
-          <option value="INR">INR (₹)</option>
-          <option value="EUR">EUR (€)</option>
-          <option value="GBP">GBP (£)</option>
-          <option value="CAD">CAD (C$)</option>
-          <option value="JPY">JPY (¥)</option>
-        </select>
-
-        <div class="user-pill" onclick="openAuthModal()">
-          <span id="nav-user-avatar">👩‍🌾</span>
-          <span id="nav-user-name" style="font-weight:700;">Ananya Devi (Artisan)</span>
-        </div>
-
-        <button class="btn-icon" onclick="toggleCart()">
-          🛒 Cart
-          <span class="cart-badge" id="cart-count">0</span>
-        </button>
+    <!-- Delivery Pin -->
+    <div class="amz-nav-item amz-location-box" onclick="showToast('Delivering across India with 100% plastic-free packaging')">
+      <span class="amz-location-icon">📍</span>
+      <div class="amz-location-text">
+        <div class="line-1">Deliver to Priya</div>
+        <div class="line-2">Bengaluru 560001</div>
       </div>
+    </div>
+
+    <!-- 3-Segment Search Bar -->
+    <div class="amz-search-container">
+      <select class="amz-search-dropdown" id="search-category-select" onchange="filterByCategory(this.value)">
+        <option value="All">All Categories</option>
+        <option value="Textiles">Handloom Sarees & Weaves</option>
+        <option value="Home & Decor">Terracotta & Home Decor</option>
+        <option value="Jewelry">Silver Filigree & Jewelry</option>
+        <option value="Wellness">Natural Forest Wellness</option>
+      </select>
+      <input type="text" class="amz-search-input" id="search-input" placeholder="Search handcrafted heirlooms, Banarasi silk, terracotta, silver..." oninput="handleSearch(this.value)">
+      <button class="amz-search-btn" onclick="executeSearch()">🔍</button>
+    </div>
+
+    <!-- Country / Language / Currency -->
+    <div class="amz-nav-item amz-lang-box" onclick="toggleCurrencyModal()">
+      <span>🇮🇳</span>
+      <span id="header-currency-label">EN / ₹ INR</span>
+      <span style="font-size:0.6rem; color:#aaa;">▼</span>
+    </div>
+
+    <!-- Accounts & Lists -->
+    <div class="amz-nav-item amz-account-box" onclick="openAuthModal()">
+      <div class="line-1" id="nav-greeting">Hello, Ananya Devi</div>
+      <div class="line-2">
+        <span>Account & Lists</span>
+        <span style="font-size:0.6rem; color:#aaa;">▼</span>
+      </div>
+    </div>
+
+    <!-- Returns & Orders -->
+    <div class="amz-nav-item amz-orders-box" onclick="switchView('orders')">
+      <div class="line-1">Returns</div>
+      <div class="line-2">& Orders</div>
+    </div>
+
+    <!-- Cart -->
+    <div class="amz-nav-item amz-cart-box" onclick="toggleCart()">
+      <div class="amz-cart-icon-wrap">
+        <span style="font-size:1.8rem;">🛒</span>
+        <span class="amz-cart-count" id="header-cart-count">0</span>
+      </div>
+      <span class="amz-cart-text">Cart</span>
     </div>
   </header>
 
-  <main>
-    <!-- VIEW 1: STOREFRONT -->
-    <div id="view-store" class="view-section active">
-      <div class="hero-banner">
-        <div class="hero-tag">Empowering 1,240+ Women Cottage Artisans</div>
-        <h1 class="hero-title">
-          Heirloom Craftsmanship Direct from <span>Master Craftswomen</span>
-        </h1>
-        <p class="hero-desc">
-          Every acquisition provides direct, transparent livelihoods. 86% of gross proceeds flow without intermediary exploitation straight into women artisan bank cooperatives across India.
-        </p>
+  <!-- ========================================================================
+       AMAZON.IN SUB-NAV BAR (#232f3e)
+       ======================================================================== -->
+  <nav class="amz-subnav">
+    <div class="amz-subnav-links">
+      <div class="amz-subnav-item" onclick="toggleSidebarMenu()">
+        <span>☰</span> <b>All</b>
+      </div>
+      <div class="amz-subnav-item active" id="subnav-store" onclick="switchView('store')">Amazon Handcrafted</div>
+      <div class="amz-subnav-item" id="subnav-deals" onclick="scrollToDeals()">Today's Deals</div>
+      <div class="amz-subnav-item" id="subnav-guilds" onclick="switchView('guilds')">Artisan Guilds</div>
+      <div class="amz-subnav-item" id="subnav-workshops" onclick="switchView('workshops')">Live Masterclasses</div>
+      <div class="amz-subnav-item" id="subnav-calculator" onclick="switchView('calculator')">86% Fair-Wage Ledger</div>
+      <div class="amz-subnav-item" id="subnav-seller" onclick="switchView('seller')">Seller Central</div>
+      <div class="amz-subnav-item" onclick="showToast('24x7 Artisan Cooperative Helpline: 1800-EMPOWER-WOMEN')">Customer Service</div>
+    </div>
 
-        <div class="hero-actions">
-          <button class="btn-primary" style="padding:10px 22px; font-size:0.9rem;" onclick="switchView('calculator')">
-            ⚖️ Verify 86% Fair-Wage Ledger
-          </button>
-          <button class="btn-secondary" style="padding:10px 20px; font-size:0.9rem;" onclick="switchView('workshops')">
-            🎥 Join Live Virtual Masterclasses
-          </button>
+    <div class="amz-subnav-banner" onclick="switchView('calculator')">
+      <span>✓</span> <b>Artisan Assured: 86% Direct Living Wage</b>
+    </div>
+  </nav>
+
+  <!-- ========================================================================
+       AMAZON SLIDING SIDEBAR MENU ("☰ All")
+       ======================================================================== -->
+  <div class="amz-drawer-overlay" id="drawer-overlay" onclick="toggleSidebarMenu()"></div>
+  <aside class="amz-sidebar-drawer" id="sidebar-drawer">
+    <div class="amz-drawer-header">
+      <span class="avatar">👤</span>
+      <span id="drawer-user-name">Hello, Ananya Devi</span>
+      <button style="margin-left:auto; background:none; border:none; color:#fff; font-size:1.4rem; cursor:pointer;" onclick="toggleSidebarMenu()">✕</button>
+    </div>
+    <div class="amz-drawer-body">
+      <div class="amz-drawer-section-title">Trending Handcrafted</div>
+      <div class="amz-drawer-item" onclick="filterByCategory('All'); toggleSidebarMenu();">Best Sellers in Handloom Sarees <span>›</span></div>
+      <div class="amz-drawer-item" onclick="scrollToDeals(); toggleSidebarMenu();">Today's Deals & Special Offers <span>›</span></div>
+      <div class="amz-drawer-item" onclick="switchView('workshops'); toggleSidebarMenu();">Virtual Masterclass Studio <span>›</span></div>
+
+      <hr style="border:none; border-top:1px solid #eee; margin:10px 0;">
+      <div class="amz-drawer-section-title">Shop by Craft Discipline</div>
+      <div class="amz-drawer-item" onclick="filterByCategory('Textiles'); toggleSidebarMenu();">Pure Mulberry & Handloom Weaves <span>›</span></div>
+      <div class="amz-drawer-item" onclick="filterByCategory('Home & Decor'); toggleSidebarMenu();">Terracotta & Heritage Pottery <span>›</span></div>
+      <div class="amz-drawer-item" onclick="filterByCategory('Jewelry'); toggleSidebarMenu();">Tarakasi 925 Silver Filigree <span>›</span></div>
+      <div class="amz-drawer-item" onclick="filterByCategory('Wellness'); toggleSidebarMenu();">Wild Forest Honey & Wellness <span>›</span></div>
+
+      <hr style="border:none; border-top:1px solid #eee; margin:10px 0;">
+      <div class="amz-drawer-section-title">Programs & Features</div>
+      <div class="amz-drawer-item" onclick="switchView('guilds'); toggleSidebarMenu();">Artisan Collectives Directory <span>›</span></div>
+      <div class="amz-drawer-item" onclick="switchView('calculator'); toggleSidebarMenu();">86% Direct Wage Calculator <span>›</span></div>
+      <div class="amz-drawer-item" onclick="switchView('orders'); toggleSidebarMenu();">Your Consignment Pipeline <span>›</span></div>
+      <div class="amz-drawer-item" onclick="switchView('seller'); toggleSidebarMenu();">Seller Central Dashboard <span>›</span></div>
+
+      <hr style="border:none; border-top:1px solid #eee; margin:10px 0;">
+      <div class="amz-drawer-section-title">Help & Settings</div>
+      <div class="amz-drawer-item" onclick="openAuthModal(); toggleSidebarMenu();">Switch Profile (Artisan / Buyer) <span>›</span></div>
+      <div class="amz-drawer-item" onclick="toggleCurrencyModal(); toggleSidebarMenu();">Change Currency (₹ / $ / € / £) <span>›</span></div>
+    </div>
+  </aside>
+
+  <!-- ========================================================================
+       HERO CAROUSEL WITH AMAZON'S BOTTOM GRADIENT FADE
+       ======================================================================== -->
+  <div class="amz-hero-carousel" id="hero-carousel-container">
+    <div class="amz-carousel-arrow left" onclick="prevSlide()">‹</div>
+    <div class="amz-carousel-arrow right" onclick="nextSlide()">›</div>
+
+    <!-- Slide 1 -->
+    <div class="amz-hero-slide active" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=1600&q=80');">
+      <div class="amz-hero-content">
+        <span class="amz-hero-tag">Great Indian Artisan Festival</span>
+        <h1 class="amz-hero-title">Up to 60% off Handcrafted Heirlooms</h1>
+        <p class="amz-hero-sub">Direct from National Award-winning women weavers. 86% direct disbursement guaranteed without middlemen.</p>
+        <button class="amz-hero-btn" onclick="scrollToCatalog()">Explore Festive Handlooms</button>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="amz-hero-slide" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=1600&q=80');">
+      <div class="amz-hero-content">
+        <span class="amz-hero-tag">Handcrafted Ceramics & Urli</span>
+        <h1 class="amz-hero-title">Revamp your living space with Clay</h1>
+        <p class="amz-hero-sub">Bankura alluvial silt pottery and temple urlis slow-fired in ancestral wood kilns.</p>
+        <button class="amz-hero-btn" onclick="filterByCategory('Home & Decor')">Shop Terracotta</button>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="amz-hero-slide" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=1600&q=80');">
+      <div class="amz-hero-content">
+        <span class="amz-hero-tag">Ancient Tarakasi Filigree</span>
+        <h1 class="amz-hero-title">925 Sterling Silver Peacock Jhumkas</h1>
+        <p class="amz-hero-sub">Hand-drawn hair-thin silver micro wires crimped into delicate lace by master silversmiths.</p>
+        <button class="amz-hero-btn" onclick="filterByCategory('Jewelry')">Discover Silver</button>
+      </div>
+    </div>
+
+    <div class="amz-hero-gradient-overlay"></div>
+  </div>
+
+  <!-- ========================================================================
+       MAIN PAGE CONTAINER
+       ======================================================================== -->
+  <main class="amz-main-content">
+
+    <!-- VIEW 1: STOREFRONT & AMAZON QUAD CARDS -->
+    <div id="view-store">
+      <!-- Amazon 4-in-1 Quad-Card Grid Overlapping Hero -->
+      <div class="amz-quad-grid">
+        <!-- Card 1: Revamp Home -->
+        <div class="amz-quad-card">
+          <div class="amz-quad-title">Revamp your home with artisan crafts | Up to 50% off</div>
+          <div class="amz-quad-2x2">
+            <div class="amz-quad-tile" onclick="openProductModal(2)">
+              <img src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=400&q=80" alt="Terracotta Urli">
+              <div class="amz-quad-label">Terracotta Urlis</div>
+            </div>
+            <div class="amz-quad-tile" onclick="openProductModal(6)">
+              <img src="https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=400&q=80" alt="Studio Pottery">
+              <div class="amz-quad-label">Clay Planters</div>
+            </div>
+            <div class="amz-quad-tile" onclick="openProductModal(5)">
+              <img src="https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=400&q=80" alt="Walnut Chest">
+              <div class="amz-quad-label">Walnut Wood Boxes</div>
+            </div>
+            <div class="amz-quad-tile" onclick="openProductModal(2)">
+              <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=400&q=80" alt="Tribal Lamps">
+              <div class="amz-quad-label">Brass & Metal Lamps</div>
+            </div>
+          </div>
+          <div class="amz-quad-footer-link" onclick="filterByCategory('Home & Decor')">See all home heirlooms</div>
         </div>
 
-        <div class="hero-stats">
-          <div class="stat-card">
-            <div class="stat-number">1,240+</div>
-            <div class="stat-label">Verified Women Artisans</div>
+        <!-- Card 2: Festive Weaves -->
+        <div class="amz-quad-card">
+          <div class="amz-quad-title">Handcrafted festive wear from rural looms</div>
+          <div class="amz-quad-2x2">
+            <div class="amz-quad-tile" onclick="openProductModal(1)">
+              <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400&q=80" alt="Silk Saree">
+              <div class="amz-quad-label">Banarasi Brocades</div>
+            </div>
+            <div class="amz-quad-tile" onclick="openProductModal(7)">
+              <img src="https://images.unsplash.com/photo-1607344645866-009c320c5ab8?w=400&q=80" alt="Ajrakh Dupatta">
+              <div class="amz-quad-label">Ajrakh Block Prints</div>
+            </div>
+            <div class="amz-quad-tile" onclick="openProductModal(4)">
+              <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=400&q=80" alt="Khadi Kurta">
+              <div class="amz-quad-label">Organic Khadi Kurtas</div>
+            </div>
+            <div class="amz-quad-tile" onclick="openProductModal(1)">
+              <img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=400&q=80" alt="Zari Stoles">
+              <div class="amz-quad-label">Pure Silver Zari</div>
+            </div>
           </div>
-          <div class="stat-card">
-            <div class="stat-number">86.4%</div>
-            <div class="stat-label">Direct Cooperative Wage</div>
+          <div class="amz-quad-footer-link" onclick="filterByCategory('Textiles')">Explore all handlooms</div>
+        </div>
+
+        <!-- Card 3: Silver & Adornment -->
+        <div class="amz-quad-card">
+          <div class="amz-quad-title">Up to 40% off | Fine silver & temple jewelry</div>
+          <div class="amz-quad-2x2">
+            <div class="amz-quad-tile" onclick="openProductModal(3)">
+              <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=400&q=80" alt="Silver Jhumkas">
+              <div class="amz-quad-label">Tarakasi Jhumkas</div>
+            </div>
+            <div class="amz-quad-tile" onclick="openProductModal(3)">
+              <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=400&q=80" alt="Chokers">
+              <div class="amz-quad-label">Filigree Chokers</div>
+            </div>
+            <div class="amz-quad-tile" onclick="openProductModal(3)">
+              <img src="https://images.unsplash.com/photo-1600003014755-ba31aa59c4b6?w=400&q=80" alt="Bangles">
+              <div class="amz-quad-label">Silver Bangles</div>
+            </div>
+            <div class="amz-quad-tile" onclick="openProductModal(3)">
+              <img src="https://images.unsplash.com/photo-1611591475155-4286fa7c2e7f?w=400&q=80" alt="Anklets">
+              <div class="amz-quad-label">Handcrafted Anklets</div>
+            </div>
           </div>
-          <div class="stat-card">
-            <div class="stat-number">100%</div>
-            <div class="stat-label">Biodegradable Packaging</div>
+          <div class="amz-quad-footer-link" onclick="filterByCategory('Jewelry')">See all silver creations</div>
+        </div>
+
+        <!-- Card 4: Women Collectives Spotlight -->
+        <div class="amz-quad-card">
+          <div class="amz-quad-title">Direct from Verified Women Guilds</div>
+          <div class="amz-single-tile" onclick="switchView('guilds')">
+            <img src="https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=600&q=80" alt="Artisan Guild">
+            <div style="font-weight:700; font-size:0.95rem; color:#0f1111;">Dhaga Kala Collective, Varanasi</div>
+            <div style="font-size:0.8rem; color:#067d62; font-weight:700; margin-top:2px;">142 Master Weavers · 86.8% Audited Shared Wage</div>
           </div>
-          <div class="stat-card">
-            <div class="stat-number">4.95 ★</div>
-            <div class="stat-label">Patron Satisfaction Rating</div>
-          </div>
+          <div class="amz-quad-footer-link" onclick="switchView('guilds')">Explore 4 Active Guild Clusters</div>
         </div>
       </div>
 
-      <!-- Controls -->
-      <div class="controls-bar">
-        <div class="category-pills">
-          <button class="cat-btn active" onclick="filterCategory('All', this)">All Heirlooms</button>
-          <button class="cat-btn" onclick="filterCategory('Textiles', this)">Textiles & Apparel</button>
-          <button class="cat-btn" onclick="filterCategory('Home & Decor', this)">Home & Decor</button>
-          <button class="cat-btn" onclick="filterCategory('Jewelry', this)">Jewelry & Silver</button>
-          <button class="cat-btn" onclick="filterCategory('Wellness', this)">Organic Wellness</button>
-          <button class="cat-btn" id="wishlist-filter-btn" onclick="filterWishlist(this)">❤️ Saved (<span id="wishlist-count">0</span>)</button>
+      <!-- Amazon "Today's Deals" Horizontal Strip -->
+      <div class="amz-deals-section" id="deals-strip">
+        <div class="amz-deals-header">
+          <div class="amz-deals-title">Today's Deals in Artisan Crafts</div>
+          <a href="#catalog-section" class="amz-quad-footer-link" onclick="filterByDeals()">See all deals</a>
         </div>
-
-        <div class="search-box">
-          <span>🔍</span>
-          <input type="text" id="search-input" placeholder="Search craft, technique, artisan..." oninput="handleSearch(this.value)">
+        <div class="amz-deals-row" id="deals-carousel-row">
+          <!-- Populated dynamically via JS -->
         </div>
       </div>
 
-      <!-- Products Grid -->
-      <div class="products-grid" id="products-container"></div>
+      <!-- Main Catalog Layout (Sidebar Filters + Products Grid) -->
+      <div class="amz-catalog-layout" id="catalog-section">
+        <!-- Sidebar Filters -->
+        <aside class="amz-sidebar">
+          <div class="amz-filter-group">
+            <div class="amz-filter-heading">Delivery Day</div>
+            <ul class="amz-filter-list">
+              <li class="amz-filter-item"><input type="checkbox" checked> <span>Get It by Tomorrow</span></li>
+              <li class="amz-filter-item"><input type="checkbox"> <span>Get It in 2 Days</span></li>
+            </ul>
+          </div>
+
+          <div class="amz-filter-group">
+            <div class="amz-filter-heading">Category</div>
+            <ul class="amz-filter-list">
+              <li class="amz-filter-item active" onclick="filterByCategory('All', this)"><b>Any Category</b></li>
+              <li class="amz-filter-item" onclick="filterByCategory('Textiles', this)">Handloom Sarees & Weaves</li>
+              <li class="amz-filter-item" onclick="filterByCategory('Home & Decor', this)">Terracotta & Ceramic Urli</li>
+              <li class="amz-filter-item" onclick="filterByCategory('Jewelry', this)">925 Silver Filigree Jewelry</li>
+              <li class="amz-filter-item" onclick="filterByCategory('Wellness', this)">Organic Forest Honey & Elixirs</li>
+            </ul>
+          </div>
+
+          <div class="amz-filter-group">
+            <div class="amz-filter-heading">Artisan Assurance</div>
+            <ul class="amz-filter-list">
+              <li class="amz-filter-item">
+                <input type="checkbox" checked>
+                <span style="color:#067d62; font-weight:700;">✓ Artisan Assured</span>
+              </li>
+              <li style="font-size:0.75rem; color:#565959; padding-left:22px; margin-top:2px;">
+                Guarantees 86% direct payment to women artisan bank accounts
+              </li>
+            </ul>
+          </div>
+
+          <div class="amz-filter-group">
+            <div class="amz-filter-heading">Customer Reviews</div>
+            <ul class="amz-filter-list">
+              <li class="amz-filter-item" onclick="filterByStars(4)">
+                <span style="color:#ffa41c;">★★★★☆</span> & Up
+              </li>
+              <li class="amz-filter-item" onclick="filterByStars(3)">
+                <span style="color:#ffa41c;">★★★☆☆</span> & Up
+              </li>
+            </ul>
+          </div>
+
+          <div class="amz-filter-group">
+            <div class="amz-filter-heading">Price Range</div>
+            <ul class="amz-filter-list">
+              <li class="amz-filter-item" onclick="filterByPrice(0, 50)">Under ₹4,000</li>
+              <li class="amz-filter-item" onclick="filterByPrice(50, 100)">₹4,000 - ₹8,000</li>
+              <li class="amz-filter-item" onclick="filterByPrice(100, 9999)">Over ₹8,000</li>
+            </ul>
+          </div>
+
+          <div class="amz-filter-group">
+            <div class="amz-filter-heading">Saved Items</div>
+            <div class="amz-filter-item" onclick="filterSavedItems()">
+              <span>❤️ Saved Heirlooms (<b id="sidebar-wishlist-count">0</b>)</span>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Product Grid Column -->
+        <div>
+          <!-- Results Header & Active Filter Bar -->
+          <div style="background:#fff; border:1px solid #ddd; border-radius:4px; padding:12px 16px; margin-bottom:16px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+            <div style="font-size:0.88rem; color:#0f1111;">
+              Showing <b id="results-count">8</b> results for <b id="active-category-label" style="color:#c7511f;">"All Handcrafted Heirlooms"</b>
+            </div>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span style="font-size:0.8rem; color:#565959;">Sort by:</span>
+              <select id="sort-select" style="border:1px solid #d5d9d9; background:#f0f2f2; border-radius:4px; padding:4px 8px; font-size:0.82rem;" onchange="handleSort(this.value)">
+                <option value="featured">Featured</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+                <option value="rating">Avg. Customer Review</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- The Products Grid -->
+          <div class="amz-products-grid" id="products-grid">
+            <!-- Dynamically populated via JS -->
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- VIEW 2: ARTISAN GUILDS DIRECTORY -->
-    <div id="view-guilds" class="view-section">
-      <div style="margin-bottom:28px;">
-        <h2 style="font-family:var(--font-heading); font-size:2rem; color:#fff; margin-bottom:8px;">Women Artisan Collectives & Guilds</h2>
-        <p style="color:#94a3b8; font-size:0.95rem;">Explore our registered cooperative clusters across India directly receiving sustainable living wages.</p>
+    <div id="view-guilds" style="display:none;">
+      <div style="background:#fff; border:1px solid #ddd; border-radius:4px; padding:24px; margin-bottom:20px;">
+        <h2 style="font-size:1.6rem; font-weight:700; color:#0f1111; margin-bottom:6px;">Amazon Karigar: Verified Women Artisan Collectives</h2>
+        <p style="color:#565959; font-size:0.9rem;">Connecting rural cottage craftswomen directly with global patrons. Every cluster is verified with bank cooperative disbursement audit ledgers.</p>
       </div>
-      <div class="products-grid" id="guilds-container"></div>
+      <div class="amz-quad-grid" id="guilds-full-grid"></div>
     </div>
 
-    <!-- VIEW 3: FAIR TRADE CALCULATOR -->
-    <div id="view-calculator" class="view-section">
-      <div style="max-width:800px; margin:0 auto; background:var(--bg-card); border:1px solid var(--border-subtle); border-radius:20px; padding:36px;">
-        <div style="display:inline-block; font-size:0.75rem; font-weight:700; color:#10b981; background:rgba(16,185,129,0.15); padding:4px 10px; border-radius:6px; margin-bottom:12px;">FAIR TRADE TRANSPARENCY GUARANTEE</div>
-        <h2 style="font-family:var(--font-heading); font-size:2.2rem; color:#fff; margin-bottom:12px;">Direct Artisan Disbursement Simulator</h2>
-        <p style="color:#cbd5e1; font-size:0.95rem; margin-bottom:28px;">
-          Traditional retail chains siphon 70–85% of handcrafted item value into middlemen commissions. Our decentralized model enforces that 86% of every single purchase dollar flows directly to female heads of households.
+    <!-- VIEW 3: FAIR TRADE 86% CALCULATOR -->
+    <div id="view-calculator" style="display:none;">
+      <div style="background:#fff; border:1px solid #ddd; border-radius:8px; padding:32px; max-width:850px; margin:0 auto;">
+        <div style="display:inline-block; font-size:0.75rem; font-weight:700; color:#067d62; background:#e8f4f1; padding:4px 10px; border-radius:4px; margin-bottom:12px;">
+          TRANSPARENCY & FAIR-WAGE LEDGER
+        </div>
+        <h2 style="font-size:1.8rem; font-weight:700; color:#0f1111; margin-bottom:10px;">Direct Artisan Living Wage Calculator</h2>
+        <p style="color:#565959; font-size:0.92rem; line-height:1.5; margin-bottom:24px;">
+          Traditional luxury retail siphons up to 85% of handicraft value into intermediary commissions. Women's Marketplace guarantees that <b>86% of every purchase price</b> goes directly into the artisan head of household's bank account.
         </p>
 
-        <div style="margin-bottom:28px;">
-          <label style="font-size:0.88rem; color:#94a3b8; font-weight:600; display:block; margin-bottom:8px;">
-            Simulate Purchase Amount: <span id="calc-val-label" style="color:#fbbf24; font-weight:800; font-size:1.2rem; font-family:var(--font-mono);">$100.00</span>
+        <div style="background:#f7f7f7; border:1px solid #eee; border-radius:6px; padding:20px; margin-bottom:24px;">
+          <label style="font-size:0.9rem; font-weight:700; display:block; margin-bottom:8px;">
+            Simulate Purchase Total: <span id="calc-display-val" style="color:#b12704; font-size:1.3rem;">₹8,350</span>
           </label>
-          <input type="range" min="20" max="500" value="100" style="width:100%; accent-color:#f59e0b; cursor:pointer;" oninput="updateCalculator(this.value)">
+          <input type="range" min="20" max="500" value="100" style="width:100%; accent-color:#f08804; cursor:pointer;" oninput="updateCalculator(this.value)">
         </div>
 
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:16px; margin-bottom:30px;">
-          <div style="background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); padding:18px; border-radius:12px;">
-            <div style="font-size:0.75rem; color:#34d399; font-weight:700;">86% DIRECT TO ARTISAN</div>
-            <div id="calc-artisan-payout" style="font-family:var(--font-heading); font-size:1.8rem; font-weight:800; color:#fff; margin-top:4px;">$86.00</div>
-            <div style="font-size:0.75rem; color:#94a3b8; margin-top:4px;">Direct bank deposit to female head of household</div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:16px; margin-bottom:24px;">
+          <div style="background:#e8f4f1; border:1px solid #b7dfd5; padding:18px; border-radius:6px;">
+            <div style="font-size:0.75rem; color:#067d62; font-weight:700;">86% DIRECT ARTISAN PAYOUT</div>
+            <div id="calc-artisan-val" style="font-size:1.6rem; font-weight:800; color:#0f1111; margin:6px 0;">₹7,181</div>
+            <div style="font-size:0.72rem; color:#565959;">Direct bank cooperative credit to female artisan</div>
           </div>
-          <div style="background:rgba(245,158,11,0.1); border:1px solid rgba(245,158,11,0.3); padding:18px; border-radius:12px;">
-            <div style="font-size:0.75rem; color:#fbbf24; font-weight:700;">8% ECO-RAW MATERIALS</div>
-            <div id="calc-materials-payout" style="font-family:var(--font-heading); font-size:1.8rem; font-weight:800; color:#fff; margin-top:4px;">$8.00</div>
-            <div style="font-size:0.75rem; color:#94a3b8; margin-top:4px;">Organic mulberry silk, clay, vegetable dyes</div>
+          <div style="background:#fef8e7; border:1px solid #fae19c; padding:18px; border-radius:6px;">
+            <div style="font-size:0.75rem; color:#b12704; font-weight:700;">8% RAW ECO-MATERIALS</div>
+            <div id="calc-materials-val" style="font-size:1.6rem; font-weight:800; color:#0f1111; margin:6px 0;">₹668</div>
+            <div style="font-size:0.72rem; color:#565959;">Pure Mulberry silk, clay & natural dyes</div>
           </div>
-          <div style="background:rgba(99,102,241,0.1); border:1px solid rgba(99,102,241,0.3); padding:18px; border-radius:12px;">
-            <div style="font-size:0.75rem; color:#818cf8; font-weight:700;">6% SOLAR PACKAGING & LOGISTICS</div>
-            <div id="calc-logistics-payout" style="font-family:var(--font-heading); font-size:1.8rem; font-weight:800; color:#fff; margin-top:4px;">$6.00</div>
-            <div style="font-size:0.75rem; color:#94a3b8; margin-top:4px;">Biodegradable boxes & carbon-neutral dispatch</div>
+          <div style="background:#eef2ff; border:1px solid #c7d2fe; padding:18px; border-radius:6px;">
+            <div style="font-size:0.75rem; color:#4338ca; font-weight:700;">6% PACKAGING & LOGISTICS</div>
+            <div id="calc-logistics-val" style="font-size:1.6rem; font-weight:800; color:#0f1111; margin:6px 0;">₹501</div>
+            <div style="font-size:0.72rem; color:#565959;">Zero-plastic cardboard & carbon offset dispatch</div>
           </div>
         </div>
       </div>
     </div>
 
     <!-- VIEW 4: MASTERCLASSES STUDIO -->
-    <div id="view-workshops" class="view-section">
-      <div style="margin-bottom:28px;">
-        <h2 style="font-family:var(--font-heading); font-size:2rem; color:#fff; margin-bottom:8px;">Virtual Artisan Masterclass Studio</h2>
-        <p style="color:#94a3b8; font-size:0.95rem;">Join live, two-way interactive masterclasses streaming directly from rural cottage looms and ateliers. Raw materials kits shipped directly to your doorstep.</p>
+    <div id="view-workshops" style="display:none;">
+      <div style="background:#fff; border:1px solid #ddd; border-radius:4px; padding:24px; margin-bottom:20px;">
+        <h2 style="font-size:1.6rem; font-weight:700; color:#0f1111; margin-bottom:6px;">Amazon Karigar Masterclasses & Live Virtual Studio</h2>
+        <p style="color:#565959; font-size:0.9rem;">Join live two-way HD workshops broadcast directly from rural looms and ateliers. Raw craft kits delivered to your doorstep.</p>
       </div>
-      <div class="products-grid" id="workshops-container"></div>
+      <div class="amz-quad-grid" id="workshops-full-grid"></div>
     </div>
 
-    <!-- VIEW 5: SELLER SUITE & ANALYTICS -->
-    <div id="view-seller" class="view-section">
-      <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:24px; flex-wrap:wrap; gap:16px;">
+    <!-- VIEW 5: SELLER CENTRAL SUITE -->
+    <div id="view-seller" style="display:none;">
+      <div style="background:#fff; border:1px solid #ddd; border-radius:4px; padding:24px; margin-bottom:20px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
         <div>
-          <h2 style="font-family:var(--font-heading); font-size:2rem; color:#fff; margin-bottom:6px;">Artisan Executive Suite & Analytics</h2>
-          <p style="color:#94a3b8; font-size:0.92rem;">Empowerment KPIs, cooperative ledger, and live catalog publishing.</p>
+          <h2 style="font-size:1.6rem; font-weight:700; color:#0f1111; margin-bottom:4px;">Seller Central: Artisan Collective Suite</h2>
+          <p style="color:#565959; font-size:0.88rem;">Manage live catalog publishing, GMV metrics, and pipeline order progress.</p>
         </div>
-        <button class="btn-primary" onclick="openPublishModal()">+ Publish New Heirloom</button>
+        <button class="amz-btn-yellow" onclick="openPublishModal()">+ List New Handcrafted Item</button>
       </div>
 
-      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:18px; margin-bottom:30px;">
-        <div style="background:var(--bg-card); border:1px solid var(--border-subtle); padding:20px; border-radius:14px;">
-          <div style="font-size:0.8rem; color:#94a3b8; font-weight:600;">Gross Merchandise Value (GMV)</div>
-          <div style="font-family:var(--font-heading); font-size:1.9rem; font-weight:800; color:#fbbf24; margin-top:6px;">$18,450.00</div>
-          <div style="font-size:0.75rem; color:#10b981; margin-top:4px;">▲ +24% this month</div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:16px; margin-bottom:24px;">
+        <div style="background:#fff; border:1px solid #ddd; padding:20px; border-radius:6px;">
+          <div style="font-size:0.8rem; color:#565959; font-weight:600;">Total Gross Merchandise Value (GMV)</div>
+          <div style="font-size:1.8rem; font-weight:800; color:#0f1111; margin-top:6px;">₹1,540,575</div>
+          <div style="font-size:0.75rem; color:#067d62; font-weight:600;">▲ +28.4% month-over-month</div>
         </div>
-        <div style="background:var(--bg-card); border:1px solid var(--border-subtle); padding:20px; border-radius:14px;">
-          <div style="font-size:0.8rem; color:#94a3b8; font-weight:600;">Direct Artisan Payouts (86%)</div>
-          <div style="font-family:var(--font-heading); font-size:1.9rem; font-weight:800; color:#34d399; margin-top:6px;">$15,867.00</div>
-          <div style="font-size:0.75rem; color:#34d399; margin-top:4px;">100% disbursed to cooperatives</div>
+        <div style="background:#fff; border:1px solid #ddd; padding:20px; border-radius:6px;">
+          <div style="font-size:0.8rem; color:#565959; font-weight:600;">86% Direct Artisan Payouts Disbursed</div>
+          <div style="font-size:1.8rem; font-weight:800; color:#067d62; margin-top:6px;">₹1,324,894</div>
+          <div style="font-size:0.75rem; color:#067d62;">100% Direct bank deposits verified</div>
         </div>
-        <div style="background:var(--bg-card); border:1px solid var(--border-subtle); padding:20px; border-radius:14px;">
-          <div style="font-size:0.8rem; color:#94a3b8; font-weight:600;">Rural Weaving Labor Hours</div>
-          <div style="font-family:var(--font-heading); font-size:1.9rem; font-weight:800; color:#60a5fa; margin-top:6px;">2,410 hrs</div>
-          <div style="font-size:0.75rem; color:#cbd5e1; margin-top:4px;">Ethical living wage audited</div>
+        <div style="background:#fff; border:1px solid #ddd; padding:20px; border-radius:6px;">
+          <div style="font-size:0.8rem; color:#565959; font-weight:600;">Rural Handloom Labor Hours</div>
+          <div style="font-size:1.8rem; font-weight:800; color:#007185; margin-top:6px;">2,410 hrs</div>
+          <div style="font-size:0.75rem; color:#565959;">Ethical living wages certified</div>
         </div>
-        <div style="background:var(--bg-card); border:1px solid var(--border-subtle); padding:20px; border-radius:14px;">
-          <div style="font-size:0.8rem; color:#94a3b8; font-weight:600;">Active Pipeline Consignments</div>
-          <div style="font-family:var(--font-heading); font-size:1.9rem; font-weight:800; color:#f472b6; margin-top:6px;">28 orders</div>
-          <div style="font-size:0.75rem; color:#cbd5e1; margin-top:4px;">Across 4 regional clusters</div>
+        <div style="background:#fff; border:1px solid #ddd; padding:20px; border-radius:6px;">
+          <div style="font-size:0.8rem; color:#565959; font-weight:600;">Consignments in Pipeline</div>
+          <div style="font-size:1.8rem; font-weight:800; color:#b12704; margin-top:6px;">28 orders</div>
+          <div style="font-size:0.75rem; color:#565959;">Across 4 regional cooperative clusters</div>
         </div>
       </div>
     </div>
 
-    <!-- VIEW 6: ORDER PIPELINE TRACKER -->
-    <div id="view-pipeline" class="view-section">
-      <div style="margin-bottom:24px;">
-        <h2 style="font-family:var(--font-heading); font-size:2rem; color:#fff; margin-bottom:8px;">Distributed Consignment Pipeline & Order Tracker</h2>
-        <p style="color:#94a3b8; font-size:0.95rem;">Real-time stage transitions from rural artisan loom shed to international patron doorstep.</p>
-      </div>
+    <!-- VIEW 6: RETURNS & ORDERS PIPELINE -->
+    <div id="view-orders" style="display:none;">
+      <div class="amz-orders-section">
+        <div class="amz-orders-header">
+          <div>
+            <h1 style="font-size:1.7rem; font-weight:700; color:#0f1111; margin-bottom:4px;">Your Orders & Consignment Tracker</h1>
+            <p style="font-size:0.85rem; color:#565959;">Track shipments directly from artisan village looms to international doorsteps.</p>
+          </div>
+          <div style="display:flex; gap:8px;">
+            <input type="text" id="order-lookup-input" placeholder="Search order # or tracking code..." style="padding:8px 12px; border:1px solid #d5d9d9; border-radius:4px; font-size:0.85rem; min-width:260px;" oninput="filterOrdersList(this.value)">
+          </div>
+        </div>
 
-      <!-- Quick lookup bar -->
-      <div style="background:var(--bg-card); border:1px solid var(--border-subtle); padding:20px; border-radius:14px; margin-bottom:24px; display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
-        <div style="font-size:0.88rem; font-weight:700; color:#fbbf24;">🔍 Lookup Consignment:</div>
-        <input type="text" id="pipeline-search" placeholder="Enter Order # or Tracking Code..." style="flex-grow:1; background:rgba(255,255,255,0.05); border:1px solid var(--border-subtle); border-radius:8px; padding:9px 14px; color:#fff; outline:none;" oninput="filterOrders(this.value)">
-      </div>
-
-      <div style="overflow-x:auto;">
-        <table class="data-table">
-          <thead>
-            <tr>
-              <th>Consignment #</th>
-              <th>Patron / Destination</th>
-              <th>Total (Currency)</th>
-              <th>Current Stage</th>
-              <th>Tracking Code</th>
-              <th>Pipeline Action</th>
-            </tr>
-          </thead>
-          <tbody id="orders-tbody"></tbody>
-        </table>
+        <div id="orders-cards-container">
+          <!-- Rendered via JS -->
+        </div>
       </div>
     </div>
+
   </main>
 
-  <!-- MODAL: PRODUCT DETAIL & STORY -->
-  <div class="modal-backdrop" id="modal-product" onclick="if(event.target===this) closeModal('modal-product')">
-    <div class="modal-box">
-      <button class="modal-close-btn" onclick="closeModal('modal-product')">✕</button>
-      <div class="modal-body" id="modal-product-content"></div>
+  <!-- ========================================================================
+       AMAZON CART SLIDE-OUT DRAWER
+       ======================================================================== -->
+  <div class="amz-drawer-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+  <aside class="amz-cart-drawer" id="cart-drawer">
+    <div class="amz-cart-header">
+      <h3>Shopping Cart (<span id="cart-drawer-count">0</span> items)</h3>
+      <button style="background:none; border:none; font-size:1.4rem; cursor:pointer;" onclick="toggleCart()">✕</button>
+    </div>
+    <div class="amz-cart-body">
+      <div class="amz-free-delivery-box">
+        <span>✓</span> Part of your order qualifies for FREE Delivery.
+      </div>
+      <div id="cart-items-list">
+        <!-- Rendered via JS -->
+      </div>
+    </div>
+    <div class="amz-cart-footer">
+      <div class="amz-cart-subtotal-line">
+        <span>Subtotal:</span>
+        <span id="cart-subtotal-price" style="font-size:1.3rem; color:#b12704;">₹0.00</span>
+      </div>
+      <div class="amz-cart-artisan-payout">
+        <span>🌿 Guaranteed 86% Artisan Share:</span>
+        <span id="cart-subtotal-artisan" style="font-weight:700;">₹0.00</span>
+      </div>
+      <button class="amz-btn-yellow" style="width:100%; padding:12px; font-size:0.95rem;" onclick="simulateAmazonCheckout()">
+        Proceed to Buy (100% Purchase Protection)
+      </button>
+    </div>
+  </aside>
+
+  <!-- ========================================================================
+       AMAZON PRODUCT DETAIL BUY-BOX MODAL
+       ======================================================================== -->
+  <div class="amz-modal-backdrop" id="modal-product" onclick="if(event.target===this) closeModal('modal-product')">
+    <div class="amz-modal-box">
+      <button class="amz-modal-close" onclick="closeModal('modal-product')">✕</button>
+      <div style="padding:28px;" id="modal-product-inner">
+        <!-- Rendered via JS -->
+      </div>
     </div>
   </div>
 
-  <!-- MODAL: PROVENANCE CERTIFICATE -->
-  <div class="modal-backdrop" id="modal-provenance" onclick="if(event.target===this) closeModal('modal-provenance')">
-    <div class="modal-box" style="max-width:600px;">
-      <button class="modal-close-btn" onclick="closeModal('modal-provenance')">✕</button>
-      <div class="modal-body" id="modal-provenance-content"></div>
+  <!-- ========================================================================
+       DIGITAL CERTIFICATE OF PROVENANCE MODAL
+       ======================================================================== -->
+  <div class="amz-modal-backdrop" id="modal-provenance" onclick="if(event.target===this) closeModal('modal-provenance')">
+    <div class="amz-modal-box" style="max-width:620px;">
+      <button class="amz-modal-close" onclick="closeModal('modal-provenance')">✕</button>
+      <div style="padding:28px;" id="modal-provenance-inner"></div>
     </div>
   </div>
 
-  <!-- MODAL: ARTISAN CHAT -->
-  <div class="modal-backdrop" id="modal-chat" onclick="if(event.target===this) closeModal('modal-chat')">
-    <div class="modal-box" style="max-width:560px;">
-      <button class="modal-close-btn" onclick="closeModal('modal-chat')">✕</button>
-      <div class="modal-body" id="modal-chat-content"></div>
+  <!-- ========================================================================
+       ARTISAN DIRECT CHAT MODAL
+       ======================================================================== -->
+  <div class="amz-modal-backdrop" id="modal-chat" onclick="if(event.target===this) closeModal('modal-chat')">
+    <div class="amz-modal-box" style="max-width:540px;">
+      <button class="amz-modal-close" onclick="closeModal('modal-chat')">✕</button>
+      <div style="padding:24px;" id="modal-chat-inner"></div>
     </div>
   </div>
 
-  <!-- MODAL: MASTERCLASS ACCESS PASS -->
-  <div class="modal-backdrop" id="modal-pass" onclick="if(event.target===this) closeModal('modal-pass')">
-    <div class="modal-box" style="max-width:540px;">
-      <button class="modal-close-btn" onclick="closeModal('modal-pass')">✕</button>
-      <div class="modal-body" id="modal-pass-content"></div>
-    </div>
-  </div>
-
-  <!-- MODAL: PUBLISH NEW PRODUCT -->
-  <div class="modal-backdrop" id="modal-publish" onclick="if(event.target===this) closeModal('modal-publish')">
-    <div class="modal-box" style="max-width:580px;">
-      <button class="modal-close-btn" onclick="closeModal('modal-publish')">✕</button>
-      <div class="modal-body">
-        <h2 style="font-family:var(--font-heading); font-size:1.5rem; color:#fff; margin-bottom:6px;">Publish New Handcrafted Heirloom</h2>
-        <p style="color:#94a3b8; font-size:0.85rem; margin-bottom:20px;">List your piece directly onto the decentralized global marketplace.</p>
-        <form onsubmit="handlePublish(event)" style="display:flex; flex-direction:column; gap:14px;">
+  <!-- ========================================================================
+       PUBLISH NEW PRODUCT MODAL
+       ======================================================================== -->
+  <div class="amz-modal-backdrop" id="modal-publish" onclick="if(event.target===this) closeModal('modal-publish')">
+    <div class="amz-modal-box" style="max-width:540px;">
+      <button class="amz-modal-close" onclick="closeModal('modal-publish')">✕</button>
+      <div style="padding:24px;">
+        <h2 style="font-size:1.4rem; font-weight:700; color:#0f1111; margin-bottom:6px;">List New Handcrafted Item</h2>
+        <p style="font-size:0.85rem; color:#565959; margin-bottom:18px;">Publish directly to Amazon Karigar / Women's Marketplace catalog.</p>
+        <form onsubmit="handlePublish(event)" style="display:flex; flex-direction:column; gap:12px;">
           <div>
-            <label style="font-size:0.8rem; color:#cbd5e1; font-weight:600;">Heirloom Title</label>
-            <input type="text" id="pub-title" required placeholder="e.g. Hand-Spun Eri Silk Stole" style="width:100%; background:rgba(255,255,255,0.06); border:1px solid var(--border-subtle); border-radius:8px; padding:10px 12px; color:#fff; outline:none;">
+            <label style="font-size:0.8rem; font-weight:700; color:#111;">Item Title</label>
+            <input type="text" id="pub-title" required placeholder="e.g. Hand-Spun Chanderi Silk Saree" style="width:100%; border:1px solid #bbb; border-radius:4px; padding:8px 10px;">
           </div>
-          <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
             <div>
-              <label style="font-size:0.8rem; color:#cbd5e1; font-weight:600;">Discipline</label>
-              <select id="pub-cat" style="width:100%; background:#1e293b; border:1px solid var(--border-subtle); border-radius:8px; padding:10px 12px; color:#fff; outline:none;">
+              <label style="font-size:0.8rem; font-weight:700; color:#111;">Category</label>
+              <select id="pub-cat" style="width:100%; border:1px solid #bbb; border-radius:4px; padding:8px 10px; background:#fff;">
                 <option value="Textiles">Textiles & Apparel</option>
                 <option value="Home & Decor">Home & Decor</option>
                 <option value="Jewelry">Jewelry & Silver</option>
@@ -1219,46 +1907,47 @@
               </select>
             </div>
             <div>
-              <label style="font-size:0.8rem; color:#cbd5e1; font-weight:600;">Price (USD $)</label>
-              <input type="number" id="pub-price" required min="10" max="1000" placeholder="e.g. 85" style="width:100%; background:rgba(255,255,255,0.06); border:1px solid var(--border-subtle); border-radius:8px; padding:10px 12px; color:#fff; outline:none;">
+              <label style="font-size:0.8rem; font-weight:700; color:#111;">Price (USD $)</label>
+              <input type="number" id="pub-price" required min="10" max="1000" placeholder="e.g. 95" style="width:100%; border:1px solid #bbb; border-radius:4px; padding:8px 10px;">
             </div>
           </div>
           <div>
-            <label style="font-size:0.8rem; color:#cbd5e1; font-weight:600;">Heritage Story & Technique</label>
-            <textarea id="pub-story" required rows="3" placeholder="Describe the ancestral techniques, natural dyes, and cultural lineage..." style="width:100%; background:rgba(255,255,255,0.06); border:1px solid var(--border-subtle); border-radius:8px; padding:10px 12px; color:#fff; outline:none;"></textarea>
+            <label style="font-size:0.8rem; font-weight:700; color:#111;">Craft Lineage Story</label>
+            <textarea id="pub-story" required rows="3" placeholder="Describe weaving technique, natural dyes, village cluster..." style="width:100%; border:1px solid #bbb; border-radius:4px; padding:8px 10px;"></textarea>
           </div>
           <div>
-            <label style="font-size:0.8rem; color:#cbd5e1; font-weight:600;">Image URL</label>
-            <input type="url" id="pub-image" required value="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=600&q=80" style="width:100%; background:rgba(255,255,255,0.06); border:1px solid var(--border-subtle); border-radius:8px; padding:10px 12px; color:#fff; outline:none;">
+            <label style="font-size:0.8rem; font-weight:700; color:#111;">Product Image URL</label>
+            <input type="url" id="pub-image" required value="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=600&q=80" style="width:100%; border:1px solid #bbb; border-radius:4px; padding:8px 10px;">
           </div>
-          <button type="submit" class="btn-primary" style="margin-top:10px; padding:12px; font-size:0.92rem;">Publish Heirloom to Catalog</button>
+          <button type="submit" class="amz-btn-yellow" style="margin-top:10px; padding:10px;">Publish Heirloom Now</button>
         </form>
       </div>
     </div>
   </div>
 
-  <!-- MODAL: AUTH / SWITCH ROLE -->
-  <div class="modal-backdrop" id="modal-auth" onclick="if(event.target===this) closeModal('modal-auth')">
-    <div class="modal-box" style="max-width:480px;">
-      <button class="modal-close-btn" onclick="closeModal('modal-auth')">✕</button>
-      <div class="modal-body" style="text-align:center;">
-        <div style="font-size:2.5rem; margin-bottom:10px;">🌸</div>
-        <h2 style="font-family:var(--font-heading); font-size:1.6rem; color:#fff; margin-bottom:6px;">Marketplace Authentication</h2>
-        <p style="color:#94a3b8; font-size:0.88rem; margin-bottom:24px;">Switch profiles instantly using one-click verified demo accounts:</p>
-        
-        <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:20px;">
-          <button onclick="setRole('artisan')" style="background:rgba(245,158,11,0.15); border:1px solid rgba(245,158,11,0.4); padding:14px; border-radius:10px; color:#fff; font-weight:700; cursor:pointer; text-align:left; display:flex; align-items:center; gap:12px;">
+  <!-- ========================================================================
+       AUTH / PROFILE SWITCHER MODAL
+       ======================================================================== -->
+  <div class="amz-modal-backdrop" id="modal-auth" onclick="if(event.target===this) closeModal('modal-auth')">
+    <div class="amz-modal-box" style="max-width:440px;">
+      <button class="amz-modal-close" onclick="closeModal('modal-auth')">✕</button>
+      <div style="padding:28px; text-align:center;">
+        <div style="font-size:2.2rem; margin-bottom:8px;">🌸</div>
+        <h2 style="font-size:1.45rem; font-weight:700; color:#0f1111; margin-bottom:4px;">Amazon Karigar Sign-In</h2>
+        <p style="font-size:0.85rem; color:#565959; margin-bottom:20px;">Switch instantly between verified test profiles:</p>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <button onclick="setRole('artisan')" style="background:#fef8e7; border:1px solid #febd69; border-radius:6px; padding:12px; cursor:pointer; text-align:left; display:flex; align-items:center; gap:12px;">
             <span style="font-size:1.8rem;">👩‍🌾</span>
             <div>
-              <div style="color:#fbbf24;">⚡ Demo Artisan: Ananya Devi</div>
-              <div style="font-size:0.75rem; color:#cbd5e1; font-weight:400;">Master Weaver · Dhaga Kala Collective, Varanasi</div>
+              <div style="font-weight:700; color:#0f1111;">Ananya Devi (Artisan Seller)</div>
+              <div style="font-size:0.75rem; color:#565959;">Master Weaver · Dhaga Kala Collective, Varanasi</div>
             </div>
           </button>
-          <button onclick="setRole('buyer')" style="background:rgba(99,102,241,0.15); border:1px solid rgba(99,102,241,0.4); padding:14px; border-radius:10px; color:#fff; font-weight:700; cursor:pointer; text-align:left; display:flex; align-items:center; gap:12px;">
+          <button onclick="setRole('buyer')" style="background:#edf8f5; border:1px solid #067d62; border-radius:6px; padding:12px; cursor:pointer; text-align:left; display:flex; align-items:center; gap:12px;">
             <span style="font-size:1.8rem;">🛍️</span>
             <div>
-              <div style="color:#818cf8;">⚡ Demo Buyer: Priya Sharma</div>
-              <div style="font-size:0.75rem; color:#cbd5e1; font-weight:400;">Artisan Patron · Verified Customer, Bengaluru</div>
+              <div style="font-weight:700; color:#0f1111;">Priya Sharma (Prime Patron)</div>
+              <div style="font-size:0.75rem; color:#565959;">Verified Customer · Bengaluru, Karnataka</div>
             </div>
           </button>
         </div>
@@ -1266,64 +1955,112 @@
     </div>
   </div>
 
-  <!-- SLIDE-OUT CART DRAWER -->
-  <div class="cart-drawer" id="cart-drawer">
-    <div class="cart-drawer-header">
-      <div style="font-family:var(--font-heading); font-size:1.25rem; font-weight:800; color:#fff;">
-        🛍️ Your Heritage Cart
-      </div>
-      <button style="background:none; border:none; color:#cbd5e1; font-size:1.4rem; cursor:pointer;" onclick="toggleCart()">✕</button>
+  <!-- ========================================================================
+       AMAZON MULTI-TIER FOOTER
+       ======================================================================== -->
+  <footer style="margin-top:40px;">
+    <div class="amz-back-to-top" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+      Back to top
     </div>
-    <div class="cart-drawer-body" id="cart-items-container"></div>
-    <div class="cart-drawer-footer">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
-        <span style="color:#94a3b8; font-size:0.9rem;">Guaranteed 86% Direct Artisan Payout:</span>
-        <span id="cart-artisan-share" style="color:#34d399; font-weight:700; font-family:var(--font-mono);">$0.00</span>
+    <div class="amz-footer-main">
+      <div class="amz-footer-cols">
+        <div class="amz-footer-col">
+          <h4>Get to Know Us</h4>
+          <ul>
+            <li><a href="#" onclick="switchView('store')">About Women's Marketplace</a></li>
+            <li><a href="#" onclick="switchView('guilds')">Artisan Clusters</a></li>
+            <li><a href="#" onclick="switchView('calculator')">86% Fair-Wage Science</a></li>
+            <li><a href="#">Press Releases</a></li>
+            <li><a href="#">Amazon Science & Karigar</a></li>
+          </ul>
+        </div>
+        <div class="amz-footer-col">
+          <h4>Connect with Artisans</h4>
+          <ul>
+            <li><a href="#" onclick="switchView('workshops')">Virtual Masterclasses</a></li>
+            <li><a href="#">Artisan Video Stories</a></li>
+            <li><a href="#">Instagram @HandloomArtisans</a></li>
+            <li><a href="#">Twitter / X @WomensMarket</a></li>
+          </ul>
+        </div>
+        <div class="amz-footer-col">
+          <h4>Make Money with Us</h4>
+          <ul>
+            <li><a href="#" onclick="switchView('seller')">Sell on Women's Marketplace</a></li>
+            <li><a href="#" onclick="openPublishModal()">List Handcrafted Pieces</a></li>
+            <li><a href="#">Protect Your Indigenous Motif</a></li>
+            <li><a href="#">Become an Artisan Affiliate</a></li>
+            <li><a href="#">Advertise Your Guild</a></li>
+          </ul>
+        </div>
+        <div class="amz-footer-col">
+          <h4>Let Us Help You</h4>
+          <ul>
+            <li><a href="#" onclick="openAuthModal()">Your Account</a></li>
+            <li><a href="#" onclick="switchView('orders')">Returns & Orders</a></li>
+            <li><a href="#">100% Purchase Protection</a></li>
+            <li><a href="#">Amazon App Download</a></li>
+            <li><a href="#">Help & Customer Service</a></li>
+          </ul>
+        </div>
       </div>
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px;">
-        <span style="font-size:1.1rem; font-weight:700; color:#fff;">Order Total:</span>
-        <span id="cart-total-price" style="font-family:var(--font-heading); font-size:1.6rem; font-weight:800; color:#fbbf24;">$0.00</span>
-      </div>
-      <button class="btn-primary" style="width:100%; padding:14px; font-size:0.95rem;" onclick="simulateCheckout()">
-        Proceed to Fair-Trade Checkout →
-      </button>
     </div>
-  </div>
+    <div class="amz-footer-bottom">
+      <div class="amz-footer-bottom-logo">
+        <div style="font-size:1.3rem; font-weight:800; color:#fff;">
+          🌸 marketplace<span style="color:#febd69;">.in</span>
+        </div>
+      </div>
+      <div class="amz-footer-links">
+        <a href="#">Conditions of Use & Sale</a>
+        <a href="#">Privacy Notice</a>
+        <a href="#">Interest-Based Ads</a>
+        <a href="#">Fair-Trade Living Wage Disclosure</a>
+      </div>
+      <div style="color:#777;">
+        © 2026, Women's Empowerment Marketplace.in, Inc. or its artisan affiliates. 86% direct disbursement guaranteed.
+      </div>
+    </div>
+  </footer>
 
-  <!-- TOAST NOTIFICATION -->
-  <div class="toast" id="toast">Item added to cart!</div>
+  <!-- Toast -->
+  <div class="amz-toast" id="toast">Added to your cart!</div>
 
-  <!-- JAVASCRIPT ENGINE -->
+  <!-- ========================================================================
+       AMAZON INTERACTIVE LOGIC SCRIPT
+       ======================================================================== -->
   <script>
     // State
-    let currentCurrency = 'USD';
+    let currentCurrency = 'INR'; // Defaults to INR for Amazon.in reference
     let activeCategory = 'All';
     let searchQuery = '';
     let wishlistOnly = false;
     let currentUser = { role: 'artisan', name: 'Ananya Devi', avatar: '👩‍🌾' };
 
     const CURRENCY_RATES = {
-      USD: { symbol: '$', rate: 1.0 },
       INR: { symbol: '₹', rate: 83.5 },
+      USD: { symbol: '$', rate: 1.0 },
       EUR: { symbol: '€', rate: 0.92 },
       GBP: { symbol: '£', rate: 0.79 },
-      CAD: { symbol: 'C$', rate: 1.36 },
-      JPY: { symbol: '¥', rate: 152.0 }
+      CAD: { symbol: 'C$', rate: 1.36 }
     };
 
     let PRODUCTS = [
       {
         id: 1,
-        title: "Pure Mulberry Silk Banarasi Brocade Saree",
-        price: 185,
+        title: "Pure Mulberry Silk Banarasi Brocade Saree with Real Silver Zari Weaving",
+        price: 185, // $185 = ~₹15,447
+        mrp: 245,
         category: "Textiles",
         craft_type: "Handloom Brocade",
         artisan_name: "Ananya Devi",
         village: "Varanasi, Uttar Pradesh",
         collective: "Dhaga Kala Weavers Guild",
-        lead_time: "5 days",
-        rating: 4.98,
-        reviews_count: 14,
+        lead_time: "Get It by Tomorrow",
+        rating: 4.9,
+        reviews_count: 1420,
+        deal: true,
+        deal_discount: "24% off",
         image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=600&q=80",
         story: "Hand-loomed over 180 continuous hours using untwisted pure Mulberry silk and certified electro-plated silver zari thread. Each border motif depicts sacred river flora indigenous to the sacred Ghats of Varanasi.",
         materials: "100% Mulberry Silk, Pure Silver Zari, Natural Madder Root Dye",
@@ -1331,16 +2068,19 @@
       },
       {
         id: 2,
-        title: "Terracotta Temple Urli & Floating Lotus Bowl",
+        title: "Terracotta Temple Urli & Floating Lotus Bowl with Ancient Alluvial Patina",
         price: 48,
+        mrp: 75,
         category: "Home & Decor",
         craft_type: "Terracotta Ceramic",
         artisan_name: "Radhika Pal",
         village: "Bankura, West Bengal",
         collective: "Mitti Shilp Terracotta Guild",
-        lead_time: "3 days",
-        rating: 4.92,
-        reviews_count: 9,
+        lead_time: "Get It by Tomorrow",
+        rating: 4.8,
+        reviews_count: 852,
+        deal: true,
+        deal_discount: "36% off",
         image: "https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=600&q=80",
         story: "Molded from sacred alluvial river silt deposits, burnished with river stones, and slow-fired in an underground wood kiln to impart a deep smoke patina.",
         materials: "Alluvial Clay, Organic Mustard Oil Glaze, River Stone Finish",
@@ -1348,16 +2088,18 @@
       },
       {
         id: 3,
-        title: "925 Sterling Silver Filigree Peacock Jhumkas",
+        title: "925 Sterling Silver Filigree Peacock Jhumkas (Tarakasi Hand-Drawn Wires)",
         price: 95,
+        mrp: 135,
         category: "Jewelry",
         craft_type: "Tarakasi Filigree",
         artisan_name: "Sunita Das",
         village: "Cuttack, Odisha",
         collective: "Tarakasi Silver Guild",
-        lead_time: "4 days",
-        rating: 4.96,
-        reviews_count: 18,
+        lead_time: "Get It by Tomorrow",
+        rating: 4.9,
+        reviews_count: 2110,
+        deal: false,
         image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=600&q=80",
         story: "Crafted through the 500-year-old Tarakasi tradition by drawing 92.5% silver into hair-thin threads, hand-crimped into lace-like filigree feathers without modern casts.",
         materials: "925 Sterling Silver, Hand-Drawn Micro Wires",
@@ -1365,16 +2107,19 @@
       },
       {
         id: 4,
-        title: "Handspun Organic Khadi Cotton Kurta",
+        title: "Handspun Organic Khadi Cotton Summer Kurta with Hand-Carved Coconut Buttons",
         price: 54,
+        mrp: 80,
         category: "Textiles",
         craft_type: "Charkha Khadi",
         artisan_name: "Meera Joshi",
         village: "Wardha, Maharashtra",
         collective: "Gram Seva Women's Trust",
-        lead_time: "2 days",
-        rating: 4.89,
-        reviews_count: 11,
+        lead_time: "Get It in 2 Days",
+        rating: 4.7,
+        reviews_count: 640,
+        deal: true,
+        deal_discount: "32% off",
         image: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=600&q=80",
         story: "Hand-harvested indigenous cotton hand-spun on heritage wooden Charkhas and breathable loose-weave loomed for exceptional summer ventilation.",
         materials: "100% Rainfed Desi Cotton, Herbal Wash Finish",
@@ -1382,16 +2127,18 @@
       },
       {
         id: 5,
-        title: "Hand-Carved Walnut Wood Heritage Jewelry Chest",
+        title: "Hand-Carved Kashmiri Walnut Wood Heritage Jewelry Chest with Secret Drawer",
         price: 110,
+        mrp: 160,
         category: "Home & Decor",
         craft_type: "Wood Carving",
         artisan_name: "Parveena Akhtar",
         village: "Srinagar, Kashmir",
         collective: "Chinar Valley Artisans",
-        lead_time: "6 days",
-        rating: 4.97,
-        reviews_count: 7,
+        lead_time: "Get It by Tomorrow",
+        rating: 4.9,
+        reviews_count: 490,
+        deal: false,
         image: "https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=600&q=80",
         story: "Sculpted from naturally fallen aged Kashmiri walnut roots using precision chisels. Features intricate Chinar leaf lattice fretwork and secret locking drawer.",
         materials: "Aged Walnut Root, Brass Hinges, Natural Beeswax Polish",
@@ -1399,16 +2146,19 @@
       },
       {
         id: 6,
-        title: "Glazed Stoneware Clay Planter & Saucer",
+        title: "Glazed Stoneware Clay Planter & Saucer (Lead-Free Reactive Mineral Mist)",
         price: 42,
+        mrp: 60,
         category: "Home & Decor",
         craft_type: "Studio Pottery",
         artisan_name: "Fatima Begum",
         village: "Khurja, Uttar Pradesh",
         collective: "Khurja Ceramic Guild",
-        lead_time: "3 days",
-        rating: 4.88,
-        reviews_count: 6,
+        lead_time: "Get It by Tomorrow",
+        rating: 4.8,
+        reviews_count: 320,
+        deal: true,
+        deal_discount: "30% off",
         image: "https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=600&q=80",
         story: "Wheel-thrown high-fire stoneware engineered with deliberate root aeration grooves and glazed in a reactive mineral mist finish.",
         materials: "High-Fire Earthen Stoneware, Lead-Free Mineral Glaze",
@@ -1416,16 +2166,18 @@
       },
       {
         id: 7,
-        title: "Ajrakh Hand-Block Printed Chanderi Dupatta",
+        title: "Ajrakh Hand-Block Printed Chanderi Silk Dupatta with Natural Indigo Dye",
         price: 68,
+        mrp: 95,
         category: "Textiles",
         craft_type: "Natural Block Print",
         artisan_name: "Zarina Khatun",
         village: "Kutch, Gujarat",
         collective: "Kutch Desert Block Printers",
-        lead_time: "4 days",
-        rating: 4.95,
-        reviews_count: 12,
+        lead_time: "Get It by Tomorrow",
+        rating: 4.9,
+        reviews_count: 940,
+        deal: false,
         image: "https://images.unsplash.com/photo-1607344645866-009c320c5ab8?w=600&q=80",
         story: "14-stage mud-resist printing using pure indigo and pomegranate rind mordants, hand-stamped onto airy tissue Chanderi silk-cotton.",
         materials: "Chanderi Silk-Cotton, Indigo & Alizarin Plant Dyes",
@@ -1433,16 +2185,19 @@
       },
       {
         id: 8,
-        title: "Ayurvedic Wild Forest Honey & Turmeric Elixir",
+        title: "Ayurvedic Wild Forest Raw Honey & High-Curcumin Lakadong Turmeric Elixir",
         price: 28,
+        mrp: 40,
         category: "Wellness",
         craft_type: "Foraged Wellness",
         artisan_name: "Valli Murugan",
         village: "Nilgiris, Tamil Nadu",
         collective: "Nilgiri Indigenous Forest Foragers",
-        lead_time: "1 day",
-        rating: 4.99,
-        reviews_count: 22,
+        lead_time: "Get It by Tomorrow",
+        rating: 4.9,
+        reviews_count: 3100,
+        deal: true,
+        deal_discount: "30% off",
         image: "https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=600&q=80",
         story: "Cold-harvested multi-floral wild cliff honey infused with slow-shade dried high-curcumin Lakadong turmeric and native black pepper.",
         materials: "Wild Raw Cliff Honey, 7.5% High Curcumin Turmeric",
@@ -1457,7 +2212,7 @@
         members: "142 Master Weavers",
         specialty: "Pure Mulberry silk handloom brocades and silver zari weaving.",
         revenue_shared: "86.8% Audited Direct Disbursement",
-        icon: "🧵"
+        image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=500&q=80"
       },
       {
         name: "Mitti Shilp Terracotta Guild",
@@ -1465,7 +2220,7 @@
         members: "88 Ceramic Crafters",
         specialty: "Alluvial river clay wheel-thrown urns and architectural murals.",
         revenue_shared: "87.2% Audited Direct Disbursement",
-        icon: "🏺"
+        image: "https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=500&q=80"
       },
       {
         name: "Tarakasi Silver Guild",
@@ -1473,7 +2228,7 @@
         members: "64 Silversmiths",
         specialty: "Micro-wire sterling filigree jewelry and ceremonial ornaments.",
         revenue_shared: "86.0% Audited Direct Disbursement",
-        icon: "💍"
+        image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=500&q=80"
       },
       {
         name: "Kutch Desert Block Printers",
@@ -1481,7 +2236,7 @@
         members: "110 Dye Artisans",
         specialty: "Multi-stage indigo mud-resist Ajrakh hand stamping on organic silks.",
         revenue_shared: "86.5% Audited Direct Disbursement",
-        icon: "🎨"
+        image: "https://images.unsplash.com/photo-1607344645866-009c320c5ab8?w=500&q=80"
       }
     ];
 
@@ -1495,136 +2250,200 @@
         duration: "2h 30m",
         price: 35,
         seats_left: 7,
-        seats_total: 25,
-        badge: "Live Interactive Loom Feed",
-        kit: "Pure Mulberry silk thread samples, micro-loom shuttle, natural madder dye swatches",
-        icon: "🧵"
+        image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=500&q=80",
+        kit: "Pure Mulberry silk thread samples, micro-loom shuttle, natural madder dye swatches"
       },
       {
         id: 102,
-        title: "Terracotta Wheel Sculpting & Botanical Motif Carving",
+        title: "Terracotta Wheel Sculpting & Motif Carving",
         instructor: "Radhika Pal",
         village: "Bankura, West Bengal",
         date: "Sunday, 5:00 PM IST",
         duration: "1h 45m",
         price: 28,
         seats_left: 4,
-        seats_total: 20,
-        badge: "Direct Atelier Workshop",
-        kit: "Raw alluvial clay block (2kg), wooden modeling ribs, burnishing river stone",
-        icon: "🏺"
+        image: "https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=500&q=80",
+        kit: "Raw alluvial clay block (2kg), wooden modeling ribs, burnishing river stone"
       },
       {
         id: 103,
         title: "Ancient Tarakasi Silver Wire Manipulation",
         instructor: "Sunita Das",
         village: "Cuttack, Odisha",
-        date: "Next Wednesday, 6:00 PM IST",
+        date: "Wednesday, 6:00 PM IST",
         duration: "2h 00m",
         price: 42,
         seats_left: 9,
-        seats_total: 15,
-        badge: "Master Silversmith Studio",
-        kit: "Annealed silver wire coils, jewelry micro-pliers, wooden pin-block template",
-        icon: "💍"
+        image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=500&q=80",
+        kit: "Annealed silver wire coils, jewelry micro-pliers, wooden pin-block template"
       },
       {
         id: 104,
         title: "Natural Indigo Vat Fermentation & Resist Printing",
         instructor: "Zarina Khatun",
         village: "Kutch, Gujarat",
-        date: "Next Friday, 4:00 PM IST",
+        date: "Friday, 4:00 PM IST",
         duration: "3h 00m",
         price: 32,
         seats_left: 5,
-        seats_total: 18,
-        badge: "Heritage Vat Live Stream",
-        kit: "Organic Indigo cake sample, hand-carved teak wood block, 1m test cotton stole",
-        icon: "🎨"
+        image: "https://images.unsplash.com/photo-1607344645866-009c320c5ab8?w=500&q=80",
+        kit: "Organic Indigo cake sample, hand-carved teak wood block, 1m test cotton stole"
       }
     ];
 
     let ORDERS = [
       {
         id: "WEM-892401",
+        date: "8 September 2026",
         customer: "Priya Sharma",
-        destination: "Bengaluru, India",
+        destination: "Bengaluru, Karnataka 560001",
         total: 239,
         status: "Dispatched",
         tracking: "TRK-BNG9942",
-        items: "Mulberry Silk Saree, Terracotta Urli"
+        carrier: "Amazon Shipping / Artisan Express",
+        items: [
+          { title: "Pure Mulberry Silk Banarasi Brocade Saree", price: 185, image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=100&q=80" },
+          { title: "Handspun Organic Khadi Cotton Summer Kurta", price: 54, image: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=100&q=80" }
+        ]
       },
       {
         id: "WEM-749102",
+        date: "6 September 2026",
         customer: "Elena Rostova",
         destination: "Vienna, Austria",
         total: 185,
         status: "Artisan Crafting",
         tracking: "TRK-VIE4210",
-        items: "Mulberry Silk Banarasi Saree"
+        carrier: "DHL Express / Karigar Air",
+        items: [
+          { title: "Pure Mulberry Silk Banarasi Brocade Saree", price: 185, image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=100&q=80" }
+        ]
       },
       {
         id: "WEM-632115",
+        date: "4 September 2026",
         customer: "Michael Chang",
         destination: "San Francisco, USA",
         total: 95,
         status: "Quality Check",
         tracking: "TRK-SFO1893",
-        items: "925 Silver Filigree Peacock Jhumkas"
+        carrier: "FedEx International",
+        items: [
+          { title: "925 Sterling Silver Filigree Peacock Jhumkas", price: 95, image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=100&q=80" }
+        ]
       },
       {
         id: "WEM-510982",
+        date: "1 September 2026",
         customer: "Sarah Jenkins",
         destination: "London, UK",
-        total: 126,
+        total: 152,
         status: "Delivered",
         tracking: "TRK-LDN8720",
-        items: "Khadi Kurta, Walnut Jewelry Chest"
+        carrier: "Royal Mail International",
+        items: [
+          { title: "Hand-Carved Kashmiri Walnut Wood Heritage Jewelry Chest", price: 110, image: "https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=100&q=80" },
+          { title: "Glazed Stoneware Clay Planter & Saucer", price: 42, image: "https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=100&q=80" }
+        ]
       }
     ];
 
-    let cart = JSON.parse(localStorage.getItem('wem_standalone_cart') || '[]');
-    let wishlist = JSON.parse(localStorage.getItem('wem_standalone_wishlist') || '[]');
-    let activeChatArtisan = null;
+    let cart = JSON.parse(localStorage.getItem('wem_amz_cart') || '[]');
+    let wishlist = JSON.parse(localStorage.getItem('wem_amz_wishlist') || '[]');
+    let currentSlide = 0;
 
-    // Currency Formatting
-    function formatPrice(usdAmount) {
-      const cfg = CURRENCY_RATES[currentCurrency] || CURRENCY_RATES.USD;
-      const converted = usdAmount * cfg.rate;
-      if (currentCurrency === 'JPY' || currentCurrency === 'INR') {
-        return `${cfg.symbol}${Math.round(converted).toLocaleString()}`;
+    // Price & Currency Formatter
+    function formatPrice(usd) {
+      const cfg = CURRENCY_RATES[currentCurrency] || CURRENCY_RATES.INR;
+      const conv = usd * cfg.rate;
+      if (currentCurrency === 'INR') {
+        return `₹${Math.round(conv).toLocaleString('en-IN')}`;
       }
-      return `${cfg.symbol}${converted.toFixed(2)}`;
+      return `${cfg.symbol}${conv.toFixed(2)}`;
     }
 
-    function changeCurrency(cur) {
-      currentCurrency = cur;
-      renderProducts();
-      renderCart();
-      updateCalculator(document.querySelector('input[type=range]') ? document.querySelector('input[type=range]').value : 100);
-      renderPipeline();
-      showToast(`Currency updated to ${cur}`);
+    function toggleCurrencyModal() {
+      const next = currentCurrency === 'INR' ? 'USD' : currentCurrency === 'USD' ? 'EUR' : 'INR';
+      currentCurrency = next;
+      document.getElementById('header-currency-label').textContent = `EN / ${CURRENCY_RATES[next].symbol} ${next}`;
+      renderCatalog();
+      renderDealsStrip();
+      renderCartDrawer();
+      updateCalculator(100);
+      showToast(`Switched currency to ${next}`);
     }
 
-    // Navigation & Views
-    function switchView(viewName) {
-      document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
-      document.querySelectorAll('.nav-tab-btn').forEach(el => el.classList.remove('active'));
-      
-      const targetView = document.getElementById(`view-${viewName}`);
-      const targetTab = document.getElementById(`tab-${viewName}`);
-      if (targetView) targetView.classList.add('active');
-      if (targetTab) targetTab.classList.add('active');
-      
-      if (viewName === 'guilds') renderGuilds();
-      if (viewName === 'workshops') renderWorkshops();
-      if (viewName === 'pipeline') renderPipeline();
+    // Navigation Views
+    function switchView(view) {
+      const views = ['store', 'guilds', 'calculator', 'workshops', 'seller', 'orders'];
+      views.forEach(v => {
+        const el = document.getElementById(`view-${v}`);
+        if (el) el.style.display = (v === view ? 'block' : 'none');
+        const subnavEl = document.getElementById(`subnav-${v}`);
+        if (subnavEl) {
+          if (v === view) subnavEl.classList.add('active');
+          else subnavEl.classList.remove('active');
+        }
+      });
+
+      const hero = document.getElementById('hero-carousel-container');
+      if (hero) hero.style.display = (view === 'store' ? 'block' : 'none');
+
+      if (view === 'guilds') renderGuildsView();
+      if (view === 'workshops') renderWorkshopsView();
+      if (view === 'orders') renderOrdersView();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // Render Products
-    function renderProducts() {
-      const container = document.getElementById('products-container');
+    // Hero Carousel Navigation
+    function showSlide(idx) {
+      const slides = document.querySelectorAll('.amz-hero-slide');
+      slides.forEach((s, i) => s.classList.toggle('active', i === idx));
+      currentSlide = idx;
+    }
+    function nextSlide() {
+      const slides = document.querySelectorAll('.amz-hero-slide');
+      showSlide((currentSlide + 1) % slides.length);
+    }
+    function prevSlide() {
+      const slides = document.querySelectorAll('.amz-hero-slide');
+      showSlide((currentSlide - 1 + slides.length) % slides.length);
+    }
+    setInterval(nextSlide, 6500);
+
+    function scrollToDeals() {
+      switchView('store');
+      document.getElementById('deals-strip').scrollIntoView({ behavior: 'smooth' });
+    }
+    function scrollToCatalog() {
+      switchView('store');
+      document.getElementById('catalog-section').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Render "Today's Deals" Strip
+    function renderDealsStrip() {
+      const container = document.getElementById('deals-carousel-row');
+      const dealProducts = PRODUCTS.filter(p => p.deal);
+      container.innerHTML = dealProducts.map(p => `
+        <div class="amz-deal-item" onclick="openProductModal(${p.id})">
+          <div class="amz-deal-img-wrap">
+            <img src="${p.image}" alt="${p.title}" onerror="this.src='https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=400&q=80'">
+          </div>
+          <div>
+            <span class="amz-deal-tag">${p.deal_discount || 'Limited time deal'}</span>
+            <div class="amz-deal-pricing">
+              <span class="amz-deal-price">${formatPrice(p.price)}</span>
+              <span class="amz-deal-mrp">${formatPrice(p.mrp)}</span>
+            </div>
+            <div class="amz-deal-desc">${p.title}</div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Render Main Product Catalog
+    function renderCatalog() {
+      const grid = document.getElementById('products-grid');
       let filtered = PRODUCTS.filter(p => {
         const matchesCat = (activeCategory === 'All') || (p.category === activeCategory);
         const matchesSearch = !searchQuery || 
@@ -1636,274 +2455,519 @@
         return matchesCat && matchesSearch && matchesWishlist;
       });
 
+      document.getElementById('results-count').textContent = filtered.length;
+      document.getElementById('active-category-label').textContent = `"${activeCategory === 'All' ? 'All Handcrafted Heirlooms' : activeCategory}"`;
+
       if (!filtered.length) {
-        container.innerHTML = `
-          <div style="grid-column: 1/-1; text-align:center; padding: 60px 20px; color:#94a3b8;">
+        grid.innerHTML = `
+          <div style="grid-column: 1/-1; background:#fff; border:1px solid #ddd; padding:50px 20px; text-align:center; border-radius:4px;">
             <div style="font-size:3rem; margin-bottom:12px;">🔍</div>
-            <h3 style="font-family:var(--font-heading); color:#fff; font-size:1.4rem; margin-bottom:8px;">No Heirlooms Found</h3>
-            <p>Try refining your search keyword or switching craft categories.</p>
+            <h3 style="font-size:1.3rem; font-weight:700; color:#0f1111;">No matching artisan heirlooms found</h3>
+            <p style="color:#565959; font-size:0.9rem; margin-top:6px;">Try adjusting your search terms or clearing category filters.</p>
           </div>
         `;
         return;
       }
 
-      container.innerHTML = filtered.map(p => {
-        const isWishlisted = wishlist.includes(p.id);
+      grid.innerHTML = filtered.map((p, idx) => {
+        const isWish = wishlist.includes(p.id);
         return `
-          <div class="product-card">
-            <div class="card-media" onclick="openProductModal(${p.id})">
-              <img src="${p.image}" alt="${p.title}" onerror="this.src='https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=600&q=80'">
-              <div class="badge-artisan">
-                <span>📍</span> ${p.village}
-              </div>
-              <button class="wishlist-btn ${isWishlisted ? 'active' : ''}" onclick="event.stopPropagation(); toggleWishlist(${p.id})">
-                ${isWishlisted ? '❤️' : '🤍'}
-              </button>
+          <div class="amz-card">
+            ${idx === 0 ? '<div class="amz-card-ribbon">#1 Best Seller</div>' : ''}
+            <div class="amz-card-img-wrap" onclick="openProductModal(${p.id})">
+              <img src="${p.image}" alt="${p.title}" onerror="this.src='https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=500&q=80'">
             </div>
-            <div class="card-content">
-              <div class="card-header">
-                <span class="card-category">${p.category} · ${p.craft_type}</span>
-                <span class="card-origin">⏱️ ${p.lead_time}</span>
+            <div class="amz-card-body">
+              <div class="amz-artisan-lead">Artisan: <b>${p.artisan_name}</b> · ${p.village}</div>
+              <h3 class="amz-card-title" onclick="openProductModal(${p.id})">${p.title}</h3>
+              
+              <div class="amz-stars">
+                <span class="amz-star-icons">★★★★★</span>
+                <span class="amz-rating-count">${p.rating} (${p.reviews_count.toLocaleString()})</span>
               </div>
-              <h3 class="card-title" onclick="openProductModal(${p.id})">${p.title}</h3>
-              <div class="card-artisan-name">Master: <b>${p.artisan_name}</b> · ${p.collective}</div>
-              <div class="impact-pill">
-                <span>🌿</span> 86% Direct Family Wage: <b>${formatPrice(p.price * 0.86)}</b>
+
+              <div class="amz-price-box">
+                <span class="amz-price-symbol">${CURRENCY_RATES[currentCurrency].symbol}</span>
+                <span class="amz-price-main">${Math.round(p.price * CURRENCY_RATES[currentCurrency].rate).toLocaleString()}</span>
+                <span class="amz-price-mrp">${formatPrice(p.mrp)}</span>
+                <span class="amz-price-discount">${p.deal_discount || 'Save 25%'}</span>
               </div>
-              <div class="card-footer">
-                <div class="card-price">${formatPrice(p.price)}</div>
-                <div class="card-actions">
-                  <button class="btn-secondary" onclick="openProductModal(${p.id})">Story & Hash</button>
-                  <button class="btn-primary" onclick="addToCart(${p.id})">Add to Cart</button>
-                </div>
+
+              <div class="amz-prime-badge">
+                <span>✓</span> <b>Artisan Assured: 86% Direct Living Wage</b>
+              </div>
+
+              <div class="amz-delivery-promise">
+                <b>FREE Delivery</b> by Tomorrow 2 PM
+              </div>
+
+              <div class="amz-card-buttons">
+                <button class="amz-btn-yellow" onclick="addToCart(${p.id})">Add to Cart</button>
+                <button class="amz-btn-orange" onclick="buyNow(${p.id})">Buy Now</button>
+                <button class="amz-btn-secondary" onclick="openProductModal(${p.id})">View Story & Provenance Hash</button>
               </div>
             </div>
           </div>
         `;
       }).join('');
 
-      document.getElementById('wishlist-count').textContent = wishlist.length;
+      document.getElementById('sidebar-wishlist-count').textContent = wishlist.length;
     }
 
-    function filterCategory(cat, btn) {
+    // Filter Helpers
+    function filterByCategory(cat) {
       activeCategory = cat;
       wishlistOnly = false;
-      document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      renderProducts();
+      document.getElementById('search-category-select').value = cat;
+      switchView('store');
+      renderCatalog();
     }
-
-    function filterWishlist(btn) {
+    function handleSearch(val) {
+      searchQuery = val.trim();
+      renderCatalog();
+    }
+    function executeSearch() {
+      scrollToCatalog();
+    }
+    function filterByDeals() {
+      searchQuery = '';
+      activeCategory = 'All';
+      switchView('store');
+      scrollToCatalog();
+    }
+    function filterByStars(s) {
+      showToast(`Filtered by ${s} stars & up`);
+    }
+    function filterByPrice(min, max) {
+      showToast(`Filtered by price range`);
+    }
+    function filterSavedItems() {
       wishlistOnly = !wishlistOnly;
-      document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
-      if (wishlistOnly) btn.classList.add('active');
-      else document.querySelector('.cat-btn').classList.add('active');
-      renderProducts();
+      renderCatalog();
     }
 
-    function handleSearch(q) {
-      searchQuery = q.trim();
-      renderProducts();
-    }
-
-    function toggleWishlist(id) {
-      if (wishlist.includes(id)) {
-        wishlist = wishlist.filter(x => x !== id);
-        showToast("Removed from Saved Heirlooms");
-      } else {
-        wishlist.push(id);
-        showToast("Saved to Heirloom Wishlist! ❤️");
-      }
-      localStorage.setItem('wem_standalone_wishlist', JSON.stringify(wishlist));
-      renderProducts();
-    }
-
-    // Product Detail Modal
+    // Product Detail Buy Box Modal
     function openProductModal(id) {
       const p = PRODUCTS.find(x => x.id === id);
       if (!p) return;
-      const content = document.getElementById('modal-product-content');
-      content.innerHTML = `
-        <div style="display:flex; gap:20px; flex-wrap:wrap; margin-bottom:20px;">
-          <img src="${p.image}" style="width:100%; max-width:260px; height:240px; border-radius:12px; object-fit:cover;" onerror="this.src='https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=600&q=80'">
-          <div style="flex:1; min-width:240px;">
-            <div style="font-size:0.75rem; color:#ec4899; font-weight:700; text-transform:uppercase;">${p.category} · ${p.craft_type}</div>
-            <h2 style="font-family:var(--font-heading); font-size:1.6rem; color:#fff; margin:6px 0 10px;">${p.title}</h2>
-            <div style="font-size:0.88rem; color:#cbd5e1; margin-bottom:12px;">Crafted by <b>${p.artisan_name}</b> · ${p.village}</div>
-            <div style="font-family:var(--font-heading); font-size:1.8rem; font-weight:800; color:#fbbf24; margin-bottom:14px;">${formatPrice(p.price)}</div>
-            <div style="display:flex; gap:10px;">
-              <button class="btn-primary" onclick="addToCart(${p.id}); closeModal('modal-product');">Add to Cart</button>
-              <button class="btn-secondary" onclick="openChatModal('${p.artisan_name}', '${p.village}')">💬 Chat with Artisan</button>
+      const inner = document.getElementById('modal-product-inner');
+      inner.innerHTML = `
+        <div style="display:grid; grid-template-columns:1.1fr 1fr; gap:28px;">
+          <div>
+            <img src="${p.image}" style="width:100%; height:380px; object-fit:cover; border-radius:6px; border:1px solid #ddd;" onerror="this.src='https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=800&q=80'">
+            <div style="margin-top:14px; background:#f7f7f7; border:1px solid #ddd; padding:12px; border-radius:4px;">
+              <div style="font-size:0.75rem; color:#565959; font-weight:700;">AUTHENTIC PROVENANCE STAMP:</div>
+              <div style="font-family:var(--font-mono); font-size:0.75rem; color:#007185; word-break:break-all; margin-top:2px;">
+                ${p.provenance_hash}
+              </div>
             </div>
           </div>
-        </div>
 
-        <div style="margin-bottom:18px;">
-          <h4 style="color:#fff; font-size:1rem; margin-bottom:6px;">Ancestral Craft Story</h4>
-          <p style="color:#94a3b8; font-size:0.9rem; line-height:1.6;">${p.story}</p>
-        </div>
-
-        <div style="background:rgba(255,255,255,0.03); border:1px solid var(--border-subtle); padding:14px; border-radius:10px; margin-bottom:18px;">
-          <div style="font-size:0.8rem; color:#cbd5e1; margin-bottom:4px;"><b>Eco-Materials:</b> ${p.materials}</div>
-          <div style="font-size:0.8rem; color:#cbd5e1;"><b>Production Time:</b> ${p.lead_time} ethical artisan labor</div>
-        </div>
-
-        <div style="display:flex; justify-content:space-between; align-items:center; background:rgba(245,158,11,0.08); border:1px solid rgba(245,158,11,0.3); padding:12px 16px; border-radius:10px;">
           <div>
-            <div style="font-size:0.75rem; color:#fbbf24; font-weight:700;">CRYPTOGRAPHIC PROVENANCE STAMP</div>
-            <div style="font-family:var(--font-mono); font-size:0.75rem; color:#94a3b8;">${p.provenance_hash.substring(0, 24)}...</div>
+            <div style="font-size:0.8rem; color:#007185; font-weight:600; margin-bottom:4px;">Brand: ${p.collective}</div>
+            <h2 style="font-size:1.35rem; font-weight:700; color:#0f1111; line-height:1.25; margin-bottom:8px;">${p.title}</h2>
+            
+            <div class="amz-stars" style="margin-bottom:12px;">
+              <span class="amz-star-icons">★★★★★</span>
+              <span class="amz-rating-count">${p.rating} (${p.reviews_count.toLocaleString()} verified ratings)</span>
+            </div>
+
+            <div style="border-top:1px solid #eee; border-bottom:1px solid #eee; padding:12px 0; margin-bottom:16px;">
+              <div class="amz-price-box">
+                <span class="amz-price-symbol">${CURRENCY_RATES[currentCurrency].symbol}</span>
+                <span class="amz-price-main" style="font-size:1.8rem; color:#b12704;">${Math.round(p.price * CURRENCY_RATES[currentCurrency].rate).toLocaleString()}</span>
+                <span class="amz-price-mrp">${formatPrice(p.mrp)}</span>
+              </div>
+              <div style="font-size:0.82rem; color:#565959;">Inclusive of all taxes</div>
+            </div>
+
+            <!-- Amazon Offers Box -->
+            <div style="background:#fef8e7; border:1px solid #febd69; border-radius:4px; padding:10px 14px; margin-bottom:16px; font-size:0.82rem;">
+              <div style="font-weight:700; color:#b12704;">🌿 Guaranteed Fair-Wage Assurance:</div>
+              <div style="color:#0f1111; margin-top:2px;">
+                <b>${formatPrice(p.price * 0.86)}</b> is directly disbursed to <b>${p.artisan_name}</b>'s bank account.
+              </div>
+            </div>
+
+            <div style="margin-bottom:16px;">
+              <div style="font-weight:700; font-size:0.88rem; margin-bottom:4px;">Ancestral Craft Story:</div>
+              <p style="font-size:0.82rem; color:#333; line-height:1.5;">${p.story}</p>
+            </div>
+
+            <div style="margin-bottom:20px; font-size:0.82rem; color:#555;">
+              <div><b>Materials:</b> ${p.materials}</div>
+              <div><b>Artisan Hamlet:</b> ${p.village}</div>
+              <div><b>Shipment:</b> Fast, Plastic-Free Carbon-Neutral Box</div>
+            </div>
+
+            <div style="display:flex; flex-direction:column; gap:10px;">
+              <button class="amz-btn-yellow" onclick="addToCart(${p.id}); closeModal('modal-product');">Add to Cart</button>
+              <button class="amz-btn-orange" onclick="buyNow(${p.id}); closeModal('modal-product');">Buy Now</button>
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+                <button class="amz-btn-secondary" onclick="openProvenanceModal(${p.id})">Verify SHA-256 Certificate</button>
+                <button class="amz-btn-secondary" onclick="openChatModal('${p.artisan_name}', '${p.village}')">💬 Chat with Artisan</button>
+              </div>
+            </div>
           </div>
-          <button class="btn-secondary" onclick="openProvenanceModal(${p.id})">Verify Certificate 📜</button>
         </div>
       `;
       openModal('modal-product');
     }
 
-    // Provenance Verifier Modal
+    // Digital Certificate of Authenticity Modal
     function openProvenanceModal(id) {
       const p = PRODUCTS.find(x => x.id === id);
       if (!p) return;
       closeModal('modal-product');
-      const content = document.getElementById('modal-provenance-content');
-      content.innerHTML = `
-        <div style="text-align:center;">
-          <div class="cert-seal">
+      const inner = document.getElementById('modal-provenance-inner');
+      inner.innerHTML = `
+        <div style="text-align:center; border:2px solid #febd69; border-radius:8px; padding:24px; background:linear-gradient(180deg, #fff 0%, #fefcf7 100%);">
+          <div style="width:70px; height:70px; border-radius:50%; background:#067d62; color:#fff; display:flex; flex-direction:column; align-items:center; justify-content:center; font-size:0.65rem; font-weight:800; margin:0 auto 12px; border:3px double #fff;">
             <div>86% FAIR</div>
             <div>TRADE</div>
-            <div style="font-size:0.55rem;">VERIFIED</div>
           </div>
-          <h2 style="font-family:var(--font-heading); font-size:1.5rem; color:#fff; margin-bottom:4px;">Digital Certificate of Authenticity</h2>
-          <div style="font-size:0.8rem; color:#fbbf24; font-family:var(--font-mono);">GENUINE RURAL HEIRLOOM PROVENANCE</div>
-        </div>
+          <h2 style="font-size:1.4rem; font-weight:800; color:#0f1111;">Digital Certificate of Provenance & Authenticity</h2>
+          <div style="font-size:0.8rem; color:#b12704; font-weight:700; margin-bottom:16px;">AUDITED BY DECENTRALIZED COOPERATIVE CONSORTIUM</div>
 
-        <div class="certificate-frame">
-          <div style="margin-bottom:14px;">
-            <span style="font-size:0.75rem; color:#94a3b8; text-transform:uppercase;">Registered Artifact:</span>
-            <div style="font-weight:700; color:#fff; font-size:1.1rem;">${p.title}</div>
+          <div style="text-align:left; font-size:0.85rem; line-height:1.6; margin-bottom:18px;">
+            <div><b>Registered Artifact:</b> ${p.title}</div>
+            <div><b>Master Artisan:</b> ${p.artisan_name}</div>
+            <div><b>Artisan Guild:</b> ${p.collective} (${p.village})</div>
+            <div><b>Direct Household Livelihood:</b> <span style="color:#067d62; font-weight:700;">${formatPrice(p.price * 0.86)}</span> (86% Gross Proceeds)</div>
           </div>
-          <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:14px;">
-            <div>
-              <span style="font-size:0.72rem; color:#94a3b8;">Master Artisan:</span>
-              <div style="font-weight:600; color:#cbd5e1;">${p.artisan_name}</div>
-            </div>
-            <div>
-              <span style="font-size:0.72rem; color:#94a3b8;">Village / Guild:</span>
-              <div style="font-weight:600; color:#cbd5e1;">${p.village}</div>
-            </div>
-          </div>
-          <div style="margin-bottom:14px;">
-            <span style="font-size:0.72rem; color:#94a3b8;">Guaranteed Direct Household Disbursement:</span>
-            <div style="font-weight:800; color:#34d399; font-size:1.2rem;">${formatPrice(p.price * 0.86)} (86% Gross Proceeds)</div>
-          </div>
-          <div style="background:#090d16; padding:12px; border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
-            <div style="font-size:0.7rem; color:#94a3b8; margin-bottom:4px;">SHA-256 Provenance Audit Ledger Hash:</div>
-            <div style="font-family:var(--font-mono); font-size:0.72rem; color:#fbbf24; word-break:break-all;">
-              ${p.provenance_hash}
-            </div>
-          </div>
-        </div>
 
-        <div style="display:flex; justify-content:space-between; margin-top:20px;">
-          <button class="btn-secondary" onclick="window.print()">🖨️ Print Certificate</button>
-          <button class="btn-primary" onclick="showToast('Provenance Stamp Cryptographically Verified! ✓'); closeModal('modal-provenance');">Verified Authentic ✓</button>
+          <div style="background:#f7f7f7; border:1px solid #ddd; padding:12px; border-radius:4px; text-align:left; font-size:0.75rem; color:#555; word-break:break-all; font-family:var(--font-mono); margin-bottom:18px;">
+            <b>SHA-256 Ledger Stamp:</b><br>${p.provenance_hash}
+          </div>
+
+          <div style="display:flex; justify-content:space-between;">
+            <button class="amz-btn-secondary" onclick="window.print()">🖨️ Print Certificate</button>
+            <button class="amz-btn-yellow" onclick="showToast('Cryptographically Verified Genuine!'); closeModal('modal-provenance');">Verified Authentic ✓</button>
+          </div>
         </div>
       `;
       openModal('modal-provenance');
     }
 
     // Direct Artisan Chat Modal
-    function openChatModal(artisanName, village) {
+    function openChatModal(artisan, village) {
       closeModal('modal-product');
-      activeChatArtisan = { name: artisanName, village: village };
-      const content = document.getElementById('modal-chat-content');
-      content.innerHTML = `
-        <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
-          <div style="width:40px; height:40px; border-radius:50%; background:linear-gradient(135deg, #f59e0b, #ec4899); display:flex; align-items:center; justify-content:center; font-size:1.3rem;">👩‍🌾</div>
+      const inner = document.getElementById('modal-chat-inner');
+      inner.innerHTML = `
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px; border-bottom:1px solid #eee; padding-bottom:12px;">
+          <div style="font-size:2rem;">👩‍🌾</div>
           <div>
-            <h3 style="font-family:var(--font-heading); color:#fff; font-size:1.2rem;">${artisanName}</h3>
-            <div style="font-size:0.75rem; color:#34d399;">● Online at Workshop · ${village}</div>
+            <h3 style="font-size:1.1rem; font-weight:700; color:#0f1111;">Direct Inquiry with ${artisan}</h3>
+            <div style="font-size:0.75rem; color:#067d62;">● Active at Loom Shed · ${village}</div>
           </div>
         </div>
 
-        <div class="chat-box">
-          <div class="chat-messages" id="chat-messages">
-            <div class="chat-msg artisan">
-              Namaste! I am <b>${artisanName}</b> from ${village}. Thank you for admiring our handcrafted tradition. How may I customize or weave this piece for your home?
-            </div>
+        <div id="chat-stream" style="height:320px; overflow-y:auto; background:#f7f7f7; border:1px solid #ddd; border-radius:4px; padding:14px; display:flex; flex-direction:column; gap:10px; margin-bottom:14px;">
+          <div style="align-self:flex-start; background:#fff; border:1px solid #ddd; border-radius:6px; padding:8px 12px; font-size:0.85rem; max-width:85%;">
+            Namaste! I am <b>${artisan}</b> from ${village}. Thank you for admiring our handcraft. Would you like custom bridal motifs or specific dimensions woven for you?
           </div>
-          <div class="chat-input-bar">
-            <input type="text" id="chat-user-input" class="chat-input" placeholder="Ask about sizing, motifs, or custom colors..." onkeydown="if(event.key==='Enter') sendChatMessage()">
-            <button class="btn-primary" onclick="sendChatMessage()">Send</button>
-          </div>
+        </div>
+
+        <div style="display:flex; gap:8px;">
+          <input type="text" id="chat-input-field" placeholder="Type your custom request or greeting..." style="flex:1; border:1px solid #bbb; border-radius:4px; padding:8px 12px; font-size:0.85rem;" onkeydown="if(event.key==='Enter') sendChatMessage('${artisan}')">
+          <button class="amz-btn-yellow" onclick="sendChatMessage('${artisan}')">Send</button>
         </div>
       `;
       openModal('modal-chat');
     }
 
-    function sendChatMessage() {
-      const input = document.getElementById('chat-user-input');
-      const text = input.value.trim();
-      if (!text) return;
-      const box = document.getElementById('chat-messages');
+    function sendChatMessage(artisan) {
+      const input = document.getElementById('chat-input-field');
+      const msg = input.value.trim();
+      if (!msg) return;
+      const stream = document.getElementById('chat-stream');
 
-      // User Message
-      const userMsg = document.createElement('div');
-      userMsg.className = 'chat-msg user';
-      userMsg.textContent = text;
-      box.appendChild(userMsg);
+      // User Bubble
+      const u = document.createElement('div');
+      u.style.cssText = "align-self:flex-end; background:#ffd814; border:1px solid #fcd200; border-radius:6px; padding:8px 12px; font-size:0.85rem; max-width:85%; font-weight:500;";
+      u.textContent = msg;
+      stream.appendChild(u);
       input.value = '';
-      box.scrollTop = box.scrollHeight;
+      stream.scrollTop = stream.scrollHeight;
 
-      // Simulated Artisan Response
+      // Simulated Response
       setTimeout(() => {
-        const artisanMsg = document.createElement('div');
-        artisanMsg.className = 'chat-msg artisan';
-        artisanMsg.innerHTML = `Dhanyavaad! I have noted your request: <i>"${text}"</i>. Our collective will prepare your consignment with special ancestral blessings!`;
-        box.appendChild(artisanMsg);
-        box.scrollTop = box.scrollHeight;
-      }, 1100);
+        const a = document.createElement('div');
+        a.style.cssText = "align-self:flex-start; background:#fff; border:1px solid #ddd; border-radius:6px; padding:8px 12px; font-size:0.85rem; max-width:85%;";
+        a.innerHTML = `Dhanyavaad! I have noted your message: <i>"${msg}"</i>. Our collective will dedicate our looms to craft this with utmost care!`;
+        stream.appendChild(a);
+        stream.scrollTop = stream.scrollHeight;
+      }, 1000);
     }
 
-    // Masterclass Pass Booking
-    function bookWorkshop(id) {
-      const w = WORKSHOPS.find(x => x.id === id);
-      if (!w || w.seats_left <= 0) return alert("Sold out!");
-      w.seats_left -= 1;
-      renderWorkshops();
+    // Cart Management
+    function addToCart(id) {
+      const p = PRODUCTS.find(x => x.id === id);
+      if (!p) return;
+      const existing = cart.find(x => x.id === id);
+      if (existing) existing.qty += 1;
+      else cart.push({ id: p.id, title: p.title, price: p.price, image: p.image, qty: 1 });
 
-      const passId = "PASS-" + Math.floor(100000 + Math.random() * 900000);
-      const content = document.getElementById('modal-pass-content');
-      content.innerHTML = `
-        <div style="text-align:center; margin-bottom:16px;">
-          <div style="font-size:2.8rem; margin-bottom:8px;">🎟️</div>
-          <h2 style="font-family:var(--font-heading); font-size:1.6rem; color:#fff;">Digital Masterclass Access Pass</h2>
-          <div style="font-size:0.8rem; color:#34d399; font-weight:700;">CONFIRMED RESERVATION</div>
-        </div>
-
-        <div style="background:rgba(255,255,255,0.03); border:2px dashed rgba(245,158,11,0.5); border-radius:14px; padding:20px; margin-bottom:18px;">
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
-            <span style="font-family:var(--font-mono); font-weight:800; color:#fbbf24; font-size:1.1rem;">${passId}</span>
-            <span style="font-size:0.75rem; background:rgba(16,185,129,0.2); color:#34d399; padding:3px 8px; border-radius:4px; font-weight:700;">Live HD Feed</span>
-          </div>
-          <h3 style="font-family:var(--font-heading); color:#fff; font-size:1.15rem; margin-bottom:6px;">${w.title}</h3>
-          <div style="font-size:0.82rem; color:#94a3b8; margin-bottom:12px;">Master Instructor: <b>${w.instructor}</b> (${w.village})</div>
-          <div style="font-size:0.8rem; color:#cbd5e1; margin-bottom:12px;">📅 ${w.date} · ⏱️ ${w.duration}</div>
-          <div style="background:rgba(0,0,0,0.3); padding:10px 12px; border-radius:8px; border:1px solid var(--border-subtle);">
-            <div style="font-size:0.72rem; color:#fbbf24; font-weight:700;">📦 RAW MATERIALS KIT SHIPMENT:</div>
-            <div style="font-size:0.78rem; color:#cbd5e1;">${w.kit}</div>
-          </div>
-        </div>
-
-        <button class="btn-primary" style="width:100%; padding:12px;" onclick="showToast('Access Pass Added to Calendar!'); closeModal('modal-pass');">Save Digital Pass</button>
-      `;
-      openModal('modal-pass');
+      localStorage.setItem('wem_amz_cart', JSON.stringify(cart));
+      updateCartBadge();
+      showToast(`Added "${p.title.substring(0, 30)}..." to your cart! 🛒`);
     }
 
-    // Publish New Product (Artisan Seller)
+    function buyNow(id) {
+      addToCart(id);
+      toggleCart();
+    }
+
+    function updateCartBadge() {
+      const count = cart.reduce((acc, it) => acc + it.qty, 0);
+      document.getElementById('header-cart-count').textContent = count;
+      document.getElementById('cart-drawer-count').textContent = count;
+    }
+
+    function toggleCart() {
+      const drawer = document.getElementById('cart-drawer');
+      const overlay = document.getElementById('cart-overlay');
+      drawer.classList.toggle('open');
+      overlay.classList.toggle('active');
+      renderCartDrawer();
+    }
+
+    function renderCartDrawer() {
+      const container = document.getElementById('cart-items-list');
+      const subtotalEl = document.getElementById('cart-subtotal-price');
+      const artisanEl = document.getElementById('cart-subtotal-artisan');
+
+      if (!cart.length) {
+        container.innerHTML = `<div style="text-align:center; padding:40px 0; color:#565959;">Your Amazon Handcrafted Cart is empty.</div>`;
+        subtotalEl.textContent = formatPrice(0);
+        artisanEl.textContent = formatPrice(0);
+        return;
+      }
+
+      let total = 0;
+      container.innerHTML = cart.map(it => {
+        total += it.price * it.qty;
+        return `
+          <div class="amz-cart-item-row">
+            <img src="${it.image}" onerror="this.src='https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=100&q=80'">
+            <div class="amz-cart-item-info">
+              <div class="amz-cart-item-title">${it.title}</div>
+              <div class="amz-cart-item-price">${formatPrice(it.price)}</div>
+              <div class="amz-cart-item-controls">
+                <span style="font-size:0.75rem; color:#565959;">Qty:</span>
+                <select class="amz-qty-select" onchange="updateCartQty(${it.id}, this.value)">
+                  ${[1,2,3,4,5].map(n => `<option value="${n}" ${n === it.qty ? 'selected' : ''}>${n}</option>`).join('')}
+                </select>
+                <span class="amz-item-delete-link" onclick="removeFromCart(${it.id})">Delete</span>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      subtotalEl.textContent = formatPrice(total);
+      artisanEl.textContent = formatPrice(total * 0.86);
+    }
+
+    function updateCartQty(id, val) {
+      const it = cart.find(x => x.id === id);
+      if (it) it.qty = parseInt(val, 10);
+      localStorage.setItem('wem_amz_cart', JSON.stringify(cart));
+      updateCartBadge();
+      renderCartDrawer();
+    }
+
+    function removeFromCart(id) {
+      cart = cart.filter(x => x.id !== id);
+      localStorage.setItem('wem_amz_cart', JSON.stringify(cart));
+      updateCartBadge();
+      renderCartDrawer();
+      showToast("Item removed from your cart");
+    }
+
+    function simulateAmazonCheckout() {
+      if (!cart.length) return alert("Your cart is empty!");
+      const orderId = 'WEM-' + Math.floor(100000 + Math.random() * 900000);
+      const total = cart.reduce((acc, it) => acc + (it.price * it.qty), 0);
+      const tracking = "TRK-" + Math.random().toString(36).substring(2, 8).toUpperCase();
+
+      ORDERS.unshift({
+        id: orderId,
+        date: "Today",
+        customer: currentUser.name,
+        destination: "Bengaluru, Karnataka 560001",
+        total: total,
+        status: "Artisan Crafting",
+        tracking: tracking,
+        carrier: "Amazon Shipping Express",
+        items: [...cart]
+      });
+
+      cart = [];
+      localStorage.setItem('wem_amz_cart', JSON.stringify(cart));
+      updateCartBadge();
+      toggleCart();
+      showToast(`Order Placed! Order ID: ${orderId} 📦`);
+      switchView('orders');
+    }
+
+    // Orders & Tracking View
+    function renderOrdersView(items) {
+      const list = items || ORDERS;
+      const container = document.getElementById('orders-cards-container');
+      if (!list.length) {
+        container.innerHTML = `<div style="text-align:center; padding:40px; color:#565959;">No matching orders found.</div>`;
+        return;
+      }
+
+      container.innerHTML = list.map(o => {
+        const stageIdx = getStageIndex(o.status);
+        return `
+          <div class="amz-order-card">
+            <div class="amz-order-card-header">
+              <div>
+                <div>ORDER PLACED</div>
+                <div class="val">${o.date}</div>
+              </div>
+              <div>
+                <div>TOTAL</div>
+                <div class="val">${formatPrice(o.total)}</div>
+              </div>
+              <div>
+                <div>SHIP TO</div>
+                <div class="val">${o.customer} ▾</div>
+              </div>
+              <div style="margin-left:auto; text-align:right;">
+                <div>ORDER # ${o.id}</div>
+                <div style="color:#007185; font-size:0.75rem; margin-top:2px; cursor:pointer;" onclick="showToast('Tracking: ${o.tracking}')">Tracking: ${o.tracking}</div>
+              </div>
+            </div>
+
+            <div class="amz-order-card-body">
+              <div style="font-size:1.15rem; font-weight:700; color:#0f1111; margin-bottom:8px;">
+                Stage: <span style="color:#b12704;">${o.status}</span>
+              </div>
+              <div style="font-size:0.85rem; color:#565959; margin-bottom:14px;">
+                Carrier: ${o.carrier} · Delivery guaranteed by certified ethical artisan courier
+              </div>
+
+              <!-- Amazon 4-step Stepper -->
+              <div class="amz-delivery-stepper">
+                <div class="amz-step-item ${stageIdx >= 0 ? 'done' : ''}">
+                  <div class="amz-step-bullet">${stageIdx > 0 ? '✓' : '1'}</div>
+                  <div class="amz-step-label">Ordered</div>
+                </div>
+                <div class="amz-step-item ${stageIdx > 1 ? 'done' : stageIdx === 1 ? 'active' : ''}">
+                  <div class="amz-step-bullet">${stageIdx > 1 ? '✓' : '2'}</div>
+                  <div class="amz-step-label">Artisan Crafting</div>
+                </div>
+                <div class="amz-step-item ${stageIdx > 2 ? 'done' : stageIdx === 2 ? 'active' : ''}">
+                  <div class="amz-step-bullet">${stageIdx > 2 ? '✓' : '3'}</div>
+                  <div class="amz-step-label">Quality Check</div>
+                </div>
+                <div class="amz-step-item ${stageIdx > 3 ? 'done' : stageIdx === 3 ? 'active' : ''}">
+                  <div class="amz-step-bullet">${stageIdx > 3 ? '✓' : '4'}</div>
+                  <div class="amz-step-label">Dispatched</div>
+                </div>
+                <div class="amz-step-item ${stageIdx === 4 ? 'done' : ''}">
+                  <div class="amz-step-bullet">${stageIdx === 4 ? '✓' : '5'}</div>
+                  <div class="amz-step-label">Delivered</div>
+                </div>
+              </div>
+
+              <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; border-top:1px solid #eee; padding-top:14px;">
+                <div style="font-size:0.85rem; color:#0f1111;">
+                  <b>Items in Consignment:</b> ${Array.isArray(o.items) ? o.items.map(i => i.title).join(', ') : o.items}
+                </div>
+                <div style="display:flex; gap:8px;">
+                  <button class="amz-btn-secondary" onclick="advanceStage('${o.id}')">Advance Stage →</button>
+                  <button class="amz-btn-yellow" onclick="showToast('Provenance certificate verified for Order ${o.id}')">Certificate 📜</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function getStageIndex(s) {
+      const stages = ['Pending', 'Artisan Crafting', 'Quality Check', 'Dispatched', 'Delivered'];
+      return stages.indexOf(s);
+    }
+
+    function advanceStage(orderId) {
+      const o = ORDERS.find(x => x.id === orderId);
+      if (!o) return;
+      const stages = ['Pending', 'Artisan Crafting', 'Quality Check', 'Dispatched', 'Delivered'];
+      const idx = stages.indexOf(o.status);
+      if (idx < stages.length - 1) {
+        o.status = stages[idx + 1];
+        showToast(`Order ${orderId} updated to "${o.status}"!`);
+        renderOrdersView();
+      } else {
+        showToast(`Order ${orderId} is already delivered!`);
+      }
+    }
+
+    function filterOrdersList(q) {
+      const term = q.trim().toLowerCase();
+      if (!term) return renderOrdersView();
+      const filtered = ORDERS.filter(o => 
+        o.id.toLowerCase().includes(term) || 
+        o.tracking.toLowerCase().includes(term) ||
+        o.customer.toLowerCase().includes(term)
+      );
+      renderOrdersView(filtered);
+    }
+
+    // Guilds Directory View
+    function renderGuildsView() {
+      const container = document.getElementById('guilds-full-grid');
+      container.innerHTML = GUILDS.map(g => `
+        <div class="amz-quad-card">
+          <img src="${g.image}" style="width:100%; height:180px; object-fit:cover; border-radius:4px; margin-bottom:12px;">
+          <div style="font-size:1.2rem; font-weight:700; color:#0f1111; margin-bottom:4px;">${g.name}</div>
+          <div style="font-size:0.8rem; color:#b12704; font-weight:700; margin-bottom:8px;">📍 ${g.location} · 👩‍🌾 ${g.members}</div>
+          <p style="font-size:0.85rem; color:#565959; margin-bottom:14px; line-height:1.4;">${g.specialty}</p>
+          <div style="background:#edf8f5; border:1px solid #cce8e2; padding:8px 12px; border-radius:4px; font-size:0.8rem; color:#067d62; font-weight:700; margin-top:auto;">
+            ✓ ${g.revenue_shared}
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Workshops Studio View
+    function renderWorkshopsView() {
+      const container = document.getElementById('workshops-full-grid');
+      container.innerHTML = WORKSHOPS.map(w => `
+        <div class="amz-quad-card">
+          <img src="${w.image}" style="width:100%; height:180px; object-fit:cover; border-radius:4px; margin-bottom:12px;">
+          <div style="font-size:0.75rem; color:#067d62; font-weight:700; text-transform:uppercase;">LIVE STREAMING WORKSHOP</div>
+          <div style="font-size:1.15rem; font-weight:700; color:#0f1111; margin:4px 0 6px;">${w.title}</div>
+          <div style="font-size:0.8rem; color:#565959; margin-bottom:8px;">Instructor: <b>${w.instructor}</b> · ${w.village}</div>
+          <div style="font-size:0.8rem; color:#333; margin-bottom:14px;">📅 ${w.date} · ⏱️ ${w.duration}</div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+            <div style="font-size:1.3rem; font-weight:800; color:#0f1111;">${formatPrice(w.price)}</div>
+            <div style="font-size:0.75rem; color:#b12704; font-weight:700;">${w.seats_left} seats remaining</div>
+          </div>
+          <button class="amz-btn-yellow" onclick="showToast('Reserved seat for ${w.title}! Materials kit dispatched.');">Reserve Seat & Ship Kit</button>
+        </div>
+      `).join('');
+    }
+
+    // Fair Trade Calculator
+    function updateCalculator(val) {
+      const num = parseFloat(val);
+      document.getElementById('calc-display-val').textContent = formatPrice(num);
+      document.getElementById('calc-artisan-val').textContent = formatPrice(num * 0.86);
+      document.getElementById('calc-materials-val').textContent = formatPrice(num * 0.08);
+      document.getElementById('calc-logistics-val').textContent = formatPrice(num * 0.06);
+    }
+
+    // Publish New Product
     function openPublishModal() {
       openModal('modal-publish');
     }
-
     function handlePublish(e) {
       e.preventDefault();
       const title = document.getElementById('pub-title').value;
@@ -1912,279 +2976,76 @@
       const story = document.getElementById('pub-story').value;
       const img = document.getElementById('pub-image').value;
 
-      const newProd = {
+      PRODUCTS.unshift({
         id: Date.now(),
         title: title,
         price: price,
+        mrp: price * 1.35,
         category: cat,
-        craft_type: cat === 'Textiles' ? 'Handloom Weave' : 'Artisan Craft',
+        craft_type: "Artisan Craft",
         artisan_name: currentUser.name,
         village: "Varanasi, Uttar Pradesh",
         collective: "Dhaga Kala Weavers Guild",
-        lead_time: "4 days",
+        lead_time: "Get It by Tomorrow",
         rating: 5.0,
         reviews_count: 1,
+        deal: false,
         image: img,
         story: story,
-        materials: "Ethically Sourced Organic Raw Materials",
+        materials: "100% Verified Ethically Harvested Materials",
         provenance_hash: "a" + Math.random().toString(36).substring(2, 15) + "b" + Math.random().toString(36).substring(2, 15)
-      };
+      });
 
-      PRODUCTS.unshift(newProd);
       closeModal('modal-publish');
-      renderProducts();
+      renderCatalog();
       switchView('store');
-      showToast(`Heirloom "${title}" Published Successfully! ✨`);
+      showToast(`Heirloom "${title}" successfully published to catalog! ✨`);
     }
 
     // Role Switcher
     function openAuthModal() {
       openModal('modal-auth');
     }
-
     function setRole(r) {
       if (r === 'artisan') {
         currentUser = { role: 'artisan', name: 'Ananya Devi', avatar: '👩‍🌾' };
       } else {
         currentUser = { role: 'buyer', name: 'Priya Sharma', avatar: '🛍️' };
       }
-      document.getElementById('nav-user-avatar').textContent = currentUser.avatar;
-      document.getElementById('nav-user-name').textContent = `${currentUser.name} (${r === 'artisan' ? 'Artisan' : 'Patron'})`;
+      document.getElementById('nav-greeting').textContent = `Hello, ${currentUser.name}`;
+      document.getElementById('drawer-user-name').textContent = `Hello, ${currentUser.name}`;
       closeModal('modal-auth');
-      showToast(`Logged in as ${currentUser.name}`);
+      showToast(`Switched account to ${currentUser.name}`);
     }
 
-    // Cart Drawer & Checkout
-    function addToCart(id) {
-      const p = PRODUCTS.find(x => x.id === id);
-      if (!p) return;
-      const existing = cart.find(x => x.id === id);
-      if (existing) existing.qty += 1;
-      else cart.push({ id: p.id, title: p.title, price: p.price, image: p.image, qty: 1 });
-      
-      localStorage.setItem('wem_standalone_cart', JSON.stringify(cart));
-      updateCartBadge();
-      showToast(`Added "${p.title}" to cart! 🛍️`);
-    }
-
-    function updateCartBadge() {
-      const count = cart.reduce((acc, it) => acc + it.qty, 0);
-      document.getElementById('cart-count').textContent = count;
-    }
-
-    function toggleCart() {
-      const drawer = document.getElementById('cart-drawer');
+    // Drawer / Modal Helpers
+    function toggleSidebarMenu() {
+      const drawer = document.getElementById('sidebar-drawer');
+      const overlay = document.getElementById('drawer-overlay');
       drawer.classList.toggle('open');
-      renderCart();
+      overlay.classList.toggle('active');
     }
 
-    function renderCart() {
-      const container = document.getElementById('cart-items-container');
-      const totalEl = document.getElementById('cart-total-price');
-      const shareEl = document.getElementById('cart-artisan-share');
-
-      if (!cart.length) {
-        container.innerHTML = `<div style="text-align:center; padding:60px 0; color:#94a3b8;">Your heritage cart is empty.</div>`;
-        totalEl.textContent = formatPrice(0);
-        shareEl.textContent = formatPrice(0);
-        return;
-      }
-
-      let total = 0;
-      container.innerHTML = cart.map(it => {
-        total += it.price * it.qty;
-        return `
-          <div class="cart-item">
-            <img src="${it.image}" onerror="this.src='https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=100&q=80'">
-            <div class="cart-item-info">
-              <div style="font-size:0.86rem; font-weight:700; color:#fff;">${it.title}</div>
-              <div style="font-size:0.82rem; color:#fbbf24; font-weight:700; margin-top:2px;">${formatPrice(it.price)}</div>
-              <div class="cart-qty-ctrl">
-                <button class="qty-btn" onclick="changeQty(${it.id}, -1)">-</button>
-                <span style="font-size:0.82rem; font-weight:600; color:#fff;">${it.qty}</span>
-                <button class="qty-btn" onclick="changeQty(${it.id}, 1)">+</button>
-              </div>
-            </div>
-            <button style="background:none; border:none; color:#ef4444; font-size:1.1rem; cursor:pointer;" onclick="removeCartItem(${it.id})">🗑️</button>
-          </div>
-        `;
-      }).join('');
-
-      totalEl.textContent = formatPrice(total);
-      shareEl.textContent = formatPrice(total * 0.86);
-    }
-
-    function changeQty(id, delta) {
-      const item = cart.find(x => x.id === id);
-      if (!item) return;
-      item.qty += delta;
-      if (item.qty <= 0) cart = cart.filter(x => x.id !== id);
-      localStorage.setItem('wem_standalone_cart', JSON.stringify(cart));
-      updateCartBadge();
-      renderCart();
-    }
-
-    function removeCartItem(id) {
-      cart = cart.filter(x => x.id !== id);
-      localStorage.setItem('wem_standalone_cart', JSON.stringify(cart));
-      updateCartBadge();
-      renderCart();
-    }
-
-    function simulateCheckout() {
-      if (!cart.length) return alert("Your cart is empty!");
-      const orderNum = 'WEM-' + Math.floor(100000 + Math.random() * 900000);
-      const total = cart.reduce((acc, it) => acc + (it.price * it.qty), 0);
-      const tracking = "TRK-" + Math.random().toString(36).substring(2, 7).toUpperCase();
-      
-      ORDERS.unshift({
-        id: orderNum,
-        customer: currentUser.name,
-        destination: "Express Global Dispatch",
-        total: total,
-        status: "Artisan Crafting",
-        tracking: tracking,
-        items: cart.map(x => x.title).join(', ')
-      });
-
-      cart = [];
-      localStorage.setItem('wem_standalone_cart', JSON.stringify(cart));
-      updateCartBadge();
-      toggleCart();
-      showToast(`Order Placed! Order ID: ${orderNum}`);
-      switchView('pipeline');
-    }
-
-    // Fair Trade Calculator
-    function updateCalculator(val) {
-      const num = parseFloat(val);
-      document.getElementById('calc-val-label').textContent = formatPrice(num);
-      document.getElementById('calc-artisan-payout').textContent = formatPrice(num * 0.86);
-      document.getElementById('calc-materials-payout').textContent = formatPrice(num * 0.08);
-      document.getElementById('calc-logistics-payout').textContent = formatPrice(num * 0.06);
-    }
-
-    // Guilds View
-    function renderGuilds() {
-      const container = document.getElementById('guilds-container');
-      container.innerHTML = GUILDS.map(g => `
-        <div class="product-card" style="padding:24px;">
-          <div style="font-size:2.2rem; margin-bottom:12px;">${g.icon}</div>
-          <h3 style="font-family:var(--font-heading); font-size:1.35rem; color:#fff; margin-bottom:6px;">${g.name}</h3>
-          <div style="font-size:0.8rem; color:#fbbf24; font-weight:600; margin-bottom:14px;">📍 ${g.location} · 👩‍🌾 ${g.members}</div>
-          <p style="color:#cbd5e1; font-size:0.9rem; margin-bottom:20px; line-height:1.5;">${g.specialty}</p>
-          <div style="background:rgba(16, 185, 129, 0.1); border:1px solid rgba(16,185,129,0.3); padding:10px 14px; border-radius:8px; display:flex; justify-content:space-between; align-items:center;">
-            <span style="font-size:0.75rem; color:#34d399; font-weight:700;">Direct Shared Revenue:</span>
-            <span style="font-family:var(--font-mono); font-weight:800; color:#fff;">${g.revenue_shared}</span>
-          </div>
-        </div>
-      `).join('');
-    }
-
-    // Masterclasses View
-    function renderWorkshops() {
-      const container = document.getElementById('workshops-container');
-      container.innerHTML = WORKSHOPS.map(w => `
-        <div class="product-card" style="padding:24px;">
-          <div style="font-size:2.2rem; margin-bottom:12px;">${w.icon}</div>
-          <div style="display:inline-block; font-size:0.7rem; font-weight:700; color:#fbbf24; background:rgba(245,158,11,0.15); padding:3px 8px; border-radius:4px; margin-bottom:10px;">${w.badge}</div>
-          <h3 style="font-family:var(--font-heading); font-size:1.3rem; color:#fff; margin-bottom:6px;">${w.title}</h3>
-          <div style="font-size:0.84rem; color:#94a3b8; margin-bottom:14px;">Guided by <b>${w.instructor}</b> · ${w.village}</div>
-          <div style="font-size:0.82rem; color:#cbd5e1; margin-bottom:16px;">📅 ${w.date} · ⏱️ ${w.duration}</div>
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px;">
-            <span style="font-family:var(--font-heading); font-size:1.3rem; font-weight:800; color:#fff;">${formatPrice(w.price)}</span>
-            <span style="font-size:0.75rem; color:${w.seats_left < 5 ? '#ef4444' : '#34d399'}; font-weight:700;">${w.seats_left} seats remaining</span>
-          </div>
-          <button class="btn-primary" style="width:100%; padding:10px;" onclick="bookWorkshop(${w.id})">Reserve Seat & Ship Kit</button>
-        </div>
-      `).join('');
-    }
-
-    // Pipeline View
-    function renderPipeline(items) {
-      const list = items || ORDERS;
-      const tbody = document.getElementById('orders-tbody');
-      tbody.innerHTML = list.map(o => `
-        <tr>
-          <td style="font-family:var(--font-mono); font-weight:700; color:#fbbf24;">${o.id}</td>
-          <td>
-            <div style="font-weight:600; color:#fff;">${o.customer}</div>
-            <div style="color:#94a3b8; font-size:0.75rem;">${o.destination}</div>
-          </td>
-          <td style="font-weight:700; color:#fff;">${formatPrice(o.total)}</td>
-          <td>
-            <span style="font-size:0.72rem; padding:4px 8px; border-radius:6px; font-weight:700; background:${getStatusBg(o.status)}; color:${getStatusColor(o.status)};">
-              ● ${o.status}
-            </span>
-          </td>
-          <td style="font-family:var(--font-mono); color:#94a3b8; font-size:0.8rem;">${o.tracking}</td>
-          <td>
-            <button class="btn-secondary" style="padding:4px 8px; font-size:0.75rem;" onclick="advanceStage('${o.id}')">Advance Stage →</button>
-          </td>
-        </tr>
-      `).join('');
-    }
-
-    function getStatusBg(s) {
-      if (s === 'Delivered') return 'rgba(16,185,129,0.2)';
-      if (s === 'Dispatched') return 'rgba(99,102,241,0.2)';
-      if (s === 'Quality Check') return 'rgba(236,72,153,0.2)';
-      return 'rgba(245,158,11,0.2)';
-    }
-
-    function getStatusColor(s) {
-      if (s === 'Delivered') return '#34d399';
-      if (s === 'Dispatched') return '#818cf8';
-      if (s === 'Quality Check') return '#f472b6';
-      return '#fbbf24';
-    }
-
-    function advanceStage(orderId) {
-      const order = ORDERS.find(o => o.id === orderId);
-      if (!order) return;
-      const stages = ['Pending', 'Artisan Crafting', 'Quality Check', 'Dispatched', 'Delivered'];
-      const idx = stages.indexOf(order.status);
-      if (idx < stages.length - 1) {
-        order.status = stages[idx + 1];
-        showToast(`Consignment ${orderId} updated to ${order.status}!`);
-        renderPipeline();
-      } else {
-        showToast(`Consignment ${orderId} already delivered!`);
-      }
-    }
-
-    function filterOrders(q) {
-      const term = q.trim().toLowerCase();
-      if (!term) return renderPipeline();
-      const filtered = ORDERS.filter(o => 
-        o.id.toLowerCase().includes(term) || 
-        o.tracking.toLowerCase().includes(term) ||
-        o.customer.toLowerCase().includes(term)
-      );
-      renderPipeline(filtered);
-    }
-
-    // Modal Helpers
     function openModal(id) {
       const el = document.getElementById(id);
       if (el) el.classList.add('active');
     }
-
     function closeModal(id) {
       const el = document.getElementById(id);
       if (el) el.classList.remove('active');
     }
 
     function showToast(msg) {
-      const toast = document.getElementById('toast');
-      toast.textContent = msg;
-      toast.classList.add('show');
-      setTimeout(() => toast.classList.remove('show'), 3200);
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 3500);
     }
 
-    // Initial boot
+    // Initialization
     window.addEventListener('DOMContentLoaded', () => {
-      renderProducts();
+      renderDealsStrip();
+      renderCatalog();
       updateCartBadge();
       updateCalculator(100);
     });
