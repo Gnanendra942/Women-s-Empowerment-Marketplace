@@ -20,6 +20,7 @@ The platform is live and accessible over encrypted global HTTPS:
 | Channel / Interface | Live URL | Description |
 | :--- | :--- | :--- |
 | 🛍️ **Interactive Full-Stack Web App** | [**https://ctrl-hints-margin-direct.trycloudflare.com**](https://ctrl-hints-margin-direct.trycloudflare.com) | React 19 Storefront + Express API + Image CDN |
+| 🚀 **GitHub Pages Deployment** | [**https://gnanendra942.github.io/Women-s-Empowerment-Marketplace/**](https://gnanendra942.github.io/Women-s-Empowerment-Marketplace/) | Static cloud hosting on `gh-pages` branch |
 | 📄 **Standalone Portable Marketplace** | [**https://ctrl-hints-margin-direct.trycloudflare.com/marketplace.html**](https://ctrl-hints-margin-direct.trycloudflare.com/marketplace.html) | Zero-dependency single-file HTML5 app |
 | 🩺 **Backend Health API** | [**https://ctrl-hints-margin-direct.trycloudflare.com/api/health**](https://ctrl-hints-margin-direct.trycloudflare.com/api/health) | Live system health & engine status check |
 | 📦 **Products REST API** | [**https://ctrl-hints-margin-direct.trycloudflare.com/api/products**](https://ctrl-hints-margin-direct.trycloudflare.com/api/products) | Handcrafted catalog data & artisan lineage |
