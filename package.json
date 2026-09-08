@@ -1,0 +1,24 @@
+{
+  "name": "women-empowerment-marketplace",
+  "version": "1.0.0",
+  "description": "Full-stack digital commerce engine empowering women artisans & local cottage entrepreneurs.",
+  "scripts": {
+    "start": "node server/server.js",
+    "server": "node server/server.js",
+    "client": "npm run dev --prefix client",
+    "build": "npm run build --prefix client",
+    "dev": "node -e \"const { spawn } = require('child_process'); spawn('node', ['server/server.js'], { stdio: 'inherit' }); spawn('npm', ['run', 'dev', '--prefix', 'client'], { stdio: 'inherit' });\""
+  },
+  "keywords": [
+    "women-empowerment",
+    "ecommerce",
+    "artisan-marketplace",
+    "react",
+    "express",
+    "sqlite",
+    "jwt",
+    "order-pipeline"
+  ],
+  "author": "Women Artisan Collective",
+  "license": "MIT"
+}
