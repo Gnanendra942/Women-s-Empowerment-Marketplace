@@ -75,7 +75,7 @@ app.use(express.static(publicDir));
 app.get('/api/health', (req, res) => {
   res.json({
     status: 'healthy',
-    platform: "Women's Empowerment Marketplace API",
+    platform: "IRIS Artisan Marketplace API",
     engine: 'Node.js Express + SQLite',
     security: 'JWT Encrypted Auth Guard',
     pipeline: 'Distributed Order Lifecycle Active',
@@ -96,7 +96,7 @@ app.use((req, res) => {
   if (fs.existsSync(standalonePath)) {
     return res.sendFile(standalonePath);
   }
-  res.status(200).send(`<!doctype html><html><body><h1>Women's Empowerment Marketplace</h1><p>Client build pending. Please run <code>npm run build</code>.</p></body></html>`);
+  res.status(200).send(`<!doctype html><html><body><h1>IRIS Artisan Marketplace</h1><p>Client build pending. Please run <code>npm run build</code>.</p></body></html>`);
 });
 
 // Start server

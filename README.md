@@ -1,7 +1,7 @@
-# 🌸 Women's Empowerment Marketplace
+# 🪻 IRIS | Artisan Collective & Marketplace
 
-> **Full-Stack Flagship Digital Commerce & Artisan Empowerment Engine**  
-> Empowering women master artisans and rural cottage entrepreneurs through decentralized provenance tracking, fair-trade transparency guarantees, interactive live masterclasses, direct artisan messaging, multi-currency checkout, and a distributed fulfillment pipeline.
+> **Full-Stack Luxury Digital Commerce & Handcrafted Artisan Empowerment Engine**  
+> Empowering women master artisans and rural cottage entrepreneurs through decentralized provenance tracking, fair-trade living wage transparency, interactive live masterclasses, direct atelier messaging, multi-currency checkout, and a distributed fulfillment pipeline.
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Active%20Cloudflare%20Edge-10b981?style=for-the-badge&logo=cloudflare)](https://simulations-burlington-burn-permanent.trycloudflare.com)
 [![React 19](https://img.shields.io/badge/Frontend-React%2019%20%2B%20Vite-61dafb?logo=react)](https://react.dev/)
@@ -19,7 +19,7 @@ The platform is live and accessible over encrypted global HTTPS:
 
 | Channel / Interface | Live URL | Description |
 | :--- | :--- | :--- |
-| 🛍️ **Interactive Full-Stack Web App** | [**https://simulations-burlington-burn-permanent.trycloudflare.com**](https://simulations-burlington-burn-permanent.trycloudflare.com) | React 19 Storefront + Express API + Image CDN |
+| 🛍️ **Interactive Full-Stack Web App** | [**https://simulations-burlington-burn-permanent.trycloudflare.com**](https://simulations-burlington-burn-permanent.trycloudflare.com) | IRIS Storefront + Express API + Image CDN |
 | 🚀 **GitHub Pages Deployment** | [**https://gnanendra942.github.io/Women-s-Empowerment-Marketplace/**](https://gnanendra942.github.io/Women-s-Empowerment-Marketplace/) | Static cloud hosting on `gh-pages` branch |
 | 📄 **Standalone Portable Marketplace** | [**https://simulations-burlington-burn-permanent.trycloudflare.com/marketplace.html**](https://simulations-burlington-burn-permanent.trycloudflare.com/marketplace.html) | Zero-dependency single-file HTML5 app |
 | 🩺 **Backend Health API** | [**https://simulations-burlington-burn-permanent.trycloudflare.com/api/health**](https://simulations-burlington-burn-permanent.trycloudflare.com/api/health) | Live system health & engine status check |
@@ -31,9 +31,9 @@ The platform is live and accessible over encrypted global HTTPS:
 
 ## 🌟 Executive Summary
 
-The **Women's Empowerment Marketplace** is an end-to-end commerce platform designed to remove exploitative intermediaries from traditional handicraft supply chains. By connecting rural women-led artisan guilds directly with global patrons, the platform guarantees that **86% of every purchase price is directly disbursed** to female heads of households.
+**IRIS** is a luxury direct-from-artisan digital commerce engine designed to remove exploitative intermediaries from traditional handicraft supply chains. By connecting rural women-led artisan guilds directly with global patrons, the platform guarantees that **86% of every purchase price is directly disbursed** to female heads of households.
 
-The platform provides a consumer experience paired with enterprise seller tooling:
+The platform provides a frictionless consumer experience paired with enterprise seller tooling:
 - **For Patrons**: Heritage storytelling, authentic provenance validation, virtual masterclasses, direct craft inquiries, multi-currency support, and live consignment tracking.
 - **For Women Artisans**: Unified seller analytics suite, one-click catalog publishing, live pipeline state transitions, and fair-wage ledger transparency.
 

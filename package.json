@@ -1,7 +1,7 @@
 {
-  "name": "women-empowerment-marketplace",
+  "name": "iris-artisan-marketplace",
   "version": "1.0.0",
-  "description": "Full-stack digital commerce engine empowering women artisans & local cottage entrepreneurs.",
+  "description": "IRIS: Luxury Handcrafted Marketplace empowering women master artisans & rural cottage entrepreneurs.",
   "scripts": {
     "start": "node -e \"const fs=require('fs'); if(!fs.existsSync('client/dist/index.html')){ console.log('✨ Building frontend bundle...'); require('child_process').execSync('npm run build', {stdio:'inherit'}); } const s=require('child_process').spawn('node', ['server/server.js'], {stdio:'inherit'}); s.on('exit', process.exit);\"",
     "build": "npm run build --prefix client",
