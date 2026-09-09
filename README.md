@@ -74,42 +74,54 @@ The platform provides a consumer experience paired with enterprise seller toolin
 
 ---
 
-## ✨ Flagship Capabilities
+## ✨ Pro-Level Features & Enterprise Catalog
 
-### 🛍️ 1. Dynamic Storefront & Catalog
-- **Curated Craft Disciplines**: Filter seamlessly across `Textiles & Apparel`, `Home & Decor`, `Jewelry & Adornment`, and `Organic Wellness`.
-- **Search & Filter Suite**: Multi-attribute filtering with real-time keyword search across craft technique, materials, and artisan village hamlets.
-- **Saved Heirlooms (Wishlist)**: Persistent local wishlist with fluid micro-animations and quick category filtering.
+### 🛍️ 1. Expansive 1,120+ Product Catalog Across 8 Departments
+- **Over 1,000 authentic handcrafted heirlooms** directly connected to female cottage entrepreneurs:
+  1. **🥻 Handlooms & Sarees (250 items)**: Pure Mulberry Banarasi Brocade, Kanjeevaram Zari Silks, Chanderi Tissue Weaves, Wild Tussar Silks, Bandhani & Patola, Solar Desi Khadi, Kalamkari Vegetable Dyes, and Kashmiri Pashmina Shawls.
+  2. **💎 Jewelry & Adornment (200 items)**: Cuttack Tarakasi 925 Sterling Silver Micro-Filigree, Temple Jewelry Chokers, Jaipur Kundan-Meenakari Enamels, Bastar Lost-Wax Dokra Brass, Fired Earthen Terracotta Beads, Lac Bangles, and Silver Payals.
+  3. **🏺 Home & Living Decor (200 items)**: Bankura Alluvial River Silt Terracotta Urns, Jaipur Quartz Stone Blue Pottery, Khurja Mineral Glaze Stoneware Planters, Bidriware Silver Inlay Metalcraft, Kashmiri Root Walnut Wood Carvings, and Channapatna Lacquer Wooden Toys.
+  4. **🌿 Ayurvedic & Forest Organics (150 items)**: Nilgiri Wild Cliff Multi-Floral Raw Honey, 7.8% High-Curcumin Lakadong Turmeric, Pure Kashmiri Mogra Saffron (Kesar), Charaka Kumkumadi Facial Serums, and Cold-Pressed Wood-Chekku Carrier Oils.
+  5. **🎨 Traditional Fine Art (80 items)**: Madhubani Bamboo Nib & Natural Pigment Folk Canvases, Odisha Palm Leaf Pattachitra Scrolls, Warli Rice Paste Mud Murals, Gond Dotted Forest Canvases, and Nathdwara Pichwai 24K Gold Foil Temple Paintings.
+  6. **🍲 Pottery & Kitchenware (100 items)**: Longpi Serpentine Stone Black Cookware, Unglazed Curd & Handi Pots, Natural Evaporative Clay Water Dispensers, Kansa 78:22 Bell-Metal Dinner Thalis, and Anti-Bacterial Carved Neem Woodware.
+  7. **👜 Bags, Footwear & Accessories (80 items)**: Shantiniketan Embossed Vegetable Tanned Leather Totes, Lambada Nomadic Banjara Mirror Clutches, Golden Fiber Braided Jute Bags, and Zero-Chemical Handmade Mojaris & Kolhapuris.
+  8. **🪔 Festive & Spiritual Crafts (60 items)**: Nachiyar Koil Sand-Casting Brass Akhand Diyas, Desi Cow Panchagavya Sambrani Cups, Aranmula Carved Teakwood Pooja Chowkis, and Charcoal-Free Temple Flower Agarbatti.
 
-### 📜 2. Digital Certificate of Authenticity & Provenance Verifier
+### 🧭 2. Interactive Pro Mega Menu & Department Navigation
+- **All Departments Mega Menu Trigger (`[ ☰ All Departments (1,000+ Items) ▾ ]`)**: Full-width interactive dropdown organizing the 8 departments and 36 subcategories with live product counts and instant one-click catalog filters.
+- **Direct Navigation Tabs**: High-contrast category links with dynamic counts (`All (1,120)`, `Handlooms (250)`, `Jewelry (200)`, `Home Decor (200)`, etc.).
+
+### 🔍 3. Live Autocomplete Search & Pro Faceted Filters
+- **Real-Time Autocomplete Search**: Debounced instant suggestions with 42x42px image thumbnails, titles, prices, and department badges.
+- **Faceted Filter Sidebar**:
+  - **Price Range Slider**: Smooth slider (₹99 to ₹6,999) + quick price brackets (`< ₹500`, `₹500–₹1,500`, `₹1,500–₹3,000`, `₹3,000+`).
+  - **Artisan State Cluster**: Filter by 12 states (Uttar Pradesh, West Bengal, Odisha, Rajasthan, Tamil Nadu, Kashmir, Gujarat, etc.).
+  - **Discount & Rating Filters**: Direct deals (50%+, 40%+, 30%+) and verified customer ratings (4.8★+, 4.6★+).
+  - **Dispatch Speed**: Quick toggle for 24-hour fast shipping.
+  - **Active Filter Chips**: Clickable tags with instant removal and a "Reset All" button.
+
+### ⚡ 4. High-Performance Paginated Catalog & Quick View
+- **60 FPS Paginated Grid**: Browse in slices of 24, 48, or 96 items per page with smooth auto-scroll to top.
+- **Page Jump Controls**: Numbered pagination buttons, previous/next, and a jump-to-page input.
+- **👁 Quick View Modal**: Interactive card overlay to inspect multi-angle photos, GI tags, living wage disbursements, and specs without leaving the catalog page.
+
+### 🎟️ 5. Cart Drawer with Promo Coupon Engine & Simulated Checkout
+- **Coupon Engine**:
+  - `EMPOWER15`: 15% discount across the total cart.
+  - `CRAFTLOVE`: Flat ₹200 off on orders above ₹500.
+  - `FREESHIP`: 100% Free Express Delivery.
+- **Fair-Wage Ledger Summary**: Real-time display showing 86% of the cart value disbursed directly to female heads of household.
+- **Pro Checkout Modal**: Patron details, payment method selection (UPI Instant, Cards, NetBanking, COD), order summary, and instant Order Confirmation Receipt with reference ID and live tracking code.
+
+### 📜 6. Digital Certificate of Authenticity & Provenance Verifier
 - **Immutable Provenance Hash**: Every piece features a SHA-256 cryptographic provenance stamp validating origin cluster and master artisan identity.
 - **86% Direct Fair-Wage Certified Seal**: Audited wage disbursement breakdown directly to artisan bank accounts.
 - **Printable Certificate Card**: High-resolution, gold-accented certificate layout ready for framing or digital verification.
 
-### 🎓 3. Virtual Artisan Masterclass Studio
-- **Live Two-Way Studio**: Interactive masterclasses hosted directly from rural loom sheds and ceramic ateliers.
-- **Curated Materials Kit**: Pure Mulberry silk, raw alluvial clay, or sterling silver tools shipped directly to patron doorsteps.
-- **Instant Digital Pass**: Real-time reservation engine issuing unique pass codes (`PASS-XXXXXX`) with countdowns.
-
-### 💬 4. Direct Patron-to-Artisan Messaging
-- **Bespoke Craft Inquiries**: Request custom dimensions, bridal stoles, or personalized inscriptions directly from artisan collective leads.
-- **Authentic Workshop Acknowledgement**: Real-time communication simulator providing cultural artisan greetings and workshop updates.
-
-### ⚖️ 5. Fair-Trade Transparency Engine & Cluster Map
-- **Interactive Wage Simulator**: Drag sliders to verify real-time disbursements:
-  - **86%** Direct Artisan Household Payout
-  - **8%** Raw Eco-Materials & Natural Vegetable Dyes
-  - **6%** Solar-Powered Logistics & Biodegradable Packaging
-- **Artisan Guild Cluster Map**: Explore active clusters across Varanasi, Bankura, Cuttack, and Kutch.
-
-### 💱 6. Global Multi-Currency Conversion
-- Seamless real-time currency switching across catalog, modal stories, and checkout drawer:
-  - 🇺🇸 **USD ($)** · 🇪🇺 **EUR (€)** · 🇬🇧 **GBP (£)** · 🇮🇳 **INR (₹)** · 🇨🇦 **CAD (C$)** · 🇯🇵 **JPY (¥)**
-
-### 📊 7. Seller Analytics Suite & Fulfillment Pipeline
-- **Executive KPIs**: Gross Merchandise Value (GMV), Direct Artisan Payouts, Pipeline Order Volume, Rural Weaving Labor Hours.
-- **Distributed Pipeline Controller**: Advance consignments through lifecycle stages (`Pending` ➔ `Artisan Crafting` ➔ `Quality Check` ➔ `Dispatched` ➔ `Delivered`).
-- **Live Consignment Lookup**: Track orders by Order # or SHA tracking hash.
+### 🎓 7. Virtual Artisan Masterclass Studio & Pipeline Tracking
+- **Live Two-Way Studio**: Interactive masterclasses with materials kits delivered to patrons.
+- **Direct Artisan Chat**: Real-time atelier inquiry simulator with cultural artisan greetings.
+- **Consignment Lifecycle**: Real-time order tracking (`Pending` ➔ `Crafting` ➔ `Quality Check` ➔ `Dispatched` ➔ `Delivered`).
 
 ---
 

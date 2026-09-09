@@ -1410,6 +1410,856 @@
       .sc_products_grid { grid-template-columns: repeat(2, 1fr); }
       .sc_features_row, .sc_footer_cols { grid-template-columns: repeat(2, 1fr); }
     }
+
+    /* ==========================================================================
+       PRO LEVEL EXTENSIONS: MEGA MENU, AUTOCOMPLETE, FILTERS, PAGINATION, MODALS
+       ========================================================================== */
+    /* Mega Menu Button & Dropdown */
+    .mega_nav_item {
+      position: relative;
+    }
+    .mega_menu_btn {
+      background: linear-gradient(135deg, #036b77 0%, #05a2b3 100%);
+      color: #ffffff;
+      border: none;
+      height: 42px;
+      padding: 0 16px;
+      font-family: var(--font-heading);
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-right: 1px solid rgba(255,255,255,0.25);
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .mega_menu_btn:hover {
+      background: #02525c;
+      color: #fff;
+    }
+    .mega_menu_dropdown {
+      position: absolute;
+      top: 42px;
+      left: 0;
+      width: 100%;
+      background: #ffffff;
+      box-shadow: 0 20px 40px -10px rgba(0,0,0,0.22);
+      border-top: 3px solid var(--sc-orange);
+      border-bottom: 2px solid var(--sc-border);
+      z-index: 2500;
+      display: none;
+      animation: megaFadeDown 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .mega_menu_dropdown.open {
+      display: block;
+    }
+    @keyframes megaFadeDown {
+      from { opacity: 0; transform: translateY(-8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .mega_menu_inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 20px 24px;
+    }
+    .mega_menu_header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--sc-border-light);
+      padding-bottom: 14px;
+      margin-bottom: 16px;
+    }
+    .mega_menu_title {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #1a1a1a;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .mega_deal_pill {
+      background: #fff3ed;
+      color: var(--sc-orange);
+      border: 1px solid #fed7aa;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    .mega_close_btn {
+      background: transparent;
+      border: 1px solid var(--sc-border);
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #666;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .mega_close_btn:hover {
+      background: #f1f5f9;
+      color: #111;
+    }
+    .mega_departments_grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .mega_dept_card {
+      background: #fafafa;
+      border: 1px solid var(--sc-border-light);
+      border-radius: 6px;
+      padding: 12px 14px;
+      transition: all 0.15s;
+    }
+    .mega_dept_card:hover {
+      background: #ffffff;
+      border-color: var(--sc-teal);
+      box-shadow: 0 4px 12px rgba(5, 162, 179, 0.1);
+    }
+    .mega_dept_head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #eaeaea;
+      cursor: pointer;
+    }
+    .mega_dept_name {
+      font-family: var(--font-heading);
+      font-size: 13px;
+      font-weight: 800;
+      color: #111;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .mega_dept_count {
+      background: var(--sc-teal-light);
+      color: var(--sc-teal-dark);
+      font-size: 10px;
+      font-weight: 800;
+      padding: 2px 6px;
+      border-radius: 10px;
+    }
+    .mega_sub_list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .mega_sub_list li a {
+      color: #4b5563;
+      font-size: 11.5px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 2px 4px;
+      border-radius: 3px;
+      transition: all 0.15s;
+      text-decoration: none;
+    }
+    .mega_sub_list li a:hover {
+      color: var(--sc-teal-dark);
+      background: var(--sc-teal-light);
+      font-weight: 700;
+      padding-left: 8px;
+    }
+    .mega_sub_cnt {
+      font-size: 10px;
+      color: #888;
+      font-weight: 600;
+    }
+    .mega_menu_footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px solid var(--sc-border-light);
+      font-size: 11.5px;
+      color: #555;
+    }
+
+    /* Live Search Autocomplete Dropdown */
+    .sc_search_autocomplete {
+      position: absolute;
+      top: 42px;
+      left: 0;
+      right: 0;
+      background: #ffffff;
+      border: 1px solid var(--sc-border);
+      border-top: none;
+      border-radius: 0 0 6px 6px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+      z-index: 3000;
+      max-height: 420px;
+      overflow-y: auto;
+    }
+    .sc_auto_item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--sc-border-light);
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .sc_auto_item:hover {
+      background: #f8fafc;
+    }
+    .sc_auto_thumb {
+      width: 42px;
+      height: 42px;
+      object-fit: cover;
+      border-radius: 4px;
+      border: 1px solid #e2e8f0;
+      flex-shrink: 0;
+    }
+    .sc_auto_info {
+      flex: 1;
+      min-width: 0;
+    }
+    .sc_auto_title {
+      font-size: 12px;
+      font-weight: 700;
+      color: #1a1a1a;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .sc_auto_meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      color: #64748b;
+      margin-top: 2px;
+    }
+    .sc_auto_pill {
+      background: var(--sc-teal-light);
+      color: var(--sc-teal-dark);
+      font-size: 9.5px;
+      font-weight: 800;
+      padding: 1px 6px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+    .sc_auto_price {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--sc-orange);
+      flex-shrink: 0;
+    }
+    .sc_auto_footer {
+      padding: 10px 14px;
+      background: #f1f5f9;
+      font-size: 11px;
+      color: var(--sc-teal-dark);
+      font-weight: 700;
+      text-align: center;
+      cursor: pointer;
+    }
+    .sc_auto_footer:hover {
+      background: #e2e8f0;
+    }
+
+    /* 2-Column Catalog Layout */
+    .catalog_layout {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      margin-top: 14px;
+      margin-bottom: 30px;
+    }
+    .catalog_sidebar {
+      width: 260px;
+      min-width: 260px;
+      background: #ffffff;
+      border: 1px solid var(--sc-border);
+      border-radius: 6px;
+      padding: 16px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    }
+    .sidebar_header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--sc-border-light);
+    }
+    .sidebar_header h3 {
+      font-family: var(--font-heading);
+      font-size: 14px;
+      font-weight: 800;
+      color: #1a1a1a;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+    .btn_reset_filters {
+      background: transparent;
+      border: none;
+      color: var(--sc-orange);
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+    .btn_reset_filters:hover {
+      color: var(--sc-orange-hover);
+    }
+    .catalog_filter_group {
+      margin-bottom: 16px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--sc-border-light);
+    }
+    .catalog_filter_title {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: #222;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      letter-spacing: 0.3px;
+    }
+    .sidebar_select {
+      width: 100%;
+      height: 34px;
+      border: 1px solid var(--sc-border);
+      border-radius: 4px;
+      padding: 0 8px;
+      font-size: 12px;
+      font-family: var(--font-body);
+      color: #333;
+      background: #ffffff;
+      outline: none;
+      cursor: pointer;
+    }
+    .sidebar_select:focus {
+      border-color: var(--sc-teal);
+    }
+    .filter_scrollable_list {
+      max-height: 180px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      padding-right: 4px;
+    }
+    .filter_check_item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: #444;
+      cursor: pointer;
+    }
+    .filter_check_item input {
+      accent-color: var(--sc-teal);
+      cursor: pointer;
+    }
+    .filter_check_item label {
+      cursor: pointer;
+      flex: 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .filter_check_count {
+      font-size: 10px;
+      color: #888;
+    }
+    .price_quick_pills {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      margin-top: 8px;
+    }
+    .price_quick_pills button {
+      background: #f8fafc;
+      border: 1px solid var(--sc-border);
+      border-radius: 4px;
+      padding: 5px 4px;
+      font-size: 10.5px;
+      font-weight: 600;
+      color: #475569;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.15s;
+    }
+    .price_quick_pills button:hover {
+      background: var(--sc-teal-light);
+      border-color: var(--sc-teal);
+      color: var(--sc-teal-dark);
+    }
+    .active_filters_row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+    .filter_chip {
+      background: var(--sc-teal-light);
+      color: var(--sc-teal-dark);
+      border: 1px solid rgba(5, 162, 179, 0.35);
+      border-radius: 12px;
+      padding: 3px 8px;
+      font-size: 10.5px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+    }
+    .filter_chip span {
+      font-size: 12px;
+      line-height: 1;
+    }
+
+    /* Catalog Content & Toolbar */
+    .catalog_main_content {
+      flex: 1;
+      min-width: 0;
+    }
+    .catalog_toolbar {
+      background: #ffffff;
+      border: 1px solid var(--sc-border);
+      border-radius: 6px;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 14px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+    }
+    .toolbar_results_info {
+      font-size: 12.5px;
+      color: #475569;
+    }
+    .toolbar_results_info b {
+      color: #111;
+    }
+    .toolbar_controls {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .toolbar_control_item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: #64748b;
+      font-weight: 600;
+    }
+    .toolbar_select {
+      height: 32px;
+      border: 1px solid var(--sc-border);
+      border-radius: 4px;
+      padding: 0 8px;
+      font-size: 12px;
+      font-family: var(--font-body);
+      color: #1e293b;
+      background: #ffffff;
+      outline: none;
+      cursor: pointer;
+    }
+    .toolbar_select:focus {
+      border-color: var(--sc-teal);
+    }
+
+    /* Enhanced Product Card Actions */
+    .sc_card_actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      margin-top: 8px;
+    }
+    .sc_card_quick_btn {
+      height: 30px;
+      border: 1px solid var(--sc-teal);
+      background: #ffffff;
+      color: var(--sc-teal);
+      border-radius: 3px;
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      transition: all 0.15s;
+    }
+    .sc_card_quick_btn:hover {
+      background: var(--sc-teal-light);
+      border-color: var(--sc-teal-dark);
+      color: var(--sc-teal-dark);
+    }
+
+    /* Pro Pagination Bar */
+    .sc_pagination_container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      margin: 28px 0 36px;
+      flex-wrap: wrap;
+    }
+    .sc_page_btn {
+      min-width: 36px;
+      height: 36px;
+      padding: 0 8px;
+      border-radius: 4px;
+      border: 1px solid var(--sc-border);
+      background: #ffffff;
+      font-size: 12px;
+      font-weight: 700;
+      color: #333;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.15s;
+    }
+    .sc_page_btn:hover:not(.active):not(:disabled) {
+      border-color: var(--sc-teal);
+      color: var(--sc-teal);
+    }
+    .sc_page_btn.active {
+      background: var(--sc-teal);
+      color: #ffffff;
+      border-color: var(--sc-teal);
+    }
+    .sc_page_btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+    .sc_page_dots {
+      padding: 0 4px;
+      color: #888;
+      font-weight: 700;
+    }
+    .sc_page_jump {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-left: 12px;
+      font-size: 11.5px;
+      color: #64748b;
+    }
+    .sc_page_jump input {
+      width: 48px;
+      height: 32px;
+      text-align: center;
+      border: 1px solid var(--sc-border);
+      border-radius: 4px;
+      font-size: 12px;
+      outline: none;
+    }
+    .sc_page_jump button {
+      height: 32px;
+      padding: 0 10px;
+      border: 1px solid var(--sc-teal);
+      background: var(--sc-teal);
+      color: #fff;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    /* Quick View Modal Box */
+    .quickview_modal_box {
+      max-width: 820px;
+      width: 95%;
+      padding: 24px;
+      border-radius: 8px;
+    }
+    .quickview_grid {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 24px;
+      align-items: flex-start;
+    }
+    .quickview_img_wrap {
+      border: 1px solid var(--sc-border);
+      border-radius: 6px;
+      overflow: hidden;
+      background: #f8fafc;
+      text-align: center;
+    }
+    .quickview_main_img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      display: block;
+    }
+    .quickview_thumbs {
+      display: flex;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .quickview_thumbs img {
+      width: 54px;
+      height: 54px;
+      object-fit: cover;
+      border-radius: 4px;
+      border: 2px solid transparent;
+      cursor: pointer;
+    }
+    .quickview_thumbs img.active {
+      border-color: var(--sc-teal);
+    }
+    .quickview_details {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .quickview_brand {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--sc-teal-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    .quickview_title {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #111;
+      line-height: 1.35;
+    }
+    .quickview_price_row {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin: 4px 0;
+    }
+    .quickview_fprice {
+      font-size: 1.45rem;
+      font-weight: 900;
+      color: var(--sc-orange);
+    }
+    .quickview_mrp {
+      font-size: 13px;
+      color: #888;
+      text-decoration: line-through;
+    }
+    .quickview_discount {
+      background: #ecfdf5;
+      color: #047857;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+    .quickview_wage_box {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 6px;
+      padding: 10px 14px;
+      font-size: 11.5px;
+      color: #166534;
+      line-height: 1.45;
+    }
+    .quickview_specs_table {
+      font-size: 11.5px;
+      width: 100%;
+      border-collapse: collapse;
+      margin: 6px 0;
+    }
+    .quickview_specs_table td {
+      padding: 4px 0;
+      border-bottom: 1px solid #f1f5f9;
+    }
+    .quickview_specs_table td:first-child {
+      color: #64748b;
+      width: 35%;
+      font-weight: 600;
+    }
+    .quickview_qty_row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 10px;
+    }
+    .qty_stepper {
+      display: flex;
+      align-items: center;
+      border: 1px solid var(--sc-border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .qty_stepper button {
+      width: 32px;
+      height: 32px;
+      background: #f8fafc;
+      border: none;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .qty_stepper button:hover {
+      background: #e2e8f0;
+    }
+    .qty_stepper span {
+      width: 38px;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    /* Cart Coupon Box */
+    .sc_coupon_box {
+      background: #f8fafc;
+      border: 1px solid var(--sc-border-light);
+      border-radius: 4px;
+      padding: 10px;
+      margin-bottom: 12px;
+    }
+    .sc_cart_price_breakdown {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 12px;
+      margin-bottom: 12px;
+    }
+    .cart_breakdown_row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #475569;
+    }
+
+    /* Checkout Modal */
+    .checkout_modal_box {
+      max-width: 860px;
+      width: 95%;
+      padding: 24px;
+      border-radius: 8px;
+    }
+    .checkout_modal_header {
+      margin-bottom: 18px;
+      border-bottom: 1px solid var(--sc-border-light);
+      padding-bottom: 12px;
+    }
+    .checkout_modal_header h2 {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #1a1a1a;
+    }
+    .checkout_modal_header p {
+      font-size: 11.5px;
+      color: var(--sc-teal-dark);
+      font-weight: 700;
+    }
+    .checkout_modal_grid {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 24px;
+      align-items: flex-start;
+    }
+    .checkout_form_section {
+      background: #f8fafc;
+      border: 1px solid var(--sc-border);
+      border-radius: 6px;
+      padding: 14px;
+    }
+    .checkout_form_section h4 {
+      font-family: var(--font-heading);
+      font-size: 12px;
+      font-weight: 800;
+      color: #1e293b;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .form_label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #475569;
+      display: block;
+      margin-bottom: 3px;
+    }
+    .payment_options {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .payment_radio {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border: 1px solid var(--sc-border);
+      border-radius: 4px;
+      background: #ffffff;
+      font-size: 11.5px;
+      font-weight: 600;
+      color: #333;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .payment_radio:hover {
+      border-color: var(--sc-teal);
+    }
+    .payment_radio input {
+      accent-color: var(--sc-teal);
+    }
+    .checkout_summary_col {
+      background: #ffffff;
+      border: 1px solid var(--sc-border);
+      border-radius: 6px;
+      padding: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+
+    /* Order Confirmation Box */
+    .order_success_box {
+      max-width: 520px;
+      text-align: center;
+      padding: 28px 24px;
+      border-radius: 8px;
+    }
+    .order_success_icon {
+      width: 68px;
+      height: 68px;
+      background: #ecfdf5;
+      color: #059669;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+      margin: 0 auto 14px;
+      box-shadow: 0 4px 12px rgba(5, 150, 105, 0.2);
+    }
+
+    @media (max-width: 990px) {
+      .catalog_layout { flex-direction: column; }
+      .catalog_sidebar { width: 100%; min-width: 100%; }
+      .mega_departments_grid { grid-template-columns: repeat(2, 1fr); }
+      .quickview_grid { grid-template-columns: 1fr; }
+      .checkout_modal_grid { grid-template-columns: 1fr; }
+    }
+
   </style>
 </head>
 <body>
@@ -1451,10 +2301,12 @@
 
         <!-- Search Bar -->
         <div class="sc_search_box">
-          <input type="text" id="autocomplete" placeholder="What is on your mind today? Search sarees, terracotta, jhumkas..." onkeydown="if(event.key==='Enter') executeSearch();">
+          <input type="text" id="autocomplete" placeholder="What is on your mind today? Search 1,000+ sarees, silver, terracotta..." oninput="handleSearchInput(this.value)" onkeydown="if(event.key==='Enter') executeSearch();" autocomplete="off">
           <button class="sc_search_btn" onclick="executeSearch()">
             <span>🔍</span> Search
           </button>
+          <!-- Live Autocomplete Dropdown -->
+          <div id="search-autocomplete-dropdown" class="sc_search_autocomplete" style="display:none;"></div>
         </div>
 
         <!-- Right Links -->
@@ -1487,26 +2339,64 @@
     </div>
 
     <!-- ======================================================================
-         SHOPCLUES MAIN NAVIGATION BAR (Deep Teal #05a2b3)
+         PRO LEVEL MAIN NAVIGATION BAR WITH MEGA MENU (1,120+ PRODUCTS)
          ====================================================================== -->
-    <nav class="main_navigation">
-      <div class="wrapper">
+    <nav class="main_navigation" style="position:relative;">
+      <div class="wrapper" style="position:relative;">
         <ul>
+          <li class="mega_nav_item">
+            <button class="mega_menu_btn" onclick="toggleMegaMenu()" id="mega-menu-trigger">
+              <span style="font-size:14px;">☰</span>
+              <span>All Departments (1,000+ Items)</span>
+              <span style="font-size:10px; margin-left:2px;">▼</span>
+            </button>
+          </li>
           <li class="made">
             <span class="madein_badge" onclick="showToast('100% Handcrafted by Women Artisans across India')">
               🇮🇳 Made In India
             </span>
           </li>
-          <li class="active" id="nav-all"><a href="javascript:void(0);" onclick="filterByCategory('All')">All Handcrafted</a></li>
-          <li id="nav-textiles"><a href="javascript:void(0);" onclick="filterByCategory('Textiles')">Handlooms & Sarees</a></li>
-          <li id="nav-decor"><a href="javascript:void(0);" onclick="filterByCategory('Home & Decor')">Terracotta & Decor</a></li>
-          <li id="nav-jewelry"><a href="javascript:void(0);" onclick="filterByCategory('Jewelry')">Silver Filigree</a></li>
-          <li id="nav-wellness"><a href="javascript:void(0);" onclick="filterByCategory('Wellness')">Organic & Forest</a></li>
+          <li class="active" id="nav-all"><a href="javascript:void(0);" onclick="filterByCategory('All')">All Heirlooms (1,120)</a></li>
+          <li id="nav-handlooms"><a href="javascript:void(0);" onclick="filterByCategory('Handlooms & Sarees')">Handlooms (250)</a></li>
+          <li id="nav-jewelry"><a href="javascript:void(0);" onclick="filterByCategory('Jewelry & Adornment')">Jewelry (200)</a></li>
+          <li id="nav-decor"><a href="javascript:void(0);" onclick="filterByCategory('Home & Living Decor')">Home Decor (200)</a></li>
+          <li id="nav-wellness"><a href="javascript:void(0);" onclick="filterByCategory('Ayurvedic & Forest Organics')">Ayurveda (150)</a></li>
+          <li id="nav-art"><a href="javascript:void(0);" onclick="filterByCategory('Traditional Fine Art')">Fine Art (80)</a></li>
+          <li id="nav-pottery"><a href="javascript:void(0);" onclick="filterByCategory('Pottery & Kitchenware')">Kitchenware (100)</a></li>
+          <li id="nav-bags"><a href="javascript:void(0);" onclick="filterByCategory('Bags, Footwear & Accessories')">Bags & Crafts (80)</a></li>
+          <li id="nav-festive"><a href="javascript:void(0);" onclick="filterByCategory('Festive & Spiritual Crafts')">Spiritual (60)</a></li>
           <li><a href="javascript:void(0);" onclick="switchView('workshops')">Masterclasses</a></li>
-          <li><a href="javascript:void(0);" onclick="switchView('guilds')">Artisan Guilds</a></li>
+          <li><a href="javascript:void(0);" onclick="switchView('guilds')">Guilds</a></li>
           <li><a href="javascript:void(0);" onclick="switchView('orders')">Track Orders</a></li>
           <li><a href="javascript:void(0);" onclick="switchView('calculator')">86% Fair-Wage</a></li>
         </ul>
+
+        <!-- PRO MEGA MENU DROPDOWN (FULL WIDTH) -->
+        <div id="mega-menu-dropdown" class="mega_menu_dropdown">
+          <div class="mega_menu_inner">
+            <div class="mega_menu_header">
+              <div class="mega_menu_title">
+                <span>🛍️ Explore 1,120+ Direct-From-Artisan Handcrafted Masterpieces</span>
+                <span class="mega_deal_pill">🔥 Direct Living Wage Deals · 35% to 59% OFF</span>
+              </div>
+              <button class="mega_close_btn" onclick="toggleMegaMenu(false)">✕ Close</button>
+            </div>
+            <div class="mega_departments_grid" id="mega-departments-container">
+              <!-- Populated via JS with 8 department columns and 36 subcategories -->
+            </div>
+            <div class="mega_menu_footer">
+              <div class="mega_footer_left">
+                <span>🌸 <b>Fair-Wage Guarantee:</b> 86% of every purchase disbursed directly to female heads of household.</span>
+              </div>
+              <div class="mega_footer_right">
+                <button class="btn orange" style="height:32px; font-size:11px; padding:0 16px;" onclick="toggleMegaMenu(false); filterByCategory('All');">
+                  Browse All 1,120 Products →
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </nav>
   </header>
@@ -1801,14 +2691,184 @@
         </div>
       </div>
 
-      <!-- SHOPCLUES RECOMMENDATIONS / CATALOG GRID -->
+      <!-- PRO-LEVEL DIRECT ARTISAN CATALOG BROWSER (1,120 PRODUCTS) -->
       <div class="sc_recommend_heading">
-        <span>Customers Who Viewed This Also Bought</span>
-        <span class="tag">Direct-From-Artisan Deals</span>
+        <div>
+          <span>Direct-From-Artisan Marketplace Catalog</span>
+          <span class="tag" id="catalog-counter-badge">1,120 Handcrafted Masterpieces</span>
+        </div>
+        <div style="font-size:11px; color:#666; font-weight:normal;">
+          Fair-Wage Audited · Zero Intermediaries · Dispatched Direct from Rural Guilds
+        </div>
       </div>
 
-      <div class="sc_products_grid" id="products-grid">
-        <!-- Dynamically rendered ShopClues product cards -->
+      <!-- PRO 2-COLUMN CATALOG LAYOUT -->
+      <div class="catalog_layout">
+        
+        <!-- LEFT FACETED FILTER SIDEBAR -->
+        <aside class="catalog_sidebar" id="catalog-filter-sidebar">
+          <div class="sidebar_header">
+            <h3>Filters</h3>
+            <button class="btn_reset_filters" onclick="resetAllFilters()">Reset All</button>
+          </div>
+
+          <!-- Active Filter Pills Container -->
+          <div id="active-filter-chips" class="active_filters_row"></div>
+
+          <!-- Filter Group 1: Departments -->
+          <div class="catalog_filter_group">
+            <div class="catalog_filter_title">
+              <span>Department</span>
+            </div>
+            <div class="filter_scrollable_list" id="filter-departments-list">
+              <!-- Dynamically populated department radio buttons with counts -->
+            </div>
+          </div>
+
+          <!-- Filter Group 2: Subcategory -->
+          <div class="catalog_filter_group">
+            <div class="catalog_filter_title">
+              <span>Craft Subcategory</span>
+            </div>
+            <select id="filter-subcategory-select" class="sidebar_select" onchange="applySubcategoryFilter(this.value)">
+              <option value="All">All Subcategories (36 Specialties)</option>
+            </select>
+          </div>
+
+          <!-- Filter Group 3: Price Slider & Quick Buttons -->
+          <div class="catalog_filter_group">
+            <div class="catalog_filter_title">
+              <span>Max Price</span>
+              <span id="price-slider-display" style="color:var(--sc-teal-dark); font-weight:800;">₹6,999</span>
+            </div>
+            <div style="margin:8px 0;">
+              <input type="range" id="price-range-slider" min="149" max="6999" step="50" value="6999" style="width:100%; accent-color:var(--sc-teal);" oninput="handlePriceSlider(this.value)">
+            </div>
+            <div class="price_quick_pills">
+              <button type="button" onclick="setPriceBracket(0, 499)">Under ₹500</button>
+              <button type="button" onclick="setPriceBracket(500, 1499)">₹500–₹1,500</button>
+              <button type="button" onclick="setPriceBracket(1500, 2999)">₹1,500–₹3,000</button>
+              <button type="button" onclick="setPriceBracket(3000, 10000)">₹3,000+</button>
+            </div>
+          </div>
+
+          <!-- Filter Group 4: Craft Origin State -->
+          <div class="catalog_filter_group">
+            <div class="catalog_filter_title">
+              <span>Artisan State Cluster</span>
+            </div>
+            <select id="filter-state-select" class="sidebar_select" onchange="applyStateFilter(this.value)">
+              <option value="All">All India (12 Clusters)</option>
+              <option value="Uttar Pradesh">Uttar Pradesh (Varanasi/Khurja)</option>
+              <option value="West Bengal">West Bengal (Bankura/Bolpur)</option>
+              <option value="Odisha">Odisha (Cuttack/Raghurajpur)</option>
+              <option value="Rajasthan">Rajasthan (Jaipur/Jodhpur)</option>
+              <option value="Tamil Nadu">Tamil Nadu (Nilgiris/Kanchi)</option>
+              <option value="Jammu & Kashmir">Jammu & Kashmir (Srinagar)</option>
+              <option value="Gujarat">Gujarat (Bhuj, Kutch)</option>
+              <option value="Madhya Pradesh">Madhya Pradesh (Chanderi)</option>
+              <option value="Maharashtra">Maharashtra (Wardha/Kolhapur)</option>
+              <option value="Kerala">Kerala (Wayanad/Aranmula)</option>
+              <option value="Meghalaya">Meghalaya (Jaintia Hills)</option>
+              <option value="Manipur">Manipur (Longpi)</option>
+            </select>
+          </div>
+
+          <!-- Filter Group 5: Discount % -->
+          <div class="catalog_filter_group">
+            <div class="catalog_filter_title">Discount Range</div>
+            <div class="filter_check_item">
+              <input type="radio" name="discount_filter" id="disc-all" checked onchange="applyDiscountFilter(0)">
+              <label for="disc-all">All Direct Deals</label>
+            </div>
+            <div class="filter_check_item">
+              <input type="radio" name="discount_filter" id="disc-50" onchange="applyDiscountFilter(50)">
+              <label for="disc-50">50% & Above</label>
+            </div>
+            <div class="filter_check_item">
+              <input type="radio" name="discount_filter" id="disc-40" onchange="applyDiscountFilter(40)">
+              <label for="disc-40">40% & Above</label>
+            </div>
+            <div class="filter_check_item">
+              <input type="radio" name="discount_filter" id="disc-30" onchange="applyDiscountFilter(30)">
+              <label for="disc-30">30% & Above</label>
+            </div>
+          </div>
+
+          <!-- Filter Group 6: Rating -->
+          <div class="catalog_filter_group">
+            <div class="catalog_filter_title">Customer Rating</div>
+            <div class="filter_check_item">
+              <input type="radio" name="rating_filter" id="rat-all" checked onchange="applyRatingFilter(0)">
+              <label for="rat-all">Any Rating</label>
+            </div>
+            <div class="filter_check_item">
+              <input type="radio" name="rating_filter" id="rat-48" onchange="applyRatingFilter(4.8)">
+              <label for="rat-48">★ 4.8 & Above</label>
+            </div>
+            <div class="filter_check_item">
+              <input type="radio" name="rating_filter" id="rat-46" onchange="applyRatingFilter(4.6)">
+              <label for="rat-46">★ 4.6 & Above</label>
+            </div>
+          </div>
+
+          <!-- Filter Group 7: Speed -->
+          <div class="catalog_filter_group" style="border-bottom:none;">
+            <div class="catalog_filter_title">Delivery Speed</div>
+            <div class="filter_check_item">
+              <input type="checkbox" id="fast-dispatch-check" onchange="toggleFastDispatch(this.checked)">
+              <label for="fast-dispatch-check">⚡ Dispatched in 24 hrs</label>
+            </div>
+          </div>
+
+        </aside>
+
+        <!-- RIGHT CATALOG MAIN CONTAINER -->
+        <div class="catalog_main_content">
+          
+          <!-- TOP TOOLBAR -->
+          <div class="catalog_toolbar">
+            <div class="toolbar_results_info">
+              <span id="catalog-page-summary">Showing <b>1–24</b> of <b>1,120</b> Products</span>
+              <span id="active-category-label" style="color:var(--sc-teal); font-weight:700; margin-left:8px;">(All Masterpieces)</span>
+            </div>
+
+            <div class="toolbar_controls">
+              <div class="toolbar_control_item">
+                <label for="sort-select">Sort By:</label>
+                <select id="sort-select" class="toolbar_select" onchange="handleSortChange(this.value)">
+                  <option value="featured">Featured Heirlooms</option>
+                  <option value="price_asc">Price: Low to High</option>
+                  <option value="price_desc">Price: High to Low</option>
+                  <option value="rating">Customer Rating</option>
+                  <option value="discount">Biggest Discount</option>
+                  <option value="popular">Most Reviews</option>
+                </select>
+              </div>
+
+              <div class="toolbar_control_item">
+                <label for="perpage-select">Show:</label>
+                <select id="perpage-select" class="toolbar_select" onchange="handlePerPageChange(this.value)">
+                  <option value="24">24 / page</option>
+                  <option value="48">48 / page</option>
+                  <option value="96">96 / page</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- PRODUCTS GRID -->
+          <div class="sc_products_grid" id="products-grid">
+            <!-- Dynamically rendered ShopClues product cards with Quick View & Add to Cart -->
+          </div>
+
+          <!-- PRO PAGINATION BAR -->
+          <div class="sc_pagination_container" id="pagination-container">
+            <!-- Dynamic pagination buttons -->
+          </div>
+
+        </div>
+
       </div>
     </section>
 
@@ -1986,15 +3046,41 @@
       <!-- Dynamically filled -->
     </div>
     <div class="sc_cart_footer">
-      <div class="sc_cart_subtotal">
-        <span>Cart Total:</span>
-        <span id="cart-subtotal-price" style="color:var(--sc-orange);">₹0</span>
+      <!-- Coupon Promo Box -->
+      <div class="sc_coupon_box">
+        <div style="display:flex; gap:6px;">
+          <input type="text" id="coupon-input" placeholder="Promo code (e.g. EMPOWER15)" class="pin_type" style="flex:1; height:32px; font-size:11px; text-transform:uppercase;">
+          <button class="btn orange-white" style="height:32px; font-size:11px; padding:0 12px;" onclick="handleApplyCoupon()">Apply</button>
+        </div>
+        <div id="coupon-status" style="font-size:10.5px; margin-top:4px; min-height:14px;"></div>
+        <div style="font-size:10px; color:#888; margin-top:2px;">Try: <b>EMPOWER15</b> (15% off) · <b>CRAFTLOVE</b> (₹200 off) · <b>FREESHIP</b></div>
       </div>
+
+      <!-- Breakdown Table -->
+      <div class="sc_cart_price_breakdown">
+        <div class="cart_breakdown_row">
+          <span>Items Subtotal:</span>
+          <span id="cart-subtotal-price">₹0</span>
+        </div>
+        <div class="cart_breakdown_row" id="cart-coupon-row" style="display:none; color:var(--sc-green); font-weight:700;">
+          <span>Promo Discount:</span>
+          <span id="cart-coupon-discount">-₹0</span>
+        </div>
+        <div class="cart_breakdown_row">
+          <span>Express Delivery:</span>
+          <span id="cart-shipping-price" style="color:var(--sc-green); font-weight:700;">FREE</span>
+        </div>
+        <div class="sc_cart_subtotal" style="border-top:1px solid var(--sc-border-light); padding-top:6px; margin-top:4px;">
+          <span>Final Total:</span>
+          <span id="cart-final-total" style="color:var(--sc-orange); font-size:1.15rem; font-weight:900;">₹0</span>
+        </div>
+      </div>
+
       <div style="font-size:11px; color:#2e7d32; margin-bottom:12px; font-weight:700;">
-        🌿 Guaranteed Direct Living Wage: <span id="cart-subtotal-artisan">₹0</span>
+        🌿 86% Direct Living Wage Payout: <span id="cart-subtotal-artisan">₹0</span>
       </div>
-      <button class="btn orange" style="width:100%;" onclick="simulateCheckout()">
-        Proceed to Checkout (Apply WOMENPOWER)
+      <button class="btn orange" style="width:100%; height:40px; font-size:12px; font-weight:800;" onclick="openCheckoutModal()">
+        Proceed to Secure Checkout →
       </button>
     </div>
   </div>
@@ -2063,6 +3149,95 @@
     </div>
   </div>
 
+  <!-- MODAL: PRO QUICK VIEW -->
+  <div class="sc_modal_backdrop" id="modal-quickview">
+    <div class="sc_modal_box quickview_modal_box" id="modal-quickview-inner">
+      <!-- Dynamically populated quick view -->
+    </div>
+  </div>
+
+  <!-- MODAL: PRO CHECKOUT -->
+  <div class="sc_modal_backdrop" id="modal-checkout">
+    <div class="sc_modal_box checkout_modal_box">
+      <button class="sc_modal_close" onclick="closeModal('modal-checkout')">✕</button>
+      <div class="checkout_modal_header">
+        <h2>🛍️ Complete Fair-Trade Checkout</h2>
+        <p>Direct Living Wage Disbursement to Women Master Artisans</p>
+      </div>
+      <div class="checkout_modal_grid">
+        <form id="checkout-form" onsubmit="handlePlaceOrder(event)">
+          <div class="checkout_form_section">
+            <h4>1. Patron & Delivery Details</h4>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:10px;">
+              <div>
+                <label class="form_label">Full Name</label>
+                <input type="text" class="pin_type" id="chk-name" required value="Priya Sharma" style="width:100%;">
+              </div>
+              <div>
+                <label class="form_label">Email Address</label>
+                <input type="email" class="pin_type" id="chk-email" required value="buyer@market.org" style="width:100%;">
+              </div>
+            </div>
+            <div style="margin-bottom:10px;">
+              <label class="form_label">Shipping Address</label>
+              <input type="text" class="pin_type" id="chk-address" required value="Flat 402, Lotus Heritage Towers, Indiranagar" style="width:100%;">
+            </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+              <div>
+                <label class="form_label">City</label>
+                <input type="text" class="pin_type" id="chk-city" required value="Bengaluru" style="width:100%;">
+              </div>
+              <div>
+                <label class="form_label">Postal PIN Code</label>
+                <input type="text" class="pin_type" id="chk-pin" required value="560038" style="width:100%;">
+              </div>
+            </div>
+          </div>
+
+          <div class="checkout_form_section" style="margin-top:14px;">
+            <h4>2. Payment Method</h4>
+            <div class="payment_options">
+              <label class="payment_radio">
+                <input type="radio" name="chk_payment" value="UPI" checked>
+                <span>📱 UPI Instant Payment (GPay, PhonePe, Paytm, BHIM)</span>
+              </label>
+              <label class="payment_radio">
+                <input type="radio" name="chk_payment" value="Card">
+                <span>💳 Credit / Debit Card (RuPay, Visa, MasterCard)</span>
+              </label>
+              <label class="payment_radio">
+                <input type="radio" name="chk_payment" value="NetBanking">
+                <span>🏦 Internet Banking (All Indian Banks)</span>
+              </label>
+              <label class="payment_radio">
+                <input type="radio" name="chk_payment" value="COD">
+                <span>📦 Cash on Delivery (Fair-Trade Inspected)</span>
+              </label>
+            </div>
+          </div>
+
+          <div style="margin-top:16px;">
+            <button type="submit" class="btn orange" style="width:100%; height:42px; font-size:13px; font-weight:800;">
+              Confirm & Place Order →
+            </button>
+          </div>
+        </form>
+
+        <!-- Order Summary Column -->
+        <div class="checkout_summary_col" id="checkout-summary-box">
+          <!-- Dynamically populated summary -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: ORDER CONFIRMATION RECEIPT -->
+  <div class="sc_modal_backdrop" id="modal-order-success">
+    <div class="sc_modal_box order_success_box" id="modal-order-success-inner">
+      <!-- Dynamically populated order receipt -->
+    </div>
+  </div>
+
   <!-- Toast Notification -->
   <div class="sc_toast" id="sc-toast">
     <span id="toast-msg">Item added to cart!</span>
@@ -2072,778 +3247,1680 @@
        INTERACTIVE JAVASCRIPT ENGINE
        ======================================================================== -->
   <script>
-    // Global State
-    let currentCurrency = 'INR';
-    let activeCategory = 'All';
-    let searchQuery = '';
-    let wishlistOnly = false;
-    let currentUser = { role: 'buyer', name: 'Priya Sharma', avatar: '🛍️' };
+// ============================================================================
+// WOMEN'S EMPOWERMENT MARKETPLACE - ENTERPRISE CLIENT ENGINE (1,120 PRODUCTS)
+// ============================================================================
 
-    const CURRENCY_RATES = {
-      INR: { symbol: '₹', rate: 1.0 },
-      USD: { symbol: '$', rate: 0.024 },
-      EUR: { symbol: '€', rate: 0.022 },
-      GBP: { symbol: '£', rate: 0.019 }
-    };
+// 1. DETERMINISTIC FAST CATALOG GENERATOR FOR BROWSER (1,120 PRODUCTS)
+function generateClientCatalog() {
+  function simpleHash(str) {
+    let h1 = 5381, h2 = 52711;
+    for (let i = 0; i < str.length; i++) {
+      const c = str.charCodeAt(i);
+      h1 = (h1 * 33) ^ c;
+      h2 = (h2 * 33) ^ c;
+    }
+    return (Math.abs(h1).toString(16) + Math.abs(h2).toString(16) + '000000000000000000000000000000000000000000000000').slice(0, 64);
+  }
 
-    // DECREASED AFFORDABLE COTTAGE INDUSTRY PRODUCT CATALOG
-    let PRODUCTS = [
-      {
-        id: 1,
-        title: "Pure Mulberry Silk Banarasi Brocade Saree with Silver Zari Weaving",
-        price: 1499, // Accessible ₹1,499 ($35.90)
-        mrp: 2999,
-        category: "Textiles",
-        craft_type: "Handloom Brocade",
-        artisan_name: "Ananya Devi",
-        village: "Varanasi, Uttar Pradesh",
-        collective: "Dhaga Kala Weavers Guild",
-        lead_time: "Dispatched in 24 hrs",
-        rating: 4.9,
-        reviews_count: 1420,
-        deal: true,
-        deal_discount: "50% off",
-        badge: "💮 Authentic Masterpiece Expert Certified",
-        image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=600&q=80",
-        thumbnails: [
-          "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=600&q=80",
-          "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=600&q=80",
-          "https://images.unsplash.com/photo-1609357605129-26f69add5d6e?w=600&q=80",
-          "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=600&q=80"
-        ],
-        story: "Hand-loomed over 180 continuous hours using untwisted pure Mulberry silk and certified silver zari thread. Each border motif depicts sacred river flora indigenous to the sacred Ghats of Varanasi.",
-        materials: "100% Mulberry Silk, Pure Silver Zari, Natural Madder Root Dye",
-        provenance_hash: "8f7e2a9b4c1d6e3f5a8b7c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f"
-      },
-      {
-        id: 2,
-        title: "Terracotta Temple Urli & Floating Lotus Bowl with Ancient Alluvial Patina",
-        price: 349, // Accessible ₹349 ($8.30)
-        mrp: 699,
-        category: "Home & Decor",
-        craft_type: "Terracotta Ceramic",
-        artisan_name: "Radhika Pal",
-        village: "Bankura, West Bengal",
-        collective: "Mitti Shilp Terracotta Guild",
-        lead_time: "Dispatched in 24 hrs",
-        rating: 4.8,
-        reviews_count: 852,
-        deal: true,
-        deal_discount: "50% off",
-        badge: "🏺 Alluvial River Silt Certified",
-        image: "https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=600&q=80",
-        thumbnails: [
-          "https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=600&q=80",
-          "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=600&q=80",
-          "https://images.unsplash.com/photo-1615529182904-14819c35db37?w=600&q=80"
-        ],
-        story: "Molded from sacred alluvial river silt deposits, burnished with river stones, and slow-fired in an underground wood kiln to impart a deep smoke patina.",
-        materials: "Alluvial Clay, Organic Mustard Oil Glaze, River Stone Finish",
-        provenance_hash: "3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d"
-      },
-      {
-        id: 3,
-        title: "925 Sterling Silver Filigree Peacock Jhumkas (Tarakasi Hand-Drawn Wires)",
-        price: 799, // Accessible ₹799 ($19.10)
-        mrp: 1599,
-        category: "Jewelry",
-        craft_type: "Tarakasi Filigree",
-        artisan_name: "Sunita Das",
-        village: "Cuttack, Odisha",
-        collective: "Tarakasi Silver Guild",
-        lead_time: "Dispatched in 24 hrs",
-        rating: 4.9,
-        reviews_count: 2110,
-        deal: true,
-        deal_discount: "50% off",
-        badge: "💎 92.5 Sterling Silver Hallmarked",
-        image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=600&q=80",
-        thumbnails: [
-          "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=600&q=80",
-          "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80",
-          "https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?w=600&q=80"
-        ],
-        story: "Crafted through the 500-year-old Tarakasi tradition by drawing 92.5% silver into hair-thin threads, hand-crimped into lace-like filigree feathers without modern casts.",
-        materials: "925 Sterling Silver, Hand-Drawn Micro Wires",
-        provenance_hash: "5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b"
-      },
-      {
-        id: 4,
-        title: "Handspun Organic Khadi Cotton Summer Kurta with Hand-Carved Coconut Buttons",
-        price: 499, // Accessible ₹499 ($11.90)
-        mrp: 999,
-        category: "Textiles",
-        craft_type: "Charkha Khadi",
-        artisan_name: "Meera Joshi",
-        village: "Wardha, Maharashtra",
-        collective: "Gram Seva Women's Trust",
-        lead_time: "Dispatched in 24 hrs",
-        rating: 4.7,
-        reviews_count: 640,
-        deal: true,
-        deal_discount: "50% off",
-        badge: "🌿 100% Desi Solar Khadi",
-        image: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=600&q=80",
-        thumbnails: [
-          "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=600&q=80",
-          "https://images.unsplash.com/photo-1618932260643-eee4a2f652a6?w=600&q=80"
-        ],
-        story: "Hand-harvested indigenous cotton hand-spun on heritage wooden Charkhas and breathable loose-weave loomed for exceptional summer ventilation.",
-        materials: "100% Rainfed Desi Cotton, Herbal Wash Finish",
-        provenance_hash: "7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f"
-      },
-      {
-        id: 5,
-        title: "Hand-Carved Kashmiri Walnut Wood Heritage Jewelry Chest with Secret Drawer",
-        price: 849, // Accessible ₹849 ($20.30)
-        mrp: 1699,
-        category: "Home & Decor",
-        craft_type: "Wood Carving",
-        artisan_name: "Parveena Akhtar",
-        village: "Srinagar, Kashmir",
-        collective: "Chinar Valley Artisans",
-        lead_time: "Dispatched in 48 hrs",
-        rating: 4.9,
-        reviews_count: 490,
-        deal: true,
-        deal_discount: "50% off",
-        badge: "🪵 Aged Walnut Root Carved",
-        image: "https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=600&q=80",
-        thumbnails: [
-          "https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=600&q=80",
-          "https://images.unsplash.com/photo-1544816155-12df9643f363?w=600&q=80"
-        ],
-        story: "Sculpted from naturally fallen aged Kashmiri walnut roots using precision chisels. Features intricate Chinar leaf lattice fretwork and secret locking drawer.",
-        materials: "Aged Walnut Root, Brass Hinges, Natural Beeswax Polish",
-        provenance_hash: "2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c"
-      },
-      {
-        id: 6,
-        title: "Glazed Stoneware Clay Planter & Saucer (Lead-Free Reactive Mineral Mist)",
-        price: 249, // Accessible ₹249 ($5.90)
-        mrp: 499,
-        category: "Home & Decor",
-        craft_type: "Studio Pottery",
-        artisan_name: "Fatima Begum",
-        village: "Khurja, Uttar Pradesh",
-        collective: "Khurja Ceramic Guild",
-        lead_time: "Dispatched in 24 hrs",
-        rating: 4.8,
-        reviews_count: 320,
-        deal: true,
-        deal_discount: "50% off",
-        badge: "🪴 Root Aeration Stoneware",
-        image: "https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=600&q=80",
-        thumbnails: [
-          "https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=600&q=80",
-          "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?w=600&q=80"
-        ],
-        story: "Wheel-thrown high-fire stoneware engineered with deliberate root aeration grooves and glazed in a reactive mineral mist finish.",
-        materials: "High-Fire Earthen Stoneware, Lead-Free Mineral Glaze",
-        provenance_hash: "9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b"
-      },
-      {
-        id: 7,
-        title: "Ajrakh Hand-Block Printed Chanderi Silk Dupatta with Natural Indigo Dye",
-        price: 599, // Accessible ₹599 ($14.30)
-        mrp: 1199,
-        category: "Textiles",
-        craft_type: "Natural Block Print",
-        artisan_name: "Zarina Khatun",
-        village: "Kutch, Gujarat",
-        collective: "Kutch Desert Block Printers",
-        lead_time: "Dispatched in 24 hrs",
-        rating: 4.9,
-        reviews_count: 940,
-        deal: true,
-        deal_discount: "50% off",
-        badge: "🎨 14-Stage Pure Indigo",
-        image: "https://images.unsplash.com/photo-1607344645866-009c320c5ab8?w=600&q=80",
-        thumbnails: [
-          "https://images.unsplash.com/photo-1607344645866-009c320c5ab8?w=600&q=80",
-          "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=600&q=80"
-        ],
-        story: "14-stage mud-resist printing using pure indigo and pomegranate rind mordants, hand-stamped onto airy tissue Chanderi silk-cotton.",
-        materials: "Chanderi Silk-Cotton, Indigo & Alizarin Plant Dyes",
-        provenance_hash: "4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e"
-      },
-      {
-        id: 8,
-        title: "Ayurvedic Wild Forest Raw Honey & High-Curcumin Lakadong Turmeric Elixir",
-        price: 179, // Accessible ₹179 ($4.20)
-        mrp: 350,
-        category: "Wellness",
-        craft_type: "Foraged Wellness",
-        artisan_name: "Valli Murugan",
-        village: "Nilgiris, Tamil Nadu",
-        collective: "Nilgiri Indigenous Forest Foragers",
-        lead_time: "Dispatched in 24 hrs",
-        rating: 4.9,
-        reviews_count: 3100,
-        deal: true,
-        deal_discount: "49% off",
-        badge: "🍯 Wild Cliff Harvest",
-        image: "https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=600&q=80",
-        thumbnails: [
-          "https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=600&q=80",
-          "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&q=80"
-        ],
-        story: "Cold-harvested multi-floral wild cliff honey infused with slow-shade dried high-curcumin Lakadong turmeric and native black pepper.",
-        materials: "Wild Raw Cliff Honey, 7.5% High Curcumin Turmeric",
-        provenance_hash: "1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f"
+  const DEPARTMENTS = [
+    {
+      name: 'Handlooms & Sarees',
+      targetCount: 250,
+      icon: '🥻',
+      subcategories: [
+        { name: 'Banarasi Brocade', craft: 'Handloom Brocade', state: 'Uttar Pradesh', village: 'Varanasi', collective: 'Dhaga Kala Weavers Guild', artisan: 'Ananya Devi', basePrice: 1499, imgKey: 'silk' },
+        { name: 'Kanjeevaram Silk', craft: 'Pure Zari Silk Weaving', state: 'Tamil Nadu', village: 'Kanchipuram', collective: 'Kanchi Thari Sisterhood', artisan: 'Revathi Ammal', basePrice: 2499, imgKey: 'silk' },
+        { name: 'Chanderi & Maheshwari', craft: 'Chanderi Tissue Weave', state: 'Madhya Pradesh', village: 'Chanderi', collective: 'Pranpur Handloom Society', artisan: 'Sunita Chouhan', basePrice: 899, imgKey: 'textile' },
+        { name: 'Tussar & Muga Silk', craft: 'Wild Tussar Reeling', state: 'Jharkhand', village: 'Bhagalpur', collective: 'Resham Silk Sahayog', artisan: 'Kamala Soren', basePrice: 1299, imgKey: 'silk' },
+        { name: 'Bandhani & Patola', craft: 'Tie & Dye Hand Knotting', state: 'Gujarat', village: 'Bhuj, Kutch', collective: 'Kutch Bandhani Sangam', artisan: 'Zarina Khatun', basePrice: 799, imgKey: 'textile' },
+        { name: 'Desi Khadi & Kurtas', craft: 'Charkha Solar Khadi', state: 'Maharashtra', village: 'Wardha', collective: 'Gram Seva Women’s Trust', artisan: 'Meera Joshi', basePrice: 499, imgKey: 'khadi' },
+        { name: 'Kalamkari & Block Prints', craft: 'Natural Vegetable Pen Art', state: 'Andhra Pradesh', village: 'Srikalahasti', collective: 'Kalamkari Kalakshetra', artisan: 'Lakshmi Varma', basePrice: 599, imgKey: 'print' },
+        { name: 'Pashmina & Wool Shawls', craft: 'Sozni Needle Embroidery', state: 'Jammu & Kashmir', village: 'Srinagar', collective: 'Chinar Valley Pashmina Guild', artisan: 'Parveena Akhtar', basePrice: 1999, imgKey: 'pashmina' }
+      ]
+    },
+    {
+      name: 'Jewelry & Adornment',
+      targetCount: 200,
+      icon: '💎',
+      subcategories: [
+        { name: 'Cuttack Tarakasi Silver (925)', craft: 'Tarakasi Micro-Filigree', state: 'Odisha', village: 'Cuttack Old Town', collective: 'Tarakasi Silver Guild', artisan: 'Sunita Das', basePrice: 799, imgKey: 'jewelry' },
+        { name: 'Temple Jewelry & Chokers', craft: 'Vadasery Temple Metalcraft', state: 'Tamil Nadu', village: 'Nagercoil', collective: 'Vadasery Goldsmith Sisters', artisan: 'Meenakshi Iyer', basePrice: 999, imgKey: 'gold_jewelry' },
+        { name: 'Kundan & Meenakari', craft: 'Enamel Glass Cloisonné', state: 'Rajasthan', village: 'Jaipur Walled City', collective: 'Rani Meena Artisan Trust', artisan: 'Kalyani Sharma', basePrice: 849, imgKey: 'jewelry' },
+        { name: 'Dokra Tribal Brass', craft: 'Lost-Wax Bell Metal Casting', state: 'Chhattisgarh', village: 'Bastar Hamlet', collective: 'Bastar Tribal Matriarchs', artisan: 'Raimati Ghadwa', basePrice: 449, imgKey: 'brass' },
+        { name: 'Terracotta & Ceramic Beads', craft: 'Fired Earthen Clay Jewelry', state: 'West Bengal', village: 'Bankura', collective: 'Mitti Rupa Craft Ring', artisan: 'Bimla Mondal', basePrice: 249, imgKey: 'terracotta' },
+        { name: 'Lac & Glass Bangles', craft: 'Natural Tree Resin Shaping', state: 'Bihar', village: 'Muzaffarpur', collective: 'Laakh Karigar Union', artisan: 'Shobha Devi', basePrice: 199, imgKey: 'jewelry' },
+        { name: 'Anklets & Silver Payals', craft: 'Chandi Chain Linking', state: 'Rajasthan', village: 'Jodhpur', collective: 'Marwar Silver Craft', artisan: 'Geeta Rathore', basePrice: 699, imgKey: 'jewelry' }
+      ]
+    },
+    {
+      name: 'Home & Living Decor',
+      targetCount: 200,
+      icon: '🏺',
+      subcategories: [
+        { name: 'Bankura Terracotta Urns', craft: 'Alluvial River Clay Wheel', state: 'West Bengal', village: 'Panchmura, Bankura', collective: 'Mitti Shilp Terracotta Guild', artisan: 'Radhika Pal', basePrice: 349, imgKey: 'pottery' },
+        { name: 'Jaipur Blue Pottery', craft: 'Quartz Stone Paste Ceramics', state: 'Rajasthan', village: 'Sanganer, Jaipur', collective: 'Neelam Clay Society', artisan: 'Chanda Devi', basePrice: 429, imgKey: 'blue_pottery' },
+        { name: 'Khurja Stoneware Planters', craft: 'High-Fire Mineral Glaze', state: 'Uttar Pradesh', village: 'Khurja Pottery Town', collective: 'Khurja Ceramic Guild', artisan: 'Fatima Begum', basePrice: 279, imgKey: 'pottery' },
+        { name: 'Bidriware Silver Inlay', craft: 'Zinc-Copper Silver Etching', state: 'Karnataka', village: 'Bidar', collective: 'Bidri Shilpa Matruchhaya', artisan: 'Salma Sultana', basePrice: 649, imgKey: 'metal' },
+        { name: 'Kashmiri Walnut Carvings', craft: 'Root Walnut Wood Chiseling', state: 'Jammu & Kashmir', village: 'Baramulla', collective: 'Chinar Woodcraft Circle', artisan: 'Nazia Jan', basePrice: 849, imgKey: 'wood' },
+        { name: 'Channapatna Wooden Toys', craft: 'Non-Toxic Vegetable Lac Wood', state: 'Karnataka', village: 'Channapatna', collective: 'Gombe Wooden Toy Collective', artisan: 'Pushpa Gowda', basePrice: 229, imgKey: 'wood' },
+        { name: 'Sabai & Bamboo Weaves', craft: 'Wild Sabai Grass Coiling', state: 'Odisha', village: 'Mayurbhanj Forest', collective: 'Sabai Shakti Mahila Samiti', artisan: 'Subhadra Majhi', basePrice: 319, imgKey: 'basket' }
+      ]
+    },
+    {
+      name: 'Ayurvedic & Forest Organics',
+      targetCount: 150,
+      icon: '🌿',
+      subcategories: [
+        { name: 'Wild Cliff Raw Honey', craft: 'Ethical Cliff Hive Foraging', state: 'Tamil Nadu', village: 'Nilgiris Highlands', collective: 'Nilgiri Indigenous Forest Foragers', artisan: 'Valli Murugan', basePrice: 179, imgKey: 'honey' },
+        { name: 'Lakadong High-Curcumin Turmeric', craft: '7.8% Curcumin Sun Shading', state: 'Meghalaya', village: 'Jaintia Hills', collective: 'Hynniewtrep Farmers Union', artisan: 'Trinity Saioo', basePrice: 149, imgKey: 'spices' },
+        { name: 'Pure Kashmiri Mogra Saffron', craft: 'Dawn Flower Stigma Plucking', state: 'Jammu & Kashmir', village: 'Pampore', collective: 'Zafran Valley Women Farmers', artisan: 'Farida Bano', basePrice: 499, imgKey: 'saffron' },
+        { name: 'Kumkumadi & Herbal Serums', craft: 'Traditional Charaka Decoction', state: 'Kerala', village: 'Wayanad Herbs Hamlet', collective: 'Aranya Veda Shala', artisan: 'Devaki Amma', basePrice: 389, imgKey: 'serum' },
+        { name: 'Cold-Pressed Wellness Oils', craft: 'Wooden Wood-Chekku Ghani', state: 'Tamil Nadu', village: 'Erode', collective: 'Marachekku Mahila Kootam', artisan: 'Maragatham Selvi', basePrice: 259, imgKey: 'oil' },
+        { name: 'Himalayan Botanical Teas', craft: 'Hand-Rolled Wild Chamomile', state: 'Himachal Pradesh', village: 'Kangra Valley', collective: 'Kangra Valley Tea Harvesters', artisan: 'Kanta Devi', basePrice: 169, imgKey: 'tea' }
+      ]
+    },
+    {
+      name: 'Traditional Fine Art',
+      targetCount: 80,
+      icon: '🎨',
+      subcategories: [
+        { name: 'Madhubani Canvas Folk Art', craft: 'Bamboo Nib & Natural Pigment', state: 'Bihar', village: 'Ranti, Madhubani', collective: 'Mithila Chitrakala Trust', artisan: 'Dulari Devi', basePrice: 699, imgKey: 'art' },
+        { name: 'Odisha Pattachitra Scrolls', craft: 'Palm Leaf & Stone Pigment Etching', state: 'Odisha', village: 'Raghurajpur Heritage Village', collective: 'Chitrakar Kulam', artisan: 'Pratima Maharana', basePrice: 849, imgKey: 'art' },
+        { name: 'Warli Tribal Murals', craft: 'Rice Paste Cow-Dung Mud Ground', state: 'Maharashtra', village: 'Dahanu tribal belt', collective: 'Sahyadri Warli Women', artisan: 'Jivya Bhill', basePrice: 499, imgKey: 'art' },
+        { name: 'Gond Heritage Canvases', craft: 'Dotted Sacred Forest Imagery', state: 'Madhya Pradesh', village: 'Patangarh', collective: 'Pardhan Gond Kala Samiti', artisan: 'Nankusia Shyam', basePrice: 749, imgKey: 'art' },
+        { name: 'Pichwai Temple Paintings', craft: '24K Gold Leaf Stone Dust Tempera', state: 'Rajasthan', village: 'Nathdwara', collective: 'Shrinathji Kala Mandali', artisan: 'Manju Sharma', basePrice: 1199, imgKey: 'art' }
+      ]
+    },
+    {
+      name: 'Pottery & Kitchenware',
+      targetCount: 100,
+      icon: '🍲',
+      subcategories: [
+        { name: 'Longpi Black Stone Cookware', craft: 'Serpentine Stone & Clay Polish', state: 'Manipur', village: 'Longpi, Ukhrul', collective: 'Tangkhul Matriarch Guild', artisan: 'Wonnganing Shimray', basePrice: 499, imgKey: 'black_pottery' },
+        { name: 'Unglazed Curd & Handi Pots', craft: 'Porous Alluvial Heat Retention', state: 'West Bengal', village: 'Kolkata outskirts', collective: 'Gramin Mitti Vikas', artisan: 'Shanti Pal', basePrice: 199, imgKey: 'pottery' },
+        { name: 'Clay Water Dispensers', craft: 'Terracotta Natural Cooling', state: 'Gujarat', village: 'Morbi Hamlets', collective: 'Saurashtra Potters Union', artisan: 'Hansaben Prajapati', basePrice: 389, imgKey: 'pottery' },
+        { name: 'Bell-Metal & Brass Thalis', craft: 'Traditional Hammered Kansa 78:22', state: 'Assam', village: 'Sarthebari', collective: 'Kanh Shilpa Mahila Sangha', artisan: 'Dipali Das', basePrice: 899, imgKey: 'brass' },
+        { name: 'Carved Neem & Teak Woodware', craft: 'Anti-Bacterial Neem Wood Turning', state: 'Uttar Pradesh', village: 'Saharanpur', collective: 'Shilpkar Rasoi Mandal', artisan: 'Zubaida Begum', basePrice: 249, imgKey: 'wood' }
+      ]
+    },
+    {
+      name: 'Bags, Footwear & Accessories',
+      targetCount: 80,
+      icon: '👜',
+      subcategories: [
+        { name: 'Shantiniketan Embossed Bags', craft: 'Vegetable Tanned Leather Batik', state: 'West Bengal', village: 'Bolpur, Shantiniketan', collective: 'Amar Kutir Craft Cooperative', artisan: 'Suparna Roy', basePrice: 599, imgKey: 'bag' },
+        { name: 'Banjara Mirrorwork Clutches', craft: 'Nomadic Cowrie & Mirror Needlework', state: 'Telangana', village: 'Lambada Thanda', collective: 'Banjara Virasat Trust', artisan: 'Lachmi Bai', basePrice: 349, imgKey: 'embroidery' },
+        { name: 'Eco Jute & Sabai Totes', craft: 'Golden Fiber Braided Weaving', state: 'West Bengal', village: 'Murshidabad', collective: 'Pat Shilp Mahila Samiti', artisan: 'Kalyani Ghosh', basePrice: 229, imgKey: 'jute' },
+        { name: 'Handmade Mojaris & Kolhapuris', craft: 'Zero-Chemical Bagaru Leather', state: 'Maharashtra', village: 'Kolhapur', collective: 'Chhatrapati Leather Karigar', artisan: 'Mangal Kamble', basePrice: 499, imgKey: 'footwear' }
+      ]
+    },
+    {
+      name: 'Festive & Spiritual Crafts',
+      targetCount: 60,
+      icon: '🪔',
+      subcategories: [
+        { name: 'Akhand Brass Temple Diyas', craft: 'Heavy Sand-Casting Brass', state: 'Tamil Nadu', village: 'Nachiyar Koil', collective: 'Nachiyar Brass Artisans', artisan: 'Ponnammal R.', basePrice: 399, imgKey: 'brass' },
+        { name: 'Organic Cow Dung Sambrani Cups', craft: 'Desi Cow Panchagavya Cup Molding', state: 'Rajasthan', village: 'Vrindavan Fringe', collective: 'Gau Seva Mahila Kendra', artisan: 'Mohini Dasi', basePrice: 129, imgKey: 'spiritual' },
+        { name: 'Temple Bells & Pooja Chowkis', craft: 'Carved Teakwood Sacred Geometry', state: 'Kerala', village: 'Aranmula', collective: 'Vastu Shilpa Fellowship', artisan: 'Gomathi Amma', basePrice: 549, imgKey: 'wood' },
+        { name: 'Handcrafted Agarbatti & Dhoop', craft: 'Charcoal-Free Temple Flower Waste', state: 'Uttar Pradesh', village: 'Kanpur Ghats', collective: 'Pushp Arpan Self-Help Group', artisan: 'Aarti Shukla', basePrice: 99, imgKey: 'incense' }
+      ]
+    }
+  ];
+
+  const IMAGE_POOLS = {
+    silk: [
+      'https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=600&q=80',
+      'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=600&q=80',
+      'https://images.unsplash.com/photo-1609357605129-26f69add5d6e?w=600&q=80',
+      'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=600&q=80'
+    ],
+    textile: [
+      'https://images.unsplash.com/photo-1607344645866-009c320c5ab8?w=600&q=80',
+      'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=600&q=80',
+      'https://images.unsplash.com/photo-1618932260643-eee4a2f652a6?w=600&q=80'
+    ],
+    khadi: [
+      'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=600&q=80',
+      'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=600&q=80'
+    ],
+    print: [
+      'https://images.unsplash.com/photo-1607344645866-009c320c5ab8?w=600&q=80',
+      'https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=600&q=80'
+    ],
+    pashmina: [
+      'https://images.unsplash.com/photo-1609357605129-26f69add5d6e?w=600&q=80',
+      'https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=600&q=80'
+    ],
+    jewelry: [
+      'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=600&q=80',
+      'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80',
+      'https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?w=600&q=80'
+    ],
+    gold_jewelry: [
+      'https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?w=600&q=80',
+      'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=600&q=80'
+    ],
+    brass: [
+      'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=600&q=80',
+      'https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=600&q=80'
+    ],
+    terracotta: [
+      'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=600&q=80',
+      'https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=600&q=80'
+    ],
+    pottery: [
+      'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=600&q=80',
+      'https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=600&q=80'
+    ],
+    blue_pottery: [
+      'https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=600&q=80',
+      'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=600&q=80'
+    ],
+    metal: [
+      'https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=600&q=80'
+    ],
+    wood: [
+      'https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=600&q=80',
+      'https://images.unsplash.com/photo-1544816155-12df9643f363?w=600&q=80'
+    ],
+    basket: [
+      'https://images.unsplash.com/photo-1544816155-12df9643f363?w=600&q=80'
+    ],
+    honey: [
+      'https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=600&q=80',
+      'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&q=80'
+    ],
+    spices: [
+      'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&q=80'
+    ],
+    saffron: [
+      'https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=600&q=80'
+    ],
+    serum: [
+      'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&q=80'
+    ],
+    oil: [
+      'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&q=80'
+    ],
+    tea: [
+      'https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=600&q=80'
+    ],
+    art: [
+      'https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=600&q=80',
+      'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?w=600&q=80'
+    ],
+    black_pottery: [
+      'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=600&q=80'
+    ],
+    bag: [
+      'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=600&q=80'
+    ],
+    embroidery: [
+      'https://images.unsplash.com/photo-1607344645866-009c320c5ab8?w=600&q=80'
+    ],
+    jute: [
+      'https://images.unsplash.com/photo-1544816155-12df9643f363?w=600&q=80'
+    ],
+    footwear: [
+      'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=600&q=80'
+    ],
+    spiritual: [
+      'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=600&q=80'
+    ],
+    incense: [
+      'https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=600&q=80'
+    ]
+  };
+
+  const ADJECTIVES = ['Authentic', 'Handcrafted', 'Heirloom', 'Heritage', 'Artisanal', 'Traditional', 'Pure', 'Organic', 'Hand-Spun', 'Intricate', 'Natural', 'Sacred', 'Vintage', 'Custom', 'Masterpiece'];
+  const MOTIFS = ['Peacock', 'Lotus Flora', 'Temple Arch', 'River Wave', 'Sun & Moon', 'Tree of Life', 'Paisley Butta', 'Forest Floral', 'Geometric Ochre', 'Sacred Mandala', 'Royal Durbar', 'Chinar Leaf'];
+  const BADGES = ['💮 GI Tag Certified', '💎 925 Hallmarked', '🌿 100% Desi Khadi', '🏺 Alluvial River Clay', '🍯 Wild Harvest', '🪵 Aged Root Carved', '✨ Bestseller', '⚡ Deal of the Day', '👑 Masterpiece Edition'];
+
+  const products = [];
+  let currentId = 1;
+
+  for (const dept of DEPARTMENTS) {
+    const subsCount = dept.subcategories.length;
+    const perSub = Math.ceil(dept.targetCount / subsCount);
+
+    for (let sIdx = 0; sIdx < subsCount; sIdx++) {
+      const sub = dept.subcategories[sIdx];
+      const countForThisSub = (sIdx === subsCount - 1) 
+        ? (dept.targetCount - (perSub * (subsCount - 1))) 
+        : perSub;
+
+      for (let i = 0; i < countForThisSub; i++) {
+        const adj = ADJECTIVES[(currentId + i * 3) % ADJECTIVES.length];
+        const motif = MOTIFS[(currentId + i * 2) % MOTIFS.length];
+        const badge = BADGES[(currentId + i) % BADGES.length];
+
+        const priceVariation = Math.round(((i * 37) % 400) - 150);
+        const price = Math.max(99, Math.round((sub.basePrice + priceVariation) / 10) * 10 - 1);
+        const discountRate = 35 + ((currentId * 7) % 25);
+        const mrp = Math.round((price / (1 - (discountRate / 100))) / 10) * 10 - 1;
+        
+        const rating = Number((4.6 + ((currentId % 5) * 0.08)).toFixed(1));
+        const reviewsCount = 45 + ((currentId * 73) % 2900);
+        const stock = 4 + ((currentId * 11) % 35);
+        const leadTime = (currentId % 3 === 0) ? 'Dispatched in 48 hrs' : 'Dispatched in 24 hrs';
+
+        const pool = IMAGE_POOLS[sub.imgKey] || IMAGE_POOLS.silk;
+        const mainImage = pool[i % pool.length];
+        const thumbnails = [
+          mainImage,
+          pool[(i + 1) % pool.length],
+          pool[(i + 2) % pool.length]
+        ];
+
+        const story = `Handcrafted with meticulous dedication by ${sub.artisan} in ${sub.village}, ${sub.state}. Hand-shaped over ${12 + (currentId % 90)} continuous artisan hours through ancient ${sub.craft} techniques preserved across unbroken generations. 86% of your purchase directly funds female livelihood security and apprentice craft training.`;
+        const materials = `100% Authentic ${sub.name.split(' ')[0]} Materials, Naturally Foraged Pigments, Cruelty-Free Zero-Electricity Traditional Processing`;
+        const provenanceHash = simpleHash(`wem-artisan-${currentId}-${sub.artisan}-${sub.village}-${price}`);
+
+        let title = '';
+        if (dept.name === 'Handlooms & Sarees') {
+          title = `${adj} ${sub.name} with Hand-Woven ${motif} Work`;
+        } else if (dept.name === 'Jewelry & Adornment') {
+          title = `${adj} ${sub.name} ${motif} Design`;
+        } else if (dept.name === 'Home & Living Decor') {
+          title = `${adj} ${sub.name} featuring ${motif} Sculpting`;
+        } else if (dept.name === 'Ayurvedic & Forest Organics') {
+          title = `${adj} ${sub.name} (${motif} Infusion)`;
+        } else if (dept.name === 'Traditional Fine Art') {
+          title = `${adj} ${sub.name} - The Sacred ${motif}`;
+        } else if (dept.name === 'Pottery & Kitchenware') {
+          title = `${adj} ${sub.name} with ${motif} Finish`;
+        } else if (dept.name === 'Bags, Footwear & Accessories') {
+          title = `${adj} ${sub.name} (${motif} Embroidery)`;
+        } else {
+          title = `${adj} ${sub.name} with ${motif} Etchings`;
+        }
+
+        if (i > 0) {
+          title += ` - Edition #${100 + i}`;
+        }
+
+        products.push({
+          id: currentId,
+          title,
+          price,
+          mrp,
+          deal_discount: `${discountRate}% off`,
+          deal: true,
+          category: dept.name,
+          subcategory: sub.name,
+          craft_type: sub.craft,
+          artisan_name: sub.artisan,
+          village: `${sub.village}, ${sub.state}`,
+          state: sub.state,
+          collective: sub.collective,
+          stock,
+          rating,
+          reviews_count: reviewsCount,
+          badge,
+          lead_time: leadTime,
+          image: mainImage,
+          thumbnails,
+          story,
+          materials,
+          provenance_hash: provenanceHash
+        });
+
+        currentId++;
       }
-    ];
+    }
+  }
 
-    let selectedProduct = PRODUCTS[0];
-    let cart = JSON.parse(localStorage.getItem('wem_sc_cart') || '[]');
-    let wishlist = JSON.parse(localStorage.getItem('wem_sc_wishlist') || '[]');
+  return { products, departments: DEPARTMENTS };
+}
 
-    // Formatter
-    function formatPrice(inr) {
-      const cfg = CURRENCY_RATES[currentCurrency] || CURRENCY_RATES.INR;
-      const conv = inr * cfg.rate;
-      if (currentCurrency === 'INR') {
-        return `₹${Math.round(conv).toLocaleString('en-IN')}`;
-      }
-      return `${cfg.symbol}${conv.toFixed(2)}`;
+// 2. GLOBAL STATE
+const { products: PRODUCTS, departments: DEPARTMENTS } = generateClientCatalog();
+if (typeof window !== 'undefined') {
+  window.PRODUCTS = PRODUCTS;
+  window.DEPARTMENTS = DEPARTMENTS;
+}
+
+let currentCurrency = 'INR';
+let activeCategory = 'All';
+let activeSubcategory = 'All';
+let activeState = 'All';
+let maxPrice = 6999;
+let minRating = 0;
+let minDiscount = 0;
+let fastDispatchOnly = false;
+let searchQuery = '';
+let sortOption = 'featured';
+let wishlistOnly = false;
+let currentPage = 1;
+let itemsPerPage = 24;
+let appliedCoupon = null;
+
+let currentUser = { role: 'buyer', name: 'Priya Sharma', avatar: '🛍️' };
+let selectedProduct = PRODUCTS[0];
+let cart = JSON.parse(localStorage.getItem('wem_sc_cart') || '[]');
+let wishlist = JSON.parse(localStorage.getItem('wem_sc_wishlist') || '[]');
+
+const CURRENCY_RATES = {
+  INR: { symbol: '₹', rate: 1.0 },
+  USD: { symbol: '$', rate: 0.024 },
+  EUR: { symbol: '€', rate: 0.022 },
+  GBP: { symbol: '£', rate: 0.019 }
+};
+
+// Formatter
+function formatPrice(inr) {
+  const cfg = CURRENCY_RATES[currentCurrency] || CURRENCY_RATES.INR;
+  const conv = inr * cfg.rate;
+  if (currentCurrency === 'INR') {
+    return `₹${Math.round(conv).toLocaleString('en-IN')}`;
+  }
+  return `${cfg.symbol}${conv.toFixed(2)}`;
+}
+
+function toggleCurrencyModal() {
+  const next = currentCurrency === 'INR' ? 'USD' : currentCurrency === 'USD' ? 'EUR' : 'INR';
+  currentCurrency = next;
+  document.getElementById('header-currency-label').textContent = `${CURRENCY_RATES[next].symbol} ${next}`;
+  renderPDP(selectedProduct);
+  renderGrid();
+  renderCartDrawer();
+  updateCalculator(499);
+  showToast(`Switched currency to ${next}`);
+}
+
+// 3. PRO MEGA MENU BUILDER
+function initMegaMenu() {
+  const container = document.getElementById('mega-departments-container');
+  if (!container) return;
+
+  container.innerHTML = DEPARTMENTS.map(dept => {
+    const deptProducts = PRODUCTS.filter(p => p.category === dept.name);
+    return `
+      <div class="mega_dept_card">
+        <div class="mega_dept_head" onclick="toggleMegaMenu(false); filterByCategory('${dept.name}');">
+          <span class="mega_dept_name">${dept.icon || '🌸'} ${dept.name}</span>
+          <span class="mega_dept_count">${deptProducts.length}</span>
+        </div>
+        <ul class="mega_sub_list">
+          ${dept.subcategories.map(sub => {
+            const subCount = deptProducts.filter(p => p.subcategory === sub.name).length;
+            return `
+              <li>
+                <a href="javascript:void(0);" onclick="toggleMegaMenu(false); selectSubcategoryFromMenu('${dept.name}', '${sub.name}');">
+                  <span>${sub.name}</span>
+                  <span class="mega_sub_cnt">(${subCount})</span>
+                </a>
+              </li>
+            `;
+          }).join('')}
+        </ul>
+      </div>
+    `;
+  }).join('');
+
+  // Populate sidebar departments list
+  const sidebarDeptList = document.getElementById('filter-departments-list');
+  if (sidebarDeptList) {
+    let deptHtml = `
+      <div class="filter_check_item">
+        <input type="radio" name="sidebar_cat" id="scat-all" value="All" ${activeCategory === 'All' ? 'checked' : ''} onchange="filterByCategory('All')">
+        <label for="scat-all">
+          <span>All Masterpieces</span>
+          <span class="filter_check_count">(${PRODUCTS.length})</span>
+        </label>
+      </div>
+    `;
+    DEPARTMENTS.forEach((dept, i) => {
+      const count = PRODUCTS.filter(p => p.category === dept.name).length;
+      deptHtml += `
+        <div class="filter_check_item">
+          <input type="radio" name="sidebar_cat" id="scat-${i}" value="${dept.name}" ${activeCategory === dept.name ? 'checked' : ''} onchange="filterByCategory('${dept.name}')">
+          <label for="scat-${i}">
+            <span>${dept.name}</span>
+            <span class="filter_check_count">(${count})</span>
+          </label>
+        </div>
+      `;
+    });
+    sidebarDeptList.innerHTML = deptHtml;
+  }
+
+  // Populate subcategory select
+  populateSubcategoryDropdown();
+}
+
+function populateSubcategoryDropdown() {
+  const select = document.getElementById('filter-subcategory-select');
+  if (!select) return;
+
+  let relevantSubs = [];
+  if (activeCategory === 'All') {
+    DEPARTMENTS.forEach(d => d.subcategories.forEach(s => relevantSubs.push({ name: s.name, dept: d.name })));
+  } else {
+    const dept = DEPARTMENTS.find(d => d.name === activeCategory);
+    if (dept) {
+      relevantSubs = dept.subcategories.map(s => ({ name: s.name, dept: dept.name }));
+    }
+  }
+
+  select.innerHTML = `<option value="All">All Subcategories (${relevantSubs.length} Available)</option>` +
+    relevantSubs.map(s => {
+      const count = PRODUCTS.filter(p => p.subcategory === s.name).length;
+      return `<option value="${s.name}" ${activeSubcategory === s.name ? 'selected' : ''}>${s.name} (${count})</option>`;
+    }).join('');
+}
+
+function toggleMegaMenu(force) {
+  const dd = document.getElementById('mega-menu-dropdown');
+  if (!dd) return;
+  if (typeof force === 'boolean') {
+    dd.classList.toggle('open', force);
+  } else {
+    dd.classList.toggle('open');
+  }
+}
+
+function selectSubcategoryFromMenu(deptName, subName) {
+  activeCategory = deptName;
+  activeSubcategory = subName;
+  currentPage = 1;
+  populateSubcategoryDropdown();
+  updateCategoryNavTabs();
+  renderGrid();
+  document.getElementById('products-grid').scrollIntoView({ behavior: 'smooth' });
+}
+
+// 4. LIVE SEARCH AUTOCOMPLETE
+let searchTimeout = null;
+function handleSearchInput(query) {
+  clearTimeout(searchTimeout);
+  const dd = document.getElementById('search-autocomplete-dropdown');
+  if (!query || query.trim().length < 2) {
+    dd.style.display = 'none';
+    return;
+  }
+
+  searchTimeout = setTimeout(() => {
+    const q = query.toLowerCase().trim();
+    const matches = PRODUCTS.filter(p => 
+      p.title.toLowerCase().includes(q) ||
+      p.category.toLowerCase().includes(q) ||
+      p.subcategory.toLowerCase().includes(q) ||
+      p.craft_type.toLowerCase().includes(q) ||
+      p.artisan_name.toLowerCase().includes(q) ||
+      p.village.toLowerCase().includes(q)
+    ).slice(0, 6);
+
+    if (!matches.length) {
+      dd.innerHTML = `<div style="padding:14px; text-align:center; color:#888; font-size:12px;">No handcrafted heirlooms match "<b>${query}</b>"</div>`;
+      dd.style.display = 'block';
+      return;
     }
 
-    function toggleCurrencyModal() {
-      const next = currentCurrency === 'INR' ? 'USD' : currentCurrency === 'USD' ? 'EUR' : 'INR';
-      currentCurrency = next;
-      document.getElementById('header-currency-label').textContent = `${CURRENCY_RATES[next].symbol} ${next}`;
-      renderPDP(selectedProduct);
-      renderGrid();
-      renderCartDrawer();
-      updateCalculator(499);
-      showToast(`Switched currency to ${next}`);
-    }
-
-    // RENDER FULL SHOPCLUES PDP
-    function renderPDP(p) {
-      selectedProduct = p;
-      // Breadcrumbs
-      document.getElementById('breadcrumb-category').innerHTML = `<a href="javascript:void(0);" onclick="filterByCategory('${p.category}')">${p.category}</a>`;
-      document.getElementById('breadcrumb-title').textContent = p.title;
-
-      // Gallery
-      const mainImg = document.getElementById('zoom_picture_gall');
-      mainImg.src = p.image;
-      document.getElementById('pdp-badge-text').textContent = p.badge || 'Authentic Masterpiece Expert Certified';
-      
-      const thumbList = document.getElementById('thumblist');
-      const thumbs = p.thumbnails && p.thumbnails.length ? p.thumbnails : [p.image];
-      thumbList.innerHTML = thumbs.map((src, i) => `
-        <li class="${i === 0 ? 'active' : ''}" onclick="switchPDPImage('${src}', this)">
-          <img src="${src}" alt="${p.title}">
-        </li>
-      `).join('');
-
-      // Wishlist toggle
-      const wishBtn = document.getElementById('pdp_wishlist');
-      wishBtn.classList.toggle('active', wishlist.includes(p.id));
-
-      // Middle Info
-      document.getElementById('pdp-brand-name').innerHTML = `<span>🏛️</span> ${p.collective}`;
-      document.getElementById('pdp-title').textContent = p.title;
-      document.getElementById('pdp-category-tag').textContent = p.category;
-      document.getElementById('pdp-sku').textContent = `1533${p.id}998`;
-      document.getElementById('pdp-rating').textContent = p.rating;
-      document.getElementById('pdp-reviews-count').textContent = p.reviews_count.toLocaleString();
-
-      // Prices & ShopClues Super Discount Table
-      const discountVal = p.deal_discount || "50% off";
-      const cbDiscount = Math.round(p.price * 0.04);
-      const couponDiscount = Math.round(p.price * 0.10);
-      const lowestDealPrice = p.price - cbDiscount - couponDiscount;
-
-      document.getElementById('pdp-price').textContent = formatPrice(p.price);
-      document.getElementById('pdp-mrp').textContent = `MRP: ${formatPrice(p.mrp)}`;
-      document.getElementById('pdp-discount').textContent = discountVal;
-      document.getElementById('pdp-deal-price').textContent = formatPrice(lowestDealPrice);
-
-      document.getElementById('table-orig-price').textContent = formatPrice(p.price);
-      document.getElementById('table-cb-price').textContent = `-${formatPrice(cbDiscount)}`;
-      document.getElementById('table-coupon-price').textContent = `-${formatPrice(couponDiscount)}`;
-      document.getElementById('table-final-price').textContent = formatPrice(lowestDealPrice);
-
-      // Seller Info
-      document.getElementById('pdp-artisan-name').textContent = p.artisan_name;
-      document.getElementById('pdp-village').textContent = p.village;
-      document.getElementById('wage-gross-price').textContent = formatPrice(p.price);
-      document.getElementById('wage-artisan-disburse').textContent = formatPrice(p.price * 0.86);
-
-      // Tab Details
-      document.getElementById('spec-craft').textContent = p.craft_type;
-      document.getElementById('spec-materials').textContent = p.materials;
-      document.getElementById('spec-origin').textContent = `${p.village} (GI Registered)`;
-      document.getElementById('spec-artisan').textContent = p.artisan_name;
-      document.getElementById('spec-guild').textContent = p.collective;
-      document.getElementById('desc-title').textContent = `${p.craft_type} Heritage from ${p.village}`;
-      document.getElementById('desc-text').textContent = p.story;
-      document.getElementById('pdp-hash').textContent = p.provenance_hash;
-    }
-
-    function switchPDPImage(src, li) {
-      document.getElementById('zoom_picture_gall').src = src;
-      document.querySelectorAll('#thumblist li').forEach(el => el.classList.remove('active'));
-      li.classList.add('active');
-    }
-
-    function loadProductIntoPDP(id) {
-      const p = PRODUCTS.find(x => x.id === id);
-      if (!p) return;
-      switchView('store');
-      renderPDP(p);
-      document.getElementById('pdp-section').scrollIntoView({ behavior: 'smooth' });
-    }
-
-    // RENDER RECOMMENDATIONS / CATALOG GRID
-    function renderGrid() {
-      const grid = document.getElementById('products-grid');
-      let filtered = PRODUCTS.filter(p => {
-        const matchesCat = (activeCategory === 'All') || (p.category === activeCategory);
-        const matchesSearch = !searchQuery || 
-          p.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          p.artisan_name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          p.village.toLowerCase().includes(searchQuery.toLowerCase());
-        const matchesWishlist = !wishlistOnly || wishlist.includes(p.id);
-        return matchesCat && matchesSearch && matchesWishlist;
-      });
-
-      if (!filtered.length) {
-        grid.innerHTML = `
-          <div style="grid-column:1/-1; background:#fff; border:1px solid var(--sc-border); padding:40px; text-align:center;">
-            <h3>No handcrafted heirlooms found matching your query.</h3>
-            <p style="color:#666; margin-top:6px;">Try clearing filters or searching for Banarasi, terracotta, or silver.</p>
+    dd.innerHTML = matches.map(p => `
+      <div class="sc_auto_item" onclick="selectAutocompleteProduct(${p.id})">
+        <img class="sc_auto_thumb" src="${p.image}" alt="${p.title}">
+        <div class="sc_auto_info">
+          <div class="sc_auto_title">${p.title}</div>
+          <div class="sc_auto_meta">
+            <span class="sc_auto_pill">${p.subcategory}</span>
+            <span>By ${p.artisan_name}</span>
           </div>
-        `;
-        return;
-      }
+        </div>
+        <div class="sc_auto_price">${formatPrice(p.price)}</div>
+      </div>
+    `).join('') + `
+      <div class="sc_auto_footer" onclick="executeSearch()">
+        View all results matching "${query}" →
+      </div>
+    `;
+    dd.style.display = 'block';
+  }, 120);
+}
 
-      grid.innerHTML = filtered.map(p => `
-        <div class="sc_card" onclick="loadProductIntoPDP(${p.id})">
-          <div class="sc_card_discount">${p.deal_discount || '50% OFF'}</div>
-          <div class="sc_card_seal">💮 Certified</div>
-          <div class="sc_card_img">
-            <img src="${p.image}" alt="${p.title}">
-          </div>
-          <div class="sc_card_title" title="${p.title}">${p.title}</div>
-          <div class="sc_card_seller">Sold by: ${p.artisan_name} (${p.village.split(',')[0]})</div>
-          <div class="sc_card_price_row">
-            <span class="sc_card_fprice">${formatPrice(p.price)}</span>
-            <span class="sc_card_mrp">${formatPrice(p.mrp)}</span>
-          </div>
-          <button class="sc_card_btn" onclick="event.stopPropagation(); addToCart(${p.id});">
+function selectAutocompleteProduct(id) {
+  const dd = document.getElementById('search-autocomplete-dropdown');
+  if (dd) dd.style.display = 'none';
+  loadProductIntoPDP(id);
+}
+
+function executeSearch() {
+  const q = document.getElementById('autocomplete').value.trim();
+  searchQuery = q;
+  currentPage = 1;
+  const dd = document.getElementById('search-autocomplete-dropdown');
+  if (dd) dd.style.display = 'none';
+  renderGrid();
+  document.getElementById('products-grid').scrollIntoView({ behavior: 'smooth' });
+}
+
+// 5. FACETED FILTERS & SORTING
+function applySubcategoryFilter(sub) {
+  activeSubcategory = sub;
+  currentPage = 1;
+  renderGrid();
+}
+
+function handlePriceSlider(val) {
+  maxPrice = Number(val);
+  document.getElementById('price-slider-display').textContent = formatPrice(maxPrice);
+  currentPage = 1;
+  renderGrid();
+}
+
+function setPriceBracket(min, max) {
+  maxPrice = max;
+  document.getElementById('price-range-slider').value = Math.min(max, 6999);
+  document.getElementById('price-slider-display').textContent = formatPrice(max);
+  currentPage = 1;
+  renderGrid();
+}
+
+function applyStateFilter(state) {
+  activeState = state;
+  currentPage = 1;
+  renderGrid();
+}
+
+function applyDiscountFilter(minDisc) {
+  minDiscount = minDisc;
+  currentPage = 1;
+  renderGrid();
+}
+
+function applyRatingFilter(minR) {
+  minRating = minR;
+  currentPage = 1;
+  renderGrid();
+}
+
+function toggleFastDispatch(checked) {
+  fastDispatchOnly = checked;
+  currentPage = 1;
+  renderGrid();
+}
+
+function handleSortChange(val) {
+  sortOption = val;
+  currentPage = 1;
+  renderGrid();
+}
+
+function handlePerPageChange(val) {
+  itemsPerPage = Number(val);
+  currentPage = 1;
+  renderGrid();
+}
+
+function resetAllFilters() {
+  activeCategory = 'All';
+  activeSubcategory = 'All';
+  activeState = 'All';
+  maxPrice = 6999;
+  minRating = 0;
+  minDiscount = 0;
+  fastDispatchOnly = false;
+  searchQuery = '';
+  sortOption = 'featured';
+  wishlistOnly = false;
+  currentPage = 1;
+
+  document.getElementById('autocomplete').value = '';
+  document.getElementById('price-range-slider').value = 6999;
+  document.getElementById('price-slider-display').textContent = formatPrice(6999);
+  document.getElementById('filter-state-select').value = 'All';
+  document.getElementById('disc-all').checked = true;
+  document.getElementById('rat-all').checked = true;
+  document.getElementById('fast-dispatch-check').checked = false;
+  document.getElementById('sort-select').value = 'featured';
+
+  populateSubcategoryDropdown();
+  updateCategoryNavTabs();
+  renderGrid();
+  showToast("All filters have been reset.");
+}
+
+function filterByCategory(cat) {
+  activeCategory = cat;
+  activeSubcategory = 'All';
+  currentPage = 1;
+  populateSubcategoryDropdown();
+  updateCategoryNavTabs();
+
+  // Update sidebar radio
+  const radios = document.querySelectorAll('input[name="sidebar_cat"]');
+  radios.forEach(r => {
+    r.checked = (r.value === cat);
+  });
+
+  renderGrid();
+}
+
+function updateCategoryNavTabs() {
+  document.querySelectorAll('.main_navigation li').forEach(li => li.classList.remove('active'));
+  const map = {
+    'All': 'nav-all',
+    'Handlooms & Sarees': 'nav-handlooms',
+    'Jewelry & Adornment': 'nav-jewelry',
+    'Home & Living Decor': 'nav-decor',
+    'Ayurvedic & Forest Organics': 'nav-wellness',
+    'Traditional Fine Art': 'nav-art',
+    'Pottery & Kitchenware': 'nav-pottery',
+    'Bags, Footwear & Accessories': 'nav-bags',
+    'Festive & Spiritual Crafts': 'nav-festive'
+  };
+  const targetId = map[activeCategory];
+  if (targetId) {
+    const el = document.getElementById(targetId);
+    if (el) el.classList.add('active');
+  }
+}
+
+// 6. HIGH PERFORMANCE PAGINATED CATALOG ENGINE
+function getFilteredAndSortedProducts() {
+  return PRODUCTS.filter(p => {
+    const matchesCat = (activeCategory === 'All') || (p.category === activeCategory);
+    const matchesSub = (activeSubcategory === 'All') || (p.subcategory === activeSubcategory);
+    const matchesState = (activeState === 'All') || (p.state === activeState);
+    const matchesPrice = p.price <= maxPrice;
+    const matchesRating = p.rating >= minRating;
+    
+    // Discount match
+    const discNum = parseInt(p.deal_discount) || 0;
+    const matchesDiscount = discNum >= minDiscount;
+
+    // Fast dispatch
+    const matchesFast = !fastDispatchOnly || p.lead_time.includes('24');
+
+    // Search query
+    const q = searchQuery.toLowerCase().trim();
+    const matchesSearch = !q || 
+      p.title.toLowerCase().includes(q) ||
+      p.category.toLowerCase().includes(q) ||
+      p.subcategory.toLowerCase().includes(q) ||
+      p.craft_type.toLowerCase().includes(q) ||
+      p.artisan_name.toLowerCase().includes(q) ||
+      p.village.toLowerCase().includes(q);
+
+    // Wishlist
+    const matchesWish = !wishlistOnly || wishlist.includes(p.id);
+
+    return matchesCat && matchesSub && matchesState && matchesPrice && matchesRating && matchesDiscount && matchesFast && matchesSearch && matchesWish;
+  }).sort((a, b) => {
+    if (sortOption === 'price_asc') return a.price - b.price;
+    if (sortOption === 'price_desc') return b.price - a.price;
+    if (sortOption === 'rating') return b.rating - a.rating;
+    if (sortOption === 'discount') {
+      const dA = parseInt(a.deal_discount) || 0;
+      const dB = parseInt(b.deal_discount) || 0;
+      return dB - dA;
+    }
+    if (sortOption === 'popular') return b.reviews_count - a.reviews_count;
+    // Featured default
+    return a.id - b.id;
+  });
+}
+
+function renderGrid() {
+  const filtered = getFilteredAndSortedProducts();
+  const total = filtered.length;
+  const totalPages = Math.max(1, Math.ceil(total / itemsPerPage));
+  if (currentPage > totalPages) currentPage = totalPages;
+
+  const startIdx = (currentPage - 1) * itemsPerPage;
+  const endIdx = Math.min(startIdx + itemsPerPage, total);
+  const pageItems = filtered.slice(startIdx, endIdx);
+
+  // Update Toolbar & Counter
+  const counterEl = document.getElementById('catalog-counter-badge');
+  if (counterEl) counterEl.textContent = `${total.toLocaleString()} Handcrafted Heirlooms`;
+
+  const summaryEl = document.getElementById('catalog-page-summary');
+  if (summaryEl) {
+    if (total === 0) {
+      summaryEl.innerHTML = `Showing <b>0</b> of <b>0</b> Products`;
+    } else {
+      summaryEl.innerHTML = `Showing <b>${startIdx + 1}–${endIdx}</b> of <b>${total.toLocaleString()}</b> Products`;
+    }
+  }
+
+  const activeCatLabel = document.getElementById('active-category-label');
+  if (activeCatLabel) {
+    activeCatLabel.textContent = `(${activeCategory}${activeSubcategory !== 'All' ? ' > ' + activeSubcategory : ''})`;
+  }
+
+  // Active Filter Chips
+  renderActiveFilterChips();
+
+  // Render Grid Cards
+  const grid = document.getElementById('products-grid');
+  if (!total) {
+    grid.innerHTML = `
+      <div style="grid-column:1/-1; background:#fff; border:1px solid var(--sc-border); border-radius:6px; padding:48px 24px; text-align:center;">
+        <div style="font-size:3rem; margin-bottom:12px;">🔍</div>
+        <h3 style="font-family:var(--font-heading); font-size:1.2rem; color:#111;">No handcrafted heirlooms found matching your exact filter combination.</h3>
+        <p style="color:#666; margin:8px 0 16px;">Try clearing some filters or widening your price range.</p>
+        <button class="btn orange" onclick="resetAllFilters()">Reset All Filters</button>
+      </div>
+    `;
+    document.getElementById('pagination-container').innerHTML = '';
+    return;
+  }
+
+  grid.innerHTML = pageItems.map(p => {
+    const isWish = wishlist.includes(p.id);
+    return `
+      <div class="sc_card" onclick="loadProductIntoPDP(${p.id})">
+        <div class="sc_card_discount">${p.deal_discount || '50% OFF'}</div>
+        <div class="sc_card_seal">${p.badge.split(' ')[0]} Certified</div>
+        <button class="sc_wish_btn ${isWish ? 'active' : ''}" title="Save to Wishlist" onclick="event.stopPropagation(); toggleWishlist(${p.id});">
+          ${isWish ? '❤️' : '🤍'}
+        </button>
+        <div class="sc_card_img">
+          <img src="${p.image}" alt="${p.title}" loading="lazy">
+        </div>
+        <div class="sc_card_title" title="${p.title}">${p.title}</div>
+        <div class="sc_card_seller">Sold by: ${p.artisan_name} (${p.village.split(',')[0]})</div>
+        <div style="display:flex; align-items:center; gap:6px; margin:3px 0; font-size:11px;">
+          <span style="color:#f59e0b; font-weight:800;">★ ${p.rating}</span>
+          <span style="color:#888;">(${p.reviews_count.toLocaleString()})</span>
+          <span style="margin-left:auto; font-size:10px; color:#2e7d32; font-weight:700;">86% Living Wage</span>
+        </div>
+        <div class="sc_card_price_row">
+          <span class="sc_card_fprice">${formatPrice(p.price)}</span>
+          <span class="sc_card_mrp">${formatPrice(p.mrp)}</span>
+        </div>
+        <div class="sc_card_actions" onclick="event.stopPropagation();">
+          <button class="sc_card_quick_btn" onclick="openQuickView(${p.id})">
+            👁 Quick View
+          </button>
+          <button class="sc_card_btn" style="margin-top:0;" onclick="addToCart(${p.id})">
             + Add To Cart
           </button>
         </div>
-      `).join('');
+      </div>
+    `;
+  }).join('');
 
-      document.getElementById('wishlist-count-badge').textContent = wishlist.length;
-    }
+  // Render Pagination
+  renderPaginationControls(totalPages);
+  document.getElementById('wishlist-count-badge').textContent = wishlist.length;
+}
 
-    // Tabs
-    function switchTab(idx) {
-      document.querySelectorAll('.tabbing_nav li').forEach((el, i) => {
-        el.classList.toggle('active', i === idx);
-      });
-      document.querySelectorAll('.pd_tab_pane').forEach((el, i) => {
-        el.classList.toggle('active', i === idx);
-      });
-    }
+function renderActiveFilterChips() {
+  const container = document.getElementById('active-filter-chips');
+  if (!container) return;
 
-    // Views
-    function switchView(view) {
-      ['store', 'guilds', 'workshops', 'calculator', 'orders'].forEach(v => {
-        const el = document.getElementById(`view-${v}`);
-        if (el) el.style.display = (v === view ? 'block' : 'none');
-      });
-      if (view === 'guilds') renderGuildsView();
-      if (view === 'workshops') renderWorkshopsView();
-      if (view === 'orders') renderOrdersView();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+  const chips = [];
+  if (activeCategory !== 'All') {
+    chips.push({ label: `Dept: ${activeCategory}`, reset: () => filterByCategory('All') });
+  }
+  if (activeSubcategory !== 'All') {
+    chips.push({ label: `Sub: ${activeSubcategory}`, reset: () => applySubcategoryFilter('All') });
+  }
+  if (activeState !== 'All') {
+    chips.push({ label: `State: ${activeState}`, reset: () => applyStateFilter('All') });
+  }
+  if (maxPrice < 6999) {
+    chips.push({ label: `Max: ${formatPrice(maxPrice)}`, reset: () => handlePriceSlider(6999) });
+  }
+  if (minDiscount > 0) {
+    chips.push({ label: `${minDiscount}%+ Off`, reset: () => applyDiscountFilter(0) });
+  }
+  if (minRating > 0) {
+    chips.push({ label: `${minRating}★+`, reset: () => applyRatingFilter(0) });
+  }
+  if (fastDispatchOnly) {
+    chips.push({ label: 'Fast 24h', reset: () => toggleFastDispatch(false) });
+  }
+  if (searchQuery) {
+    chips.push({ label: `"${searchQuery}"`, reset: () => { document.getElementById('autocomplete').value = ''; executeSearch(); } });
+  }
 
-    function filterByCategory(cat) {
-      activeCategory = cat;
-      wishlistOnly = false;
-      document.querySelectorAll('.main_navigation li').forEach(li => li.classList.remove('active'));
-      switchView('store');
-      renderGrid();
-      showToast(`Browsing ${cat === 'All' ? 'All Handcrafted Heirlooms' : cat}`);
-    }
+  container.innerHTML = chips.map((c, i) => `
+    <div class="filter_chip" onclick="window.chipResets[${i}]()">
+      ${c.label} <span>✕</span>
+    </div>
+  `).join('');
 
-    function executeSearch() {
-      searchQuery = document.getElementById('autocomplete').value.trim();
-      switchView('store');
-      renderGrid();
-      if (searchQuery) {
-        showToast(`Showing results for: "${searchQuery}"`);
-        document.getElementById('products-grid').scrollIntoView({ behavior: 'smooth' });
-      }
-    }
+  window.chipResets = chips.map(c => c.reset);
+}
 
-    function filterSavedItems() {
-      wishlistOnly = !wishlistOnly;
-      switchView('store');
-      renderGrid();
-      showToast(wishlistOnly ? 'Showing your saved Wishlist' : 'Showing all heirlooms');
-    }
+function renderPaginationControls(totalPages) {
+  const container = document.getElementById('pagination-container');
+  if (!container) return;
+  if (totalPages <= 1) {
+    container.innerHTML = '';
+    return;
+  }
 
-    function toggleWishlist(id) {
-      if (wishlist.includes(id)) {
-        wishlist = wishlist.filter(x => x !== id);
-        showToast("Removed from your Wishlist");
-      } else {
-        wishlist.push(id);
-        showToast("Saved to your Wishlist ❤️");
-      }
-      localStorage.setItem('wem_sc_wishlist', JSON.stringify(wishlist));
-      renderPDP(selectedProduct);
-      renderGrid();
-    }
+  let html = `
+    <button class="sc_page_btn" ${currentPage === 1 ? 'disabled' : ''} onclick="goToPage(${currentPage - 1})">
+      « Prev
+    </button>
+  `;
 
-    function copyCoupon(code) {
-      navigator.clipboard.writeText(code).then(() => {
-        showToast(`Coupon "${code}" copied! Paste at checkout.`);
-      }).catch(() => {
-        showToast(`Use Coupon: ${code}`);
-      });
-    }
+  const maxVisiblePages = 5;
+  let startPage = Math.max(1, currentPage - 2);
+  let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
+  if (endPage - startPage < maxVisiblePages - 1) {
+    startPage = Math.max(1, endPage - maxVisiblePages + 1);
+  }
 
-    function checkPincode() {
-      const pin = document.getElementById('pincode-input').value.trim();
-      if (pin.length !== 6 || isNaN(pin)) {
-        alert("Please enter a valid 6-digit Indian Pincode!");
-        return;
-      }
-      const days = (parseInt(pin.slice(-1), 10) % 3) + 2;
-      const d = new Date();
-      d.setDate(d.getDate() + days);
-      const dateStr = d.toLocaleDateString('en-IN', { weekday: 'long', day: 'numeric', month: 'short' });
-      document.getElementById('pincode-date').textContent = `${dateStr} (${days} Days)`;
-      showToast(`Pincode ${pin} is eligible for Free Plastic-Free Delivery!`);
-    }
+  if (startPage > 1) {
+    html += `<button class="sc_page_btn" onclick="goToPage(1)">1</button>`;
+    if (startPage > 2) html += `<span class="sc_page_dots">...</span>`;
+  }
 
-    // Cart System
-    function addToCart(id) {
-      const p = PRODUCTS.find(x => x.id === id);
-      if (!p) return;
-      const existing = cart.find(x => x.id === id);
-      if (existing) existing.qty += 1;
-      else cart.push({ id: p.id, title: p.title, price: p.price, image: p.image, qty: 1 });
+  for (let p = startPage; p <= endPage; p++) {
+    html += `<button class="sc_page_btn ${p === currentPage ? 'active' : ''}" onclick="goToPage(${p})">${p}</button>`;
+  }
 
-      localStorage.setItem('wem_sc_cart', JSON.stringify(cart));
-      updateCartBadge();
-      showToast(`Added "${p.title.substring(0, 30)}..." to Cart! 🛍️`);
-    }
+  if (endPage < totalPages) {
+    if (endPage < totalPages - 1) html += `<span class="sc_page_dots">...</span>`;
+    html += `<button class="sc_page_btn" onclick="goToPage(${totalPages})">${totalPages}</button>`;
+  }
 
-    function buyNow(id) {
-      addToCart(id);
-      toggleCart();
-    }
+  html += `
+    <button class="sc_page_btn" ${currentPage === totalPages ? 'disabled' : ''} onclick="goToPage(${currentPage + 1})">
+      Next »
+    </button>
+    <div class="sc_page_jump">
+      <span>Jump to:</span>
+      <input type="number" id="jump-page-input" min="1" max="${totalPages}" value="${currentPage}" onkeydown="if(event.key==='Enter') jumpToPageInput(${totalPages});">
+      <button type="button" onclick="jumpToPageInput(${totalPages})">Go</button>
+    </div>
+  `;
 
-    function toggleCart() {
-      const drawer = document.getElementById('cart-drawer');
-      const overlay = document.getElementById('cart-overlay');
-      drawer.classList.toggle('open');
-      overlay.classList.toggle('active');
-      renderCartDrawer();
-    }
+  container.innerHTML = html;
+}
 
-    function updateCartBadge() {
-      const count = cart.reduce((acc, it) => acc + it.qty, 0);
-      document.getElementById('cart-count-badge').textContent = count;
-      document.getElementById('drawer-cart-count').textContent = count;
-    }
+function goToPage(page) {
+  currentPage = page;
+  renderGrid();
+  document.getElementById('products-grid').scrollIntoView({ behavior: 'smooth' });
+}
 
-    function renderCartDrawer() {
-      const list = document.getElementById('cart-items-list');
-      const subtotalEl = document.getElementById('cart-subtotal-price');
-      const wageEl = document.getElementById('cart-subtotal-artisan');
+function jumpToPageInput(totalPages) {
+  const val = Number(document.getElementById('jump-page-input').value);
+  if (val >= 1 && val <= totalPages) {
+    goToPage(val);
+  } else {
+    showToast(`Please enter a page number between 1 and ${totalPages}`);
+  }
+}
 
-      if (!cart.length) {
-        list.innerHTML = `<div style="text-align:center; padding:40px; color:#888;">Your Handcrafted Cart is empty.</div>`;
-        subtotalEl.textContent = formatPrice(0);
-        wageEl.textContent = formatPrice(0);
-        return;
-      }
+// 7. QUICK VIEW MODAL
+let quickViewQty = 1;
+function openQuickView(id) {
+  const p = PRODUCTS.find(x => x.id === id);
+  if (!p) return;
+  quickViewQty = 1;
 
-      let total = 0;
-      list.innerHTML = cart.map(it => {
-        total += it.price * it.qty;
-        return `
-          <div class="sc_cart_item">
-            <img src="${it.image}" alt="${it.title}">
-            <div class="sc_cart_item_info">
-              <div class="sc_cart_item_title">${it.title}</div>
-              <div class="sc_cart_item_price">${formatPrice(it.price)}</div>
-              <div style="display:flex; align-items:center; gap:8px; margin-top:4px; font-size:11px;">
-                <span>Qty: <b>${it.qty}</b></span>
-                <a href="javascript:void(0);" style="color:var(--sc-red); margin-left:auto;" onclick="removeFromCart(${it.id})">Remove</a>
-              </div>
-            </div>
-          </div>
-        `;
-      }).join('');
-
-      subtotalEl.textContent = formatPrice(total);
-      wageEl.textContent = formatPrice(total * 0.86);
-    }
-
-    function removeFromCart(id) {
-      cart = cart.filter(x => x.id !== id);
-      localStorage.setItem('wem_sc_cart', JSON.stringify(cart));
-      updateCartBadge();
-      renderCartDrawer();
-      showToast("Item removed from cart");
-    }
-
-    function simulateCheckout() {
-      if (!cart.length) return alert("Your cart is empty!");
-      const orderId = 'SC-' + Math.floor(100000 + Math.random() * 900000);
-      toggleCart();
-      cart = [];
-      localStorage.setItem('wem_sc_cart', JSON.stringify(cart));
-      updateCartBadge();
-      showToast(`Order Placed Successfully! Consignment ID: ${orderId} 📦`);
-      switchView('orders');
-    }
-
-    // Provenance Modal
-    function openProvenanceModal(id) {
-      const p = PRODUCTS.find(x => x.id === id) || selectedProduct;
-      const box = document.getElementById('modal-provenance-inner');
-      box.innerHTML = `
-        <button class="sc_modal_close" onclick="closeModal('modal-provenance')">✕</button>
-        <div style="text-align:center; border:2px solid var(--sc-teal); border-radius:6px; padding:20px; background:#faffff;">
-          <div style="width:60px; height:60px; border-radius:50%; background:var(--sc-teal); color:#fff; display:flex; align-items:center; justify-content:center; font-size:1.6rem; margin:0 auto 10px;">
-            🌸
-          </div>
-          <h2 style="font-family:var(--font-heading); font-size:1.3rem; font-weight:800; color:#1a1a1a;">
-            Digital Certificate of Provenance & Fair-Wage Audit
-          </h2>
-          <div style="font-size:11px; color:var(--sc-teal); font-weight:700; margin-bottom:14px;">
-            DECENTRALIZED ARTISAN EMPOWERMENT CONSORTIUM
-          </div>
-
-          <div style="text-align:left; font-size:12px; line-height:1.6; margin-bottom:14px; background:#ffffff; border:1px solid var(--sc-border); padding:14px; border-radius:4px;">
-            <div><b>Heirloom Name:</b> ${p.title}</div>
-            <div><b>Master Artisan:</b> ${p.artisan_name}</div>
-            <div><b>Village & Cluster:</b> ${p.village}</div>
-            <div><b>Certified Guild:</b> ${p.collective}</div>
-            <div><b>Direct Living Wage (86%):</b> <span style="color:var(--sc-green); font-weight:800;">${formatPrice(p.price * 0.86)}</span></div>
-          </div>
-
-          <div style="background:#f1f5f9; border:1px solid #cbd5e1; padding:10px; border-radius:4px; text-align:left; font-size:10px; font-family:var(--font-mono); color:#475569; word-break:break-all; margin-bottom:14px;">
-            <b>SHA-256 LEDGER HASH:</b><br>${p.provenance_hash}
-          </div>
-
-          <div style="display:flex; justify-content:space-between; gap:10px;">
-            <button class="btn orange-white" style="height:36px; font-size:11px;" onclick="window.print()">🖨️ Print Certificate</button>
-            <button class="btn orange" style="height:36px; font-size:11px;" onclick="closeModal('modal-provenance'); showToast('Verified Cryptographically Genuine!');">Verified Authentic ✓</button>
+  const inner = document.getElementById('modal-quickview-inner');
+  inner.innerHTML = `
+    <button class="sc_modal_close" onclick="closeModal('modal-quickview')">✕</button>
+    <div class="quickview_grid">
+      <div>
+        <div class="quickview_img_wrap">
+          <img class="quickview_main_img" id="quickview-main-img" src="${p.image}" alt="${p.title}">
+        </div>
+        <div class="quickview_thumbs">
+          ${p.thumbnails.map((src, i) => `
+            <img src="${src}" class="${i === 0 ? 'active' : ''}" onclick="switchQuickViewImg('${src}', this)" alt="${p.title}">
+          `).join('')}
+        </div>
+      </div>
+      <div class="quickview_details">
+        <div class="quickview_brand">🏛️ ${p.collective}</div>
+        <h2 class="quickview_title">${p.title}</h2>
+        <div style="display:flex; align-items:center; gap:8px; font-size:12px;">
+          <span style="color:#f59e0b; font-weight:800;">★ ${p.rating}</span>
+          <span style="color:#666;">(${p.reviews_count.toLocaleString()} verified reviews)</span>
+          <span style="background:#ecfdf5; color:#047857; font-size:10px; font-weight:800; padding:2px 6px; border-radius:4px;">${p.badge}</span>
+        </div>
+        <div class="quickview_price_row">
+          <span class="quickview_fprice">${formatPrice(p.price)}</span>
+          <span class="quickview_mrp">MRP: ${formatPrice(p.mrp)}</span>
+          <span class="quickview_discount">${p.deal_discount}</span>
+        </div>
+        <div class="quickview_wage_box">
+          <b>🌿 86% Direct Living Wage Certified:</b> <span style="font-weight:900;">${formatPrice(p.price * 0.86)}</span> is directly credited to ${p.artisan_name}'s cooperative bank account.
+        </div>
+        <table class="quickview_specs_table">
+          <tr><td>Discipline</td><td>${p.craft_type}</td></tr>
+          <tr><td>Cluster Origin</td><td>${p.village} (GI Tagged)</td></tr>
+          <tr><td>Materials</td><td>${p.materials}</td></tr>
+          <tr><td>Dispatch Speed</td><td>${p.lead_time}</td></tr>
+        </table>
+        <div class="quickview_qty_row">
+          <label style="font-size:12px; font-weight:700;">Quantity:</label>
+          <div class="qty_stepper">
+            <button type="button" onclick="adjustQuickViewQty(-1)">-</button>
+            <span id="quickview-qty-val">1</span>
+            <button type="button" onclick="adjustQuickViewQty(1)">+</button>
           </div>
         </div>
-      `;
-      openModal('modal-provenance');
-    }
-
-    // Direct Chat Modal
-    function openChatModal(artisan, village) {
-      const box = document.getElementById('modal-chat-inner');
-      box.innerHTML = `
-        <button class="sc_modal_close" onclick="closeModal('modal-chat')">✕</button>
-        <div style="display:flex; align-items:center; gap:10px; border-bottom:1px solid var(--sc-border); padding-bottom:10px; margin-bottom:12px;">
-          <div style="font-size:2rem;">👩‍🌾</div>
-          <div>
-            <h3 style="font-family:var(--font-heading); font-size:1.15rem; font-weight:700;">Direct Inquiry with ${artisan}</h3>
-            <div style="font-size:11px; color:var(--sc-green);">● Active at Loom Shed · ${village}</div>
-          </div>
-        </div>
-
-        <div id="chat-stream" style="height:260px; overflow-y:auto; background:#fbfbfb; border:1px solid var(--sc-border); border-radius:4px; padding:12px; display:flex; flex-direction:column; gap:8px; margin-bottom:12px; font-size:12px;">
-          <div style="background:#ffffff; border:1px solid #e0e0e0; border-radius:4px; padding:8px 12px; max-width:85%;">
-            Namaste! I am <b>${artisan}</b> from ${village}. Thank you for supporting our women's guild. Are you looking for custom color dye variants or specific lengths?
-          </div>
-        </div>
-
-        <div style="display:flex; gap:8px;">
-          <input type="text" id="chat-text" class="pin_type" style="flex:1; width:auto;" placeholder="Type custom dimensions, colors or questions..." onkeydown="if(event.key==='Enter') sendChatMessage('${artisan}')">
-          <button class="btn orange" style="flex:none; height:34px; padding:0 16px; font-size:11px;" onclick="sendChatMessage('${artisan}')">Send</button>
-        </div>
-      `;
-      openModal('modal-chat');
-    }
-
-    function sendChatMessage(artisan) {
-      const input = document.getElementById('chat-text');
-      const val = input.value.trim();
-      if (!val) return;
-      const stream = document.getElementById('chat-stream');
-
-      const u = document.createElement('div');
-      u.style.cssText = "align-self:flex-end; background:var(--sc-teal); color:#fff; border-radius:4px; padding:8px 12px; max-width:85%;";
-      u.textContent = val;
-      stream.appendChild(u);
-      input.value = '';
-      stream.scrollTop = stream.scrollHeight;
-
-      setTimeout(() => {
-        const a = document.createElement('div');
-        a.style.cssText = "align-self:flex-start; background:#ffffff; border:1px solid #e0e0e0; border-radius:4px; padding:8px 12px; max-width:85%;";
-        a.innerHTML = `Dhanyavaad! I have received your request: <i>"${val}"</i>. Our collective weavers will craft this with divine precision.`;
-        stream.appendChild(a);
-        stream.scrollTop = stream.scrollHeight;
-      }, 1000);
-    }
-
-    // Modal Helpers
-    function openModal(id) {
-      const el = document.getElementById(id);
-      if (el) el.classList.add('active');
-    }
-    function closeModal(id) {
-      const el = document.getElementById(id);
-      if (el) el.classList.remove('active');
-    }
-
-    function showToast(msg) {
-      const t = document.getElementById('sc-toast');
-      document.getElementById('toast-msg').textContent = msg;
-      t.classList.add('show');
-      setTimeout(() => t.classList.remove('show'), 3500);
-    }
-
-    // Other Views
-    function renderGuildsView() {
-      const guilds = [
-        { name: "Dhaga Kala Weavers Guild", loc: "Varanasi, UP", members: "142 Women Weavers", share: "86.8%", spec: "Pure Mulberry silk handlooms & Kadwa Zari weaving" },
-        { name: "Mitti Shilp Terracotta Guild", loc: "Bankura, WB", members: "88 Ceramic Crafters", share: "87.2%", spec: "Alluvial river clay wheel-thrown urns and murals" },
-        { name: "Tarakasi Silver Guild", loc: "Cuttack, Odisha", members: "64 Silversmiths", share: "86.0%", spec: "Micro-wire sterling filigree jewelry" },
-        { name: "Kutch Desert Block Printers", loc: "Kutch, Gujarat", members: "110 Dye Artisans", share: "86.5%", spec: "Multi-stage indigo mud-resist Ajrakh printing" }
-      ];
-      document.getElementById('guilds-full-grid').innerHTML = guilds.map(g => `
-        <div class="shd_box" style="margin:0;">
-          <h3 style="font-family:var(--font-heading); font-size:1.15rem; color:#1a1a1a; margin-bottom:4px;">${g.name}</h3>
-          <div style="font-size:11px; color:var(--sc-teal); font-weight:700; margin-bottom:6px;">📍 ${g.loc} · 👩‍🌾 ${g.members}</div>
-          <p style="font-size:11px; color:#555; margin-bottom:12px;">${g.spec}</p>
-          <div style="background:#e8f5e9; color:#2e7d32; font-size:11px; font-weight:800; padding:4px 8px; border-radius:3px;">
-            ✓ ${g.share} Direct Disbursement Audited
-          </div>
-        </div>
-      `).join('');
-    }
-
-    function renderWorkshopsView() {
-      const ws = [
-        { title: "Zari Loom Weaving & Gold Thread Secrets", inst: "Ananya Devi", time: "Saturday, 3 PM", price: 249 },
-        { title: "Terracotta Wheel Sculpting & Motif Carving", inst: "Radhika Pal", time: "Sunday, 5 PM", price: 169 },
-        { title: "Ancient Tarakasi Silver Wire Manipulation", inst: "Sunita Das", time: "Wednesday, 6 PM", price: 299 },
-        { title: "Natural Indigo Vat Fermentation & Printing", inst: "Zarina Khatun", time: "Friday, 4 PM", price: 199 }
-      ];
-      document.getElementById('workshops-full-grid').innerHTML = ws.map(w => `
-        <div class="shd_box" style="margin:0;">
-          <span style="background:var(--sc-orange); color:#fff; font-size:9px; font-weight:800; padding:2px 6px; border-radius:2px;">LIVE WORKSHOP</span>
-          <h3 style="font-family:var(--font-heading); font-size:1.15rem; color:#1a1a1a; margin:8px 0 4px;">${w.title}</h3>
-          <div style="font-size:11px; color:#666; margin-bottom:6px;">Master: <b>${w.inst}</b> · 📅 ${w.time}</div>
-          <div style="font-family:var(--font-heading); font-size:1.3rem; font-weight:800; color:var(--sc-orange); margin-bottom:10px;">${formatPrice(w.price)}</div>
-          <button class="btn orange" style="width:100%; height:32px; font-size:11px;" onclick="showToast('Seat reserved for ${w.title}! Materials kit dispatched.')">
-            Reserve Workshop Seat
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px;">
+          <button class="btn orange" style="height:40px; font-size:12px;" onclick="addQuickViewToCart(${p.id})">
+            + Add To Cart
+          </button>
+          <button class="btn orange-white" style="height:40px; font-size:12px;" onclick="closeModal('modal-quickview'); loadProductIntoPDP(${p.id});">
+            Full Product Page →
           </button>
         </div>
-      `).join('');
-    }
+      </div>
+    </div>
+  `;
 
-    function renderOrdersView() {
-      const container = document.getElementById('orders-cards-container');
-      container.innerHTML = `
-        <div class="shd_box">
-          <div style="display:flex; justify-content:space-between; border-bottom:1px solid var(--sc-border-light); padding-bottom:10px; margin-bottom:12px; font-size:11px; flex-wrap:wrap; gap:10px;">
-            <div><b>CONSIGNMENT # SC-892401</b><br><span style="color:#888;">Placed Today · Priya Sharma</span></div>
-            <div><b>STATUS:</b> <span style="color:var(--sc-orange); font-weight:700;">Artisan Crafting at Loom</span></div>
-            <div><b>TOTAL:</b> <span style="font-weight:700;">${formatPrice(1499)}</span></div>
-          </div>
-          <div style="font-size:12px;">
-            <b>Pure Mulberry Silk Banarasi Brocade Saree</b> · Dispatched with 100% biodegradable packaging.
+  openModal('modal-quickview');
+}
+
+function switchQuickViewImg(src, imgEl) {
+  document.getElementById('quickview-main-img').src = src;
+  document.querySelectorAll('.quickview_thumbs img').forEach(el => el.classList.remove('active'));
+  imgEl.classList.add('active');
+}
+
+function adjustQuickViewQty(delta) {
+  quickViewQty = Math.max(1, quickViewQty + delta);
+  document.getElementById('quickview-qty-val').textContent = quickViewQty;
+}
+
+function addQuickViewToCart(id) {
+  addToCart(id, quickViewQty);
+  closeModal('modal-quickview');
+}
+
+// 8. CART & COUPON ENGINE
+function addToCart(id, qty = 1) {
+  const p = PRODUCTS.find(x => x.id === id);
+  if (!p) return;
+  const existing = cart.find(x => x.id === id);
+  if (existing) {
+    existing.qty += qty;
+  } else {
+    cart.push({
+      id: p.id,
+      title: p.title,
+      price: p.price,
+      mrp: p.mrp,
+      image: p.image,
+      artisan: p.artisan_name,
+      qty: qty
+    });
+  }
+  localStorage.setItem('wem_sc_cart', JSON.stringify(cart));
+  updateCartBadge();
+  renderCartDrawer();
+  showToast(`Added ${p.title.substring(0, 30)}... to cart!`);
+}
+
+function updateCartBadge() {
+  const count = cart.reduce((acc, it) => acc + it.qty, 0);
+  document.getElementById('cart-count-badge').textContent = count;
+  document.getElementById('drawer-cart-count').textContent = count;
+}
+
+function renderCartDrawer() {
+  const list = document.getElementById('cart-items-list');
+  const subtotalEl = document.getElementById('cart-subtotal-price');
+  const couponRow = document.getElementById('cart-coupon-row');
+  const couponDiscountEl = document.getElementById('cart-coupon-discount');
+  const finalTotalEl = document.getElementById('cart-final-total');
+  const wageEl = document.getElementById('cart-subtotal-artisan');
+
+  if (!cart.length) {
+    list.innerHTML = `<div style="text-align:center; padding:48px 20px; color:#888;">
+      <div style="font-size:2.5rem; margin-bottom:10px;">🛍️</div>
+      <p style="font-weight:700; color:#333;">Your Handcrafted Cart is empty.</p>
+      <p style="font-size:11px; margin-top:4px;">Explore 1,120+ authentic masterworks crafted by women artisans.</p>
+    </div>`;
+    subtotalEl.textContent = formatPrice(0);
+    couponRow.style.display = 'none';
+    finalTotalEl.textContent = formatPrice(0);
+    wageEl.textContent = formatPrice(0);
+    return;
+  }
+
+  let subtotal = 0;
+  list.innerHTML = cart.map(it => {
+    subtotal += it.price * it.qty;
+    return `
+      <div class="sc_cart_item">
+        <img src="${it.image}" alt="${it.title}">
+        <div class="sc_cart_item_info">
+          <div class="sc_cart_item_title">${it.title}</div>
+          <div class="sc_cart_item_price">${formatPrice(it.price)}</div>
+          <div style="display:flex; align-items:center; gap:8px; margin-top:6px; font-size:11.5px;">
+            <div class="qty_stepper" style="height:26px;">
+              <button style="width:24px; height:24px;" onclick="changeCartQty(${it.id}, -1)">-</button>
+              <span style="width:28px;">${it.qty}</span>
+              <button style="width:24px; height:24px;" onclick="changeCartQty(${it.id}, 1)">+</button>
+            </div>
+            <a href="javascript:void(0);" style="color:var(--sc-red); margin-left:auto; font-weight:600;" onclick="removeFromCart(${it.id})">Remove</a>
           </div>
         </div>
-      `;
+      </div>
+    `;
+  }).join('');
+
+  let discount = 0;
+  if (appliedCoupon === 'EMPOWER15') {
+    discount = Math.round(subtotal * 0.15);
+  } else if (appliedCoupon === 'CRAFTLOVE') {
+    discount = subtotal >= 500 ? 200 : 0;
+  } else if (appliedCoupon === 'FREESHIP') {
+    discount = 0; // Shipping is already free
+  }
+
+  const finalTotal = Math.max(0, subtotal - discount);
+  subtotalEl.textContent = formatPrice(subtotal);
+
+  if (discount > 0) {
+    couponRow.style.display = 'flex';
+    couponDiscountEl.textContent = `-${formatPrice(discount)}`;
+  } else {
+    couponRow.style.display = 'none';
+  }
+
+  finalTotalEl.textContent = formatPrice(finalTotal);
+  wageEl.textContent = formatPrice(finalTotal * 0.86);
+}
+
+function changeCartQty(id, delta) {
+  const it = cart.find(x => x.id === id);
+  if (!it) return;
+  it.qty += delta;
+  if (it.qty <= 0) {
+    cart = cart.filter(x => x.id !== id);
+  }
+  localStorage.setItem('wem_sc_cart', JSON.stringify(cart));
+  updateCartBadge();
+  renderCartDrawer();
+}
+
+function removeFromCart(id) {
+  cart = cart.filter(x => x.id !== id);
+  localStorage.setItem('wem_sc_cart', JSON.stringify(cart));
+  updateCartBadge();
+  renderCartDrawer();
+  showToast("Item removed from cart");
+}
+
+function handleApplyCoupon() {
+  const code = (document.getElementById('coupon-input').value || '').trim().toUpperCase();
+  const statusEl = document.getElementById('coupon-status');
+
+  if (code === 'EMPOWER15') {
+    appliedCoupon = 'EMPOWER15';
+    statusEl.innerHTML = `<span style="color:#15803d; font-weight:800;">✓ EMPOWER15 applied: 15% discount!</span>`;
+    showToast("Coupon EMPOWER15 applied: 15% off!");
+  } else if (code === 'CRAFTLOVE') {
+    appliedCoupon = 'CRAFTLOVE';
+    statusEl.innerHTML = `<span style="color:#15803d; font-weight:800;">✓ CRAFTLOVE applied: Flat ₹200 off!</span>`;
+    showToast("Coupon CRAFTLOVE applied: ₹200 off!");
+  } else if (code === 'FREESHIP') {
+    appliedCoupon = 'FREESHIP';
+    statusEl.innerHTML = `<span style="color:#15803d; font-weight:800;">✓ FREESHIP applied: Free Express Delivery!</span>`;
+    showToast("Coupon FREESHIP applied!");
+  } else {
+    appliedCoupon = null;
+    statusEl.innerHTML = `<span style="color:#b91c1c;">✕ Invalid coupon code. Try EMPOWER15</span>`;
+  }
+  renderCartDrawer();
+}
+
+function toggleCart() {
+  const drawer = document.getElementById('cart-drawer');
+  const overlay = document.getElementById('cart-overlay');
+  drawer.classList.toggle('open');
+  overlay.classList.toggle('active');
+  renderCartDrawer();
+}
+
+// 9. PRO CHECKOUT & ORDER CONFIRMATION
+function openCheckoutModal() {
+  if (!cart.length) {
+    showToast("Your cart is empty!");
+    return;
+  }
+  toggleCart();
+
+  let subtotal = cart.reduce((acc, it) => acc + (it.price * it.qty), 0);
+  let discount = 0;
+  if (appliedCoupon === 'EMPOWER15') discount = Math.round(subtotal * 0.15);
+  else if (appliedCoupon === 'CRAFTLOVE' && subtotal >= 500) discount = 200;
+
+  const total = Math.max(0, subtotal - discount);
+
+  const summaryBox = document.getElementById('checkout-summary-box');
+  summaryBox.innerHTML = `
+    <h3 style="font-family:var(--font-heading); font-size:13px; font-weight:800; text-transform:uppercase; margin-bottom:12px; border-bottom:1px solid #eee; padding-bottom:6px;">
+      Order Summary (${cart.reduce((a, b) => a + b.qty, 0)} Items)
+    </h3>
+    <div style="max-height:160px; overflow-y:auto; margin-bottom:12px;">
+      ${cart.map(it => `
+        <div style="display:flex; justify-content:space-between; font-size:11.5px; margin-bottom:6px;">
+          <span style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:180px;">${it.qty}x ${it.title}</span>
+          <span style="font-weight:700;">${formatPrice(it.price * it.qty)}</span>
+        </div>
+      `).join('')}
+    </div>
+    <div style="border-top:1px solid #eee; padding-top:8px; font-size:12px; display:flex; flex-direction:column; gap:4px;">
+      <div style="display:flex; justify-content:space-between;">
+        <span>Subtotal:</span>
+        <span>${formatPrice(subtotal)}</span>
+      </div>
+      ${discount > 0 ? `
+        <div style="display:flex; justify-content:space-between; color:#15803d; font-weight:700;">
+          <span>Coupon Discount:</span>
+          <span>-${formatPrice(discount)}</span>
+        </div>
+      ` : ''}
+      <div style="display:flex; justify-content:space-between;">
+        <span>Express Delivery:</span>
+        <span style="color:#15803d; font-weight:700;">FREE</span>
+      </div>
+      <div style="display:flex; justify-content:space-between; font-size:1.15rem; font-weight:900; color:var(--sc-orange); border-top:1px solid #eee; padding-top:6px; margin-top:4px;">
+        <span>Final Total:</span>
+        <span>${formatPrice(total)}</span>
+      </div>
+    </div>
+    <div style="margin-top:14px; background:#f0fdf4; border:1px solid #bbf7d0; border-radius:4px; padding:8px 10px; font-size:11px; color:#166534;">
+      🌸 <b>Fair-Wage Certified:</b> ${formatPrice(total * 0.86)} direct living wage will be wired to rural craftswomen upon dispatch.
+    </div>
+  `;
+
+  openModal('modal-checkout');
+}
+
+function handlePlaceOrder(e) {
+  e.preventDefault();
+  const name = document.getElementById('chk-name').value;
+  const address = document.getElementById('chk-address').value;
+  const city = document.getElementById('chk-city').value;
+  const pin = document.getElementById('chk-pin').value;
+  const paymentMethod = document.querySelector('input[name="chk_payment"]:checked').value;
+
+  const orderNum = 'SC-EMPOWER-' + Math.floor(100000 + Math.random() * 900000);
+  const trackNum = 'WEM-TRK-' + Math.floor(50000 + Math.random() * 49999);
+
+  let subtotal = cart.reduce((acc, it) => acc + (it.price * it.qty), 0);
+  let discount = 0;
+  if (appliedCoupon === 'EMPOWER15') discount = Math.round(subtotal * 0.15);
+  else if (appliedCoupon === 'CRAFTLOVE' && subtotal >= 500) discount = 200;
+  const total = Math.max(0, subtotal - discount);
+
+  closeModal('modal-checkout');
+
+  // Success Receipt Modal
+  const successInner = document.getElementById('modal-order-success-inner');
+  successInner.innerHTML = `
+    <div class="order_success_icon">✓</div>
+    <h2 style="font-family:var(--font-heading); font-size:1.4rem; font-weight:800; color:#1a1a1a; margin-bottom:4px;">
+      Order Placed Successfully!
+    </h2>
+    <p style="color:#15803d; font-weight:700; font-size:12px; margin-bottom:16px;">
+      Direct Consignment Reserved · Living Wage Disbursed
+    </p>
+    <div style="background:#f8fafc; border:1px solid var(--sc-border); border-radius:6px; padding:16px; text-align:left; font-size:12px; line-height:1.6; margin-bottom:16px;">
+      <div><b>Order Reference ID:</b> <span style="font-family:var(--font-mono); color:var(--sc-teal);">${orderNum}</span></div>
+      <div><b>Consignment Tracking Code:</b> <span style="font-family:var(--font-mono); color:var(--sc-orange);">${trackNum}</span></div>
+      <div><b>Patron Name:</b> ${name}</div>
+      <div><b>Destination Address:</b> ${address}, ${city} - ${pin}</div>
+      <div><b>Payment Mode:</b> ${paymentMethod} (Simulated)</div>
+      <div><b>Total Paid:</b> <span style="font-weight:900; color:#111;">${formatPrice(total)}</span></div>
+      <div style="margin-top:6px; color:#15803d;"><b>Direct Artisan Livelihood Payout (86%):</b> ${formatPrice(total * 0.86)}</div>
+    </div>
+    <div style="background:#fff7ed; border-left:4px solid var(--sc-orange); padding:10px 14px; text-align:left; font-size:11.5px; color:#9a3412; margin-bottom:18px;">
+      <b>🌸 Message from the Guild:</b> "Namaste! Our sisterhood has received your consignment request. We are preparing plastic-free seed paper packaging and applying the GI inspection wax seal."
+    </div>
+    <div style="display:flex; justify-content:center; gap:10px;">
+      <button class="btn orange-white" style="height:36px; font-size:11px;" onclick="window.print()">🖨️ Print Order Receipt</button>
+      <button class="btn orange" style="height:36px; font-size:11px;" onclick="closeModal('modal-order-success'); switchView('orders');">Track Live Pipeline →</button>
+    </div>
+  `;
+
+  // Clear cart
+  cart = [];
+  appliedCoupon = null;
+  localStorage.setItem('wem_sc_cart', JSON.stringify(cart));
+  updateCartBadge();
+
+  openModal('modal-order-success');
+}
+
+// 10. SHOPCLUES PDP RENDERER
+function renderPDP(p) {
+  selectedProduct = p;
+  document.getElementById('breadcrumb-category').innerHTML = `<a href="javascript:void(0);" onclick="filterByCategory('${p.category}')">${p.category}</a>`;
+  document.getElementById('breadcrumb-title').textContent = p.title;
+
+  const mainImg = document.getElementById('zoom_picture_gall');
+  mainImg.src = p.image;
+  document.getElementById('pdp-badge-text').textContent = p.badge || 'Authentic Masterpiece Expert Certified';
+  
+  const thumbList = document.getElementById('thumblist');
+  const thumbs = p.thumbnails && p.thumbnails.length ? p.thumbnails : [p.image];
+  thumbList.innerHTML = thumbs.map((src, i) => `
+    <li class="${i === 0 ? 'active' : ''}" onclick="switchPDPImage('${src}', this)">
+      <img src="${src}" alt="${p.title}">
+    </li>
+  `).join('');
+
+  const wishBtn = document.getElementById('pdp_wishlist');
+  if (wishBtn) wishBtn.classList.toggle('active', wishlist.includes(p.id));
+
+  document.getElementById('pdp-brand-name').innerHTML = `<span>🏛️</span> ${p.collective}`;
+  document.getElementById('pdp-title').textContent = p.title;
+  document.getElementById('pdp-category-tag').textContent = `${p.category} > ${p.subcategory}`;
+  document.getElementById('pdp-sku').textContent = `WEM-${p.id.toString().padStart(4, '0')}`;
+  document.getElementById('pdp-rating').textContent = p.rating;
+  document.getElementById('pdp-reviews-count').textContent = p.reviews_count.toLocaleString();
+
+  const discountVal = p.deal_discount || "50% off";
+  const cbDiscount = Math.round(p.price * 0.04);
+  const couponDiscount = Math.round(p.price * 0.10);
+  const lowestDealPrice = p.price - cbDiscount - couponDiscount;
+
+  document.getElementById('pdp-price').textContent = formatPrice(p.price);
+  document.getElementById('pdp-mrp').textContent = `MRP: ${formatPrice(p.mrp)}`;
+  document.getElementById('pdp-discount').textContent = discountVal;
+  document.getElementById('pdp-deal-price').textContent = formatPrice(lowestDealPrice);
+
+  document.getElementById('table-orig-price').textContent = formatPrice(p.price);
+  document.getElementById('table-cb-price').textContent = `-${formatPrice(cbDiscount)}`;
+  document.getElementById('table-coupon-price').textContent = `-${formatPrice(couponDiscount)}`;
+  document.getElementById('table-final-price').textContent = formatPrice(lowestDealPrice);
+
+  document.getElementById('pdp-artisan-name').textContent = p.artisan_name;
+  document.getElementById('pdp-village').textContent = p.village;
+  document.getElementById('wage-gross-price').textContent = formatPrice(p.price);
+  document.getElementById('wage-artisan-disburse').textContent = formatPrice(p.price * 0.86);
+
+  document.getElementById('spec-craft').textContent = p.craft_type;
+  document.getElementById('spec-materials').textContent = p.materials;
+  document.getElementById('spec-origin').textContent = `${p.village} (GI Registered)`;
+  document.getElementById('spec-artisan').textContent = p.artisan_name;
+  document.getElementById('spec-guild').textContent = p.collective;
+  document.getElementById('desc-title').textContent = `${p.craft_type} Heritage from ${p.village}`;
+  document.getElementById('desc-text').textContent = p.story;
+  document.getElementById('pdp-hash').textContent = p.provenance_hash;
+}
+
+function switchPDPImage(src, li) {
+  document.getElementById('zoom_picture_gall').src = src;
+  document.querySelectorAll('#thumblist li').forEach(el => el.classList.remove('active'));
+  li.classList.add('active');
+}
+
+function loadProductIntoPDP(id) {
+  const p = PRODUCTS.find(x => x.id === id);
+  if (!p) return;
+  switchView('store');
+  renderPDP(p);
+  document.getElementById('pdp-section').scrollIntoView({ behavior: 'smooth' });
+}
+
+function toggleWishlist(id) {
+  if (wishlist.includes(id)) {
+    wishlist = wishlist.filter(x => x !== id);
+    showToast("Removed from Saved Heirlooms");
+  } else {
+    wishlist.push(id);
+    showToast("Saved to Heirloom Wishlist ❤️");
+  }
+  localStorage.setItem('wem_sc_wishlist', JSON.stringify(wishlist));
+  renderGrid();
+  if (selectedProduct && selectedProduct.id === id) {
+    const wishBtn = document.getElementById('pdp_wishlist');
+    if (wishBtn) wishBtn.classList.toggle('active', wishlist.includes(id));
+  }
+}
+
+function filterSavedItems() {
+  switchView('store');
+  wishlistOnly = !wishlistOnly;
+  renderGrid();
+  showToast(wishlistOnly ? `Showing ${wishlist.length} Saved Heirlooms` : 'Showing All Products');
+}
+
+// 11. TABS & VIEWS SWITCHER
+function switchTab(idx) {
+  document.querySelectorAll('.tabbing_nav li').forEach((el, i) => {
+    el.classList.toggle('active', i === idx);
+  });
+  document.querySelectorAll('.pd_tab_pane').forEach((el, i) => {
+    el.classList.toggle('active', i === idx);
+  });
+}
+
+function switchView(viewName) {
+  const views = ['store', 'guilds', 'workshops', 'calculator', 'orders'];
+  views.forEach(v => {
+    const el = document.getElementById(`view-${v}`);
+    if (el) el.style.display = (v === viewName) ? 'block' : 'none';
+  });
+
+  if (viewName === 'workshops') renderWorkshops();
+  if (viewName === 'guilds') renderGuilds();
+  if (viewName === 'calculator') updateCalculator(499);
+  if (viewName === 'orders') renderOrdersPipeline();
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// 12. PROVENANCE CERTIFICATE MODAL
+function openProvenanceModal(id) {
+  const p = PRODUCTS.find(x => x.id === id) || selectedProduct;
+  const box = document.getElementById('modal-provenance-inner');
+  box.innerHTML = `
+    <button class="sc_modal_close" onclick="closeModal('modal-provenance')">✕</button>
+    <div style="text-align:center; border:2px solid var(--sc-teal); border-radius:6px; padding:20px; background:#faffff;">
+      <div style="width:60px; height:60px; border-radius:50%; background:var(--sc-teal); color:#fff; display:flex; align-items:center; justify-content:center; font-size:1.6rem; margin:0 auto 10px;">
+        🌸
+      </div>
+      <h2 style="font-family:var(--font-heading); font-size:1.3rem; font-weight:800; color:#1a1a1a;">
+        Digital Certificate of Provenance & Fair-Wage Audit
+      </h2>
+      <div style="font-size:11px; color:var(--sc-teal); font-weight:700; margin-bottom:14px;">
+        DECENTRALIZED ARTISAN EMPOWERMENT CONSORTIUM
+      </div>
+
+      <div style="text-align:left; font-size:12px; line-height:1.6; margin-bottom:14px; background:#ffffff; border:1px solid var(--sc-border); padding:14px; border-radius:4px;">
+        <div><b>Heirloom Name:</b> ${p.title}</div>
+        <div><b>Master Artisan:</b> ${p.artisan_name}</div>
+        <div><b>Village & Cluster:</b> ${p.village}</div>
+        <div><b>Certified Guild:</b> ${p.collective}</div>
+        <div><b>Direct Living Wage (86%):</b> <span style="color:var(--sc-green); font-weight:800;">${formatPrice(p.price * 0.86)}</span></div>
+      </div>
+
+      <div style="background:#f1f5f9; border:1px solid #cbd5e1; padding:10px; border-radius:4px; text-align:left; font-size:10px; font-family:var(--font-mono); color:#475569; word-break:break-all; margin-bottom:14px;">
+        <b>SHA-256 LEDGER HASH:</b><br>${p.provenance_hash}
+      </div>
+
+      <div style="display:flex; justify-content:space-between; gap:10px;">
+        <button class="btn orange-white" style="height:36px; font-size:11px;" onclick="window.print()">🖨️ Print Certificate</button>
+        <button class="btn orange" style="height:36px; font-size:11px;" onclick="closeModal('modal-provenance'); showToast('Verified Cryptographically Genuine!');">Verified Authentic ✓</button>
+      </div>
+    </div>
+  `;
+  openModal('modal-provenance');
+}
+
+// 13. ARTISAN CHAT MODAL
+function openChatModal(artisanName, collective) {
+  const box = document.getElementById('modal-chat-inner');
+  box.innerHTML = `
+    <button class="sc_modal_close" onclick="closeModal('modal-chat')">✕</button>
+    <div style="display:flex; align-items:center; gap:12px; margin-bottom:14px; border-bottom:1px solid var(--sc-border-light); padding-bottom:10px;">
+      <div style="width:40px; height:40px; border-radius:50%; background:var(--sc-teal); color:#fff; display:flex; align-items:center; justify-content:center; font-size:1.2rem;">
+        👩‍🌾
+      </div>
+      <div>
+        <h3 style="font-family:var(--font-heading); font-size:1.1rem; color:#1a1a1a;">Direct Atelier Inquiry: ${artisanName}</h3>
+        <p style="font-size:11px; color:#666;">${collective}</p>
+      </div>
+    </div>
+
+    <div style="background:#f8fafc; border:1px solid var(--sc-border); border-radius:4px; height:180px; overflow-y:auto; padding:12px; margin-bottom:12px; font-size:12px; display:flex; flex-direction:column; gap:8px;" id="chat-messages-box">
+      <div style="background:#e0f2fe; padding:8px 12px; border-radius:4px; max-width:80%;">
+        <b>${artisanName}:</b> Namaste! How may I assist you with sizing, natural dying, or bridal customization today?
+      </div>
+    </div>
+
+    <div style="display:flex; gap:8px;">
+      <input type="text" id="chat-user-input" class="pin_type" style="flex:1; height:34px; font-size:12px;" placeholder="Type your custom craft inquiry..." onkeydown="if(event.key==='Enter') sendChatMessage('${artisanName}');">
+      <button class="btn orange" style="height:34px; font-size:11px; padding:0 16px;" onclick="sendChatMessage('${artisanName}')">Send</button>
+    </div>
+  `;
+  openModal('modal-chat');
+}
+
+function sendChatMessage(artisanName) {
+  const input = document.getElementById('chat-user-input');
+  const txt = input.value.trim();
+  if (!txt) return;
+
+  const box = document.getElementById('chat-messages-box');
+  box.innerHTML += `
+    <div style="background:#ffffff; border:1px solid #cbd5e1; padding:8px 12px; border-radius:4px; max-width:80%; align-self:flex-end;">
+      <b>You:</b> ${txt}
+    </div>
+  `;
+  input.value = '';
+  box.scrollTop = box.scrollHeight;
+
+  setTimeout(() => {
+    box.innerHTML += `
+      <div style="background:#e0f2fe; padding:8px 12px; border-radius:4px; max-width:80%;">
+        <b>${artisanName}:</b> Dhanyawad! I have noted your preferences. We can prepare this sample on our heritage wooden frame loom within 3 days.
+      </div>
+    `;
+    box.scrollTop = box.scrollHeight;
+  }, 1000);
+}
+
+// 14. ARTISAN GUILDS DIRECTORY
+function renderGuilds() {
+  const container = document.getElementById('guilds-full-grid');
+  if (!container) return;
+
+  const guilds = [
+    { name: 'Dhaga Kala Weavers Guild', village: 'Varanasi, UP', count: 142, head: 'Ananya Devi', craft: 'Pure Silk Brocades & Zari', img: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=600&q=80' },
+    { name: 'Mitti Shilp Terracotta Guild', village: 'Bankura, WB', count: 86, head: 'Radhika Pal', craft: 'River Silt Temple Ceramic Urns', img: 'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=600&q=80' },
+    { name: 'Tarakasi Silver Guild', village: 'Cuttack, Odisha', count: 64, head: 'Sunita Das', craft: 'Micro Gossamer Silver Filigree', img: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=600&q=80' },
+    { name: 'Nilgiri Indigenous Forest Foragers', village: 'Nilgiris, TN', count: 110, head: 'Valli Murugan', craft: 'Raw Cliff Honey & Wild Herbs', img: 'https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=600&q=80' },
+    { name: 'Kutch Desert Block Printers', village: 'Bhuj, Gujarat', count: 95, head: 'Zarina Khatun', craft: '14-Stage Natural Ajrakh Block', img: 'https://images.unsplash.com/photo-1607344645866-009c320c5ab8?w=600&q=80' },
+    { name: 'Chinar Valley Artisans', village: 'Srinagar, Kashmir', count: 78, head: 'Parveena Akhtar', craft: 'Root Walnut Wood Carving & Sozni', img: 'https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=600&q=80' },
+    { name: 'Tangkhul Matriarch Guild', village: 'Longpi, Manipur', count: 52, head: 'Wonnganing Shimray', craft: 'Serpentine Stone Black Pottery', img: 'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=600&q=80' },
+    { name: 'Mithila Chitrakala Trust', village: 'Ranti, Bihar', count: 120, head: 'Dulari Devi', craft: 'Madhubani Sacred Canvas Paintings', img: 'https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=600&q=80' }
+  ];
+
+  container.innerHTML = guilds.map(g => `
+    <div class="sc_card" style="padding:14px; text-align:left;">
+      <div style="height:150px; overflow:hidden; border-radius:4px; margin-bottom:10px;">
+        <img src="${g.img}" alt="${g.name}" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+      <h3 style="font-family:var(--font-heading); font-size:1.05rem; font-weight:800; color:#1a1a1a;">${g.name}</h3>
+      <div style="font-size:11px; color:#666; margin:4px 0;">📍 ${g.village} · <b>${g.count} Women Artisans</b></div>
+      <div style="font-size:12px; color:#333; margin-bottom:8px;">Craft: <b>${g.craft}</b></div>
+      <div style="font-size:11px; color:var(--sc-teal); font-weight:700; margin-bottom:12px;">Collective Head: ${g.head}</div>
+      <div style="display:flex; gap:8px;">
+        <button class="btn blue" style="flex:1; height:32px; font-size:11px;" onclick="openChatModal('${g.head}', '${g.name}')">💬 Message Atelier</button>
+        <button class="btn orange" style="flex:1; height:32px; font-size:11px;" onclick="filterByCategory('All'); applyStateFilter('${g.village.split(',')[1].trim()}');">View Crafts</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+// 15. MASTERCLASSES STUDIO
+function renderWorkshops() {
+  const container = document.getElementById('workshops-full-grid');
+  if (!container) return;
+
+  const workshops = [
+    { id: 1, title: "Banarasi Zari Jacquard Weaving & Sacred Loom Geometry", instructor: "Ananya Devi", village: "Varanasi Cluster", duration: "2.5 Hours", date: "This Saturday, 4:00 PM IST", price: 169, img: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=600&q=80", kit: "Organic Mulberry Silk Skein, Bamboo Warp Shuttle" },
+    { id: 2, title: "Wheel Centering, Alluvial River Pinch Pots & Ochre Firing", instructor: "Radhika Pal", village: "Bankura Guild", duration: "2 Hours", date: "This Sunday, 11:00 AM IST", price: 199, img: "https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=600&q=80", kit: "Purified Alluvial Silt Clay Slab, Stone Finishing Ribs" },
+    { id: 3, title: "Tarakasi Micro-Filigree Wire Soldering & Gossamer Framing", instructor: "Sunita Das", village: "Cuttack Old Town", duration: "3 Hours", date: "Next Saturday, 5:00 PM IST", price: 299, img: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=600&q=80", kit: "925 Sterling Silver Wire Coil, Jeweler Tweezers" },
+    { id: 4, title: "Charaka Samhita Cold-Pressed Herbal & Saffron Decocting", instructor: "Valli Murugan", village: "Nilgiris Forest", duration: "1.5 Hours", date: "Next Sunday, 6:00 PM IST", price: 149, img: "https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=600&q=80", kit: "Wild Cliff Honey Sample, Pure Himalayan Turmeric" }
+  ];
+
+  container.innerHTML = workshops.map(w => `
+    <div class="sc_card" style="padding:14px; text-align:left;">
+      <div style="height:150px; overflow:hidden; border-radius:4px; margin-bottom:10px; position:relative;">
+        <img src="${w.img}" alt="${w.title}" style="width:100%; height:100%; object-fit:cover;">
+        <span style="position:absolute; top:8px; left:8px; background:var(--sc-orange); color:#fff; font-size:10px; font-weight:800; padding:2px 8px; border-radius:3px;">LIVE STUDIO</span>
+      </div>
+      <h3 style="font-family:var(--font-heading); font-size:1.05rem; font-weight:800; color:#1a1a1a;">${w.title}</h3>
+      <div style="font-size:11px; color:#666; margin:4px 0;">Mentor: <b>${w.instructor}</b> (${w.village})</div>
+      <div style="font-size:11px; color:#444;">🕒 ${w.duration} · 📅 ${w.date}</div>
+      <div style="font-size:11px; color:var(--sc-green); font-weight:700; margin:4px 0;">📦 Kit Included: ${w.kit}</div>
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-top:12px;">
+        <span style="font-size:1.25rem; font-weight:900; color:var(--sc-orange);">${formatPrice(w.price)}</span>
+        <button class="btn orange" style="height:32px; font-size:11px; padding:0 16px;" onclick="bookWorkshopPass('${w.title}', ${w.price})">Book Pass</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+function bookWorkshopPass(title, price) {
+  const code = 'PASS-' + Math.floor(100000 + Math.random() * 900000);
+  showToast(`🎟️ Reserved Pass for ${title}! Booking Ref: ${code}`);
+}
+
+// 16. FAIR-WAGE CALCULATOR
+function updateCalculator(price) {
+  const gross = Number(price);
+  const artisan = gross * 0.86;
+  const materials = gross * 0.08;
+  const platform = gross * 0.06;
+
+  document.getElementById('calc-slider-val').textContent = formatPrice(gross);
+  document.getElementById('calc-payout-amount').textContent = formatPrice(artisan);
+  document.getElementById('calc-materials-amount').textContent = formatPrice(materials);
+  document.getElementById('calc-platform-amount').textContent = formatPrice(platform);
+}
+
+// 17. CONSIGNMENT PIPELINE TRACKING
+function renderOrdersPipeline() {
+  const list = document.getElementById('orders-pipeline-list');
+  if (!list) return;
+
+  const orders = [
+    { num: 'SC-EMPOWER-948210', title: 'Banarasi Brocade Pure Mulberry Saree', artisan: 'Ananya Devi', status: 'Handloom Shuttle Weaving', track: 'WEM-TRK-77182', date: 'Expected Friday', wage: '86% living wage credited' },
+    { num: 'SC-EMPOWER-882144', title: 'Tarakasi Gossamer Silver Peacock Jhumkas', artisan: 'Sunita Das', status: 'Micro-Soldering & Quality Testing', track: 'WEM-TRK-77183', date: 'Expected Tomorrow', wage: '86% living wage credited' },
+    { num: 'SC-EMPOWER-731902', title: 'Bankura Alluvial Terracotta Water Urn', artisan: 'Radhika Pal', status: 'Dispatched via Eco-Logistics', track: 'WEM-TRK-77184', date: 'Delivered in 48 hrs', wage: '86% living wage credited' }
+  ];
+
+  list.innerHTML = orders.map(o => `
+    <div style="background:#ffffff; border:1px solid var(--sc-border); border-radius:6px; padding:16px; margin-bottom:12px; box-shadow:0 1px 4px rgba(0,0,0,0.04);">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:10px; flex-wrap:wrap; gap:8px;">
+        <div>
+          <span style="font-family:var(--font-mono); font-size:12px; font-weight:800; color:var(--sc-teal);">${o.num}</span>
+          <span style="background:#e0f2fe; color:#0369a1; font-size:10px; font-weight:800; padding:2px 8px; border-radius:10px; margin-left:8px;">${o.track}</span>
+        </div>
+        <div style="color:var(--sc-green); font-size:11px; font-weight:700;">🌸 ${o.wage}</div>
+      </div>
+      <div style="font-size:13px; font-weight:800; color:#111; margin-bottom:4px;">${o.title}</div>
+      <div style="font-size:11.5px; color:#666; margin-bottom:8px;">Crafted by: <b>${o.artisan}</b> · <span>Timeline: ${o.date}</span></div>
+      <div style="background:#f8fafc; border-left:4px solid var(--sc-orange); padding:8px 12px; font-size:11.5px; color:#444;">
+        <b>Current Status:</b> ${o.status}
+      </div>
+    </div>
+  `).join('');
+}
+
+// 18. MODAL HELPERS & GENERAL
+function openModal(id) {
+  const el = document.getElementById(id);
+  if (el) el.classList.add('active');
+}
+
+function closeModal(id) {
+  const el = document.getElementById(id);
+  if (el) el.classList.remove('active');
+}
+
+function openPublishModal() {
+  openModal('modal-publish');
+}
+
+function handlePublish(e) {
+  e.preventDefault();
+  const title = document.getElementById('pub-title').value;
+  const cat = document.getElementById('pub-cat').value;
+  const price = Number(document.getElementById('pub-price').value);
+  const image = document.getElementById('pub-image').value;
+  const story = document.getElementById('pub-story').value;
+
+  const newP = {
+    id: PRODUCTS.length + 1,
+    title,
+    price,
+    mrp: Math.round(price * 1.5),
+    category: cat,
+    subcategory: 'Artisan Special Edition',
+    craft_type: 'Master Workshop Craft',
+    artisan_name: currentUser.name || 'Ananya Devi',
+    village: 'Varanasi Weavers Cluster, UP',
+    state: 'Uttar Pradesh',
+    collective: 'Dhaga Kala Collective',
+    stock: 10,
+    rating: 5.0,
+    reviews_count: 1,
+    badge: '💮 GI Certified New Release',
+    deal_discount: '33% off',
+    lead_time: 'Dispatched in 24 hrs',
+    image,
+    thumbnails: [image],
+    story,
+    materials: 'Authentic Traditional Raw Materials',
+    provenance_hash: '9f8e7d6c5b4a3f2e1d0c9b8a7f6e5d4c3b2a1f0e9d8c7b6a5f4e3d2c1b0a9f8e'
+  };
+
+  PRODUCTS.unshift(newP);
+  closeModal('modal-publish');
+  renderGrid();
+  loadProductIntoPDP(newP.id);
+  showToast(`Successfully published "${title}" to the marketplace!`);
+}
+
+function openAuthModal() {
+  openModal('modal-auth');
+}
+
+function setRole(role) {
+  currentUser.role = role;
+  if (role === 'artisan') {
+    currentUser.name = 'Ananya Devi';
+    document.getElementById('header-user-name').textContent = 'Ananya (Master)';
+    showToast("Switched viewpoint: Master Artisan Ananya Devi (Varanasi)");
+  } else {
+    currentUser.name = 'Priya Sharma';
+    document.getElementById('header-user-name').textContent = 'Priya Sharma';
+    showToast("Switched viewpoint: Patron Priya Sharma");
+  }
+  closeModal('modal-auth');
+}
+
+function showToast(msg) {
+  const toast = document.getElementById('sc-toast');
+  document.getElementById('toast-msg').textContent = msg;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 3500);
+}
+
+// Close mega menu or search on outside click
+document.addEventListener('click', (e) => {
+  const mega = document.getElementById('mega-menu-dropdown');
+  const megaBtn = document.getElementById('mega-menu-trigger');
+  if (mega && mega.classList.contains('open')) {
+    if (!mega.contains(e.target) && !megaBtn.contains(e.target)) {
+      mega.classList.remove('open');
     }
+  }
 
-    function updateCalculator(val) {
-      const num = parseFloat(val);
-      document.getElementById('calc-display-val').textContent = formatPrice(num);
-      document.getElementById('calc-artisan-val').textContent = formatPrice(num * 0.86);
-      document.getElementById('calc-materials-val').textContent = formatPrice(num * 0.08);
-      document.getElementById('calc-logistics-val').textContent = formatPrice(num * 0.06);
+  const auto = document.getElementById('search-autocomplete-dropdown');
+  const searchInput = document.getElementById('autocomplete');
+  if (auto && auto.style.display === 'block') {
+    if (!auto.contains(e.target) && e.target !== searchInput) {
+      auto.style.display = 'none';
     }
+  }
+});
 
-    function openPublishModal() {
-      openModal('modal-publish');
-    }
+// INITIALIZE ON DOM READY
+window.addEventListener('DOMContentLoaded', () => {
+  initMegaMenu();
+  renderPDP(PRODUCTS[0]);
+  renderGrid();
+  updateCartBadge();
+  console.log(`🌸 Women's Empowerment Marketplace loaded with ${PRODUCTS.length} authentic handcrafted heirlooms.`);
+});
 
-    function handlePublish(e) {
-      e.preventDefault();
-      const title = document.getElementById('pub-title').value;
-      const cat = document.getElementById('pub-cat').value;
-      const price = parseFloat(document.getElementById('pub-price').value);
-      const img = document.getElementById('pub-image').value;
-      const story = document.getElementById('pub-story').value;
-
-      const newP = {
-        id: Date.now(),
-        title,
-        price,
-        mrp: price * 2,
-        category: cat,
-        craft_type: "Artisan Craft",
-        artisan_name: currentUser.name,
-        village: "Varanasi, Uttar Pradesh",
-        collective: "Dhaga Kala Weavers Guild",
-        lead_time: "Dispatched in 24 hrs",
-        rating: 5.0,
-        reviews_count: 1,
-        deal: true,
-        deal_discount: "50% off",
-        badge: "💮 New Artisan Masterpiece",
-        image: img,
-        thumbnails: [img],
-        story,
-        materials: "100% Certified Eco-Friendly Materials",
-        provenance_hash: "a" + Math.random().toString(36).substring(2, 15)
-      };
-
-      PRODUCTS.unshift(newP);
-      closeModal('modal-publish');
-      renderPDP(newP);
-      renderGrid();
-      switchView('store');
-      showToast(`Heirloom "${title}" listed live on ShopClues! ✨`);
-    }
-
-    function openAuthModal() {
-      openModal('modal-auth');
-    }
-    function setRole(r) {
-      if (r === 'artisan') {
-        currentUser = { role: 'artisan', name: 'Ananya Devi', avatar: '👩‍🌾' };
-      } else {
-        currentUser = { role: 'buyer', name: 'Priya Sharma', avatar: '🛍️' };
-      }
-      document.getElementById('header-user-name').textContent = currentUser.name.split(' ')[0];
-      closeModal('modal-auth');
-      showToast(`Logged in as ${currentUser.name}`);
-    }
-
-    // Initialization
-    window.addEventListener('DOMContentLoaded', () => {
-      renderPDP(selectedProduct);
-      renderGrid();
-      updateCartBadge();
-      updateCalculator(499);
-      checkPincode();
-    });
   </script>
 </body>
 </html>

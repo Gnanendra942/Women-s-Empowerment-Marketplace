@@ -542,7 +542,45 @@ async function initDB() {
       `, [r.pId, r.author, r.rating, r.comment]);
     }
 
-    console.log('✅ SQLite Database successfully initialized and seeded with authentic artisan data.');
+    console.log('✅ SQLite Database core users initialized.');
+  }
+
+  // Seed expanded enterprise catalog of 1,120 products if count < 1000
+  const productCount = await getQuery('SELECT COUNT(*) as count FROM products');
+  if (productCount.count < 1000) {
+    console.log(`✨ Seeding expanded enterprise catalog of 1,120 handcrafted products into SQLite...`);
+    const { CATALOG } = require('./catalog_data');
+    await runQuery('BEGIN TRANSACTION');
+    try {
+      for (const p of CATALOG) {
+        await runQuery(`
+          INSERT OR REPLACE INTO products (id, title, description, story, price, category, craft_type, artisan_id, artisan_name, artisan_village, stock, rating, reviews_count, image_url, impact_tag, lead_time_days)
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        `, [
+          p.id,
+          p.title,
+          p.materials,
+          p.story,
+          p.price,
+          p.category,
+          p.craft_type,
+          (p.id % 3) + 1,
+          p.artisan_name,
+          p.village,
+          p.stock,
+          p.rating,
+          p.reviews_count,
+          p.image,
+          p.badge,
+          p.lead_time.includes('24') ? 1 : 2
+        ]);
+      }
+      await runQuery('COMMIT');
+      console.log('✅ Successfully seeded 1,120 handcrafted products into SQLite database.');
+    } catch (err) {
+      await runQuery('ROLLBACK');
+      console.error('Error seeding 1,120 products into database:', err);
+    }
   }
 }
 
