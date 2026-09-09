@@ -3,7 +3,7 @@
 > **Full-Stack Flagship Digital Commerce & Artisan Empowerment Engine**  
 > Empowering women master artisans and rural cottage entrepreneurs through decentralized provenance tracking, fair-trade transparency guarantees, interactive live masterclasses, direct artisan messaging, multi-currency checkout, and a distributed fulfillment pipeline.
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Active%20Cloudflare%20Edge-10b981?style=for-the-badge&logo=cloudflare)](https://ctrl-hints-margin-direct.trycloudflare.com)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Active%20Cloudflare%20Edge-10b981?style=for-the-badge&logo=cloudflare)](https://simulations-burlington-burn-permanent.trycloudflare.com)
 [![React 19](https://img.shields.io/badge/Frontend-React%2019%20%2B%20Vite-61dafb?logo=react)](https://react.dev/)
 [![Express.js](https://img.shields.io/badge/Backend-Express.js-000000?logo=express)](https://expressjs.com/)
 [![SQLite](https://img.shields.io/badge/Database-SQLite%203-003B57?logo=sqlite)](https://www.sqlite.org/)
@@ -19,11 +19,11 @@ The platform is live and accessible over encrypted global HTTPS:
 
 | Channel / Interface | Live URL | Description |
 | :--- | :--- | :--- |
-| 🛍️ **Interactive Full-Stack Web App** | [**https://ctrl-hints-margin-direct.trycloudflare.com**](https://ctrl-hints-margin-direct.trycloudflare.com) | React 19 Storefront + Express API + Image CDN |
+| 🛍️ **Interactive Full-Stack Web App** | [**https://simulations-burlington-burn-permanent.trycloudflare.com**](https://simulations-burlington-burn-permanent.trycloudflare.com) | React 19 Storefront + Express API + Image CDN |
 | 🚀 **GitHub Pages Deployment** | [**https://gnanendra942.github.io/Women-s-Empowerment-Marketplace/**](https://gnanendra942.github.io/Women-s-Empowerment-Marketplace/) | Static cloud hosting on `gh-pages` branch |
-| 📄 **Standalone Portable Marketplace** | [**https://ctrl-hints-margin-direct.trycloudflare.com/marketplace.html**](https://ctrl-hints-margin-direct.trycloudflare.com/marketplace.html) | Zero-dependency single-file HTML5 app |
-| 🩺 **Backend Health API** | [**https://ctrl-hints-margin-direct.trycloudflare.com/api/health**](https://ctrl-hints-margin-direct.trycloudflare.com/api/health) | Live system health & engine status check |
-| 📦 **Products REST API** | [**https://ctrl-hints-margin-direct.trycloudflare.com/api/products**](https://ctrl-hints-margin-direct.trycloudflare.com/api/products) | Handcrafted catalog data & artisan lineage |
+| 📄 **Standalone Portable Marketplace** | [**https://simulations-burlington-burn-permanent.trycloudflare.com/marketplace.html**](https://simulations-burlington-burn-permanent.trycloudflare.com/marketplace.html) | Zero-dependency single-file HTML5 app |
+| 🩺 **Backend Health API** | [**https://simulations-burlington-burn-permanent.trycloudflare.com/api/health**](https://simulations-burlington-burn-permanent.trycloudflare.com/api/health) | Live system health & engine status check |
+| 📦 **Products REST API** | [**https://simulations-burlington-burn-permanent.trycloudflare.com/api/products**](https://simulations-burlington-burn-permanent.trycloudflare.com/api/products) | Handcrafted catalog data & artisan lineage |
 
 > ⚡ **Launch / Regenerate Live Link**: Run `npm run tunnel` to establish a new encrypted, globally accessible Cloudflare Edge tunnel anytime.
 
